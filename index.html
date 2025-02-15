@@ -424,12 +424,7 @@
           if (linkHeader) {
             const match = linkHeader.match(/&page=(\d+)>; rel="last"/);
             if (match) {
-              let commitCount = parseInt(match[1]); // Convert to number
-              // Extract hundreds, tens, and ones places
-              let hundreds = Math.floor(commitCount / 100);
-              let tensOnes = commitCount % 100;
-              // Format and display version
-              document.getElementById("commit-count").textContent = `v${hundreds}.${tensOnes}`;
+              document.getElementById("commit-count").textContent = `v0.${match[1]}`;
               return;
             }
           }
