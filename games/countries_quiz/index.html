@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Countries of the World Quiz">
+    <meta name="author" content="Caleb Robinson">
+
+    <title>Countries Quiz</title>
+    
+    <link href="css/leaflet.css" rel="stylesheet" />
+    
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            height: 100%;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+        }
+
+        .logo-area{
+            background-color: #19715E;
+            color: white;
+            align-items: center;
+            display: block;
+            font-family: "Segoe UI Web (West European)",Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+        }
+
+        .logo-content{
+            padding-right: 2rem;
+            padding-left: 2rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem; 
+        }
+
+        .logo-header{
+            padding-right: 2rem;
+            padding-left: 2rem;
+            padding-top: 1rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .logo-heading{
+            font-size: 1.7em;
+            letter-spacing: .1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: white;
+        }
+
+        .logo-link{
+            font-size: 100%;
+            font-weight: 400;
+            color: white;
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .leaflet-container .logo-area a {
+            color: rgb(219, 219, 219);
+        }
+        
+        .leaflet-container .logo-area a:hover {
+            color: rgb(255, 255, 255);
+        }
+        
+        .game-area{
+            align-items: center;
+            display: block;
+        }
+
+        .game-row{
+            padding-bottom: 0.5rem;
+        }
+
+        #game-timer{
+            margin-left:2rem;
+            font-size: 140%;
+            font-weight: 600;
+            width: 100px;
+            text-align: center;
+            border: 1px solid black;
+            padding: 0.25rem;
+        }
+        
+        #game-start:hover{
+            background-color: rgb(235, 235, 235);
+        }
+        #game-stop:hover{
+            background-color: rgb(235, 235, 235);
+        }
+
+        .game-label{
+            font-size: 120%;
+        }
+
+        .game-bad-label{
+            font-size: 140%;
+            color: red;
+        }
+
+        .form-control{
+            padding: .375rem .75rem;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+
+        #game-input{
+            display: inline-block;
+            width: 15rem;
+        }
+
+        #game-score{
+            margin-left:2rem;
+            font-size: 140%;
+            font-weight: 600;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="map"></div>
+    
+
+    <!-- Core JavaScript
+    ================================================== -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+    <!-- Leaflet JavaScript
+    ================================================== -->
+    <script src="js/leaflet.js" type="text/javascript"></script>
+
+    <!-- Main code
+    ================================================== -->
+    <script src="countries.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        var START_CENTER = [20, -50]; // lat, lon
+        var START_ZOOM = 3;
+
+        var countryMarkers = [];
+        var countryLatLons = [];
+        var countryNames = [];
+        var foundCountries = Object();
+        var allCountries = Object();
+        var foundCount = 0;
+        var totalCount = countries.length;
+
+        
+        var timeLeft = 15*60;
+        var running = false;
+
+        function updateScore(){
+            $("#game-score").text(foundCount + "/" + totalCount);
+        }
+
+        function doTimer(){
+            if (timeLeft > 0){
+                timeLeft -= 1;
+
+                var minutes = Math.floor(timeLeft/60);
+                var seconds = timeLeft % 60;
+
+                var pad = "00";
+                minutes = minutes.toString();
+                seconds = seconds.toString();
+
+                minutes = ("00" + minutes).substring(minutes.length);
+                seconds = ("00" + seconds).substring(seconds.length);
+
+                $("#game-timer").text(minutes+ ":" + seconds);
+
+                setTimeout(doTimer, 1000);
+            }else{
+                if(running){
+                    running = false;
+                    endGame();
+                }
+            }
+        }
+
+        function endGame(){
+            $("#game-timer").text("00:00");
+
+            for(var i=0;i<totalCount;i++){
+                if(!(i in foundCountries)){
+                    var name = countryNames[i];
+                    countryMarkers[i]._icon.innerHTML = '<span class="game-bad-label">' + name + '</span>';
+                }
+            }
+        }
+       
+        $(document).ready(function(){
+
+            //----------------------------------------------------------------------
+            // Setup map layers
+            //----------------------------------------------------------------------
+            var CartoDB_VoyagerNoLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                maxZoom: 15,
+                minZoom: 2,
+            });
+
+            var map = L.map('map', {
+                zoomControl: false,
+                center: START_CENTER,
+                zoom: START_ZOOM,
+                layers: [CartoDB_VoyagerNoLabels]
+            });
+
+
+            //---------------------------------------------------------------------
+            // Setup custom controls
+            //----------------------------------------------------------------------            
+
+            var gameControl = $("<div class='leaflet-control game-area'></div>");
+            var gameContent = $("<div class='game-content'></div>");
+            gameContent.append("<div class='game-row'><input type='button' class='form-control' value='Start' id='game-start'><input type='button' class='form-control' value='Stop' id='game-stop'><span id='game-timer'>15:00</span></div>")
+            gameContent.append("<div class='game-row'><input type='text' id='game-input' class='form-control' placeholder='Press start, enter country names, beat the timer!'><span id='game-score'>" + foundCount + "/" + totalCount +"</span></div>");
+            gameControl.append(gameContent);
+            $(".leaflet-top.leaflet-left").append(gameControl);
+
+            //----------------------------------------------------------------------
+            // Custom initialization of the map zoom controls so that we can 
+            // position it where we want
+            //----------------------------------------------------------------------
+            L.control.zoom({
+                position:'topleft'
+            }).addTo(map);
+
+
+            //----------------------------------------------------------------------
+            // Create markers for all the countries and populate the country globals
+            //----------------------------------------------------------------------
+            for(var i=0; i<totalCount; i++){
+                var lat = countries[i][0];
+                var lon = countries[i][1];
+                var names = []
+                for(var j=2;j<countries[i].length;j++){
+                    names.push(countries[i][j]);
+                }
+
+                var marker = new L.Marker([lat, lon], {
+                    icon: new L.DivIcon({
+                        className: 'my-div-icon',
+                        html: '<span class="game-label">____</span>'
+                    })
+                });
+                marker.addTo(map);
+                countryNames.push(names[0])
+                countryMarkers.push(marker);
+                countryLatLons.push([lat, lon]);
+                
+                for(var j=0;j<names.length;j++){
+                    allCountries[names[j].toLowerCase()] = i;
+                }
+
+            }
+
+            //----------------------------------------------------------------------
+            // Text listener (all game logic)
+            //----------------------------------------------------------------------
+            $("#game-input").keyup(function(){
+                if (running){
+                    var query = this.value.toLowerCase();
+                    if(query in allCountries){
+                        var idx = allCountries[query];
+                        if(!(idx in foundCountries)){
+                            var name = countryNames[idx];
+                            var lat = countryLatLons[idx][0]
+                            var lon = countryLatLons[idx][1]
+                            countryMarkers[idx]._icon.innerHTML = '<span class="game-label">' + name + '</span>';
+                            foundCount += 1
+                            foundCountries[idx] = true;
+                            map.flyTo([lat, lon], map.getZoom());
+                            $(this).val("");
+                            updateScore();
+                        }else{
+                            console.debug("Already found");
+                        }
+                    }
+                }
+                else{
+                    $(this).val("");
+                }
+            });
+
+            $("#game-start").click(function(){
+                $(this).prop("disabled",true);
+                $("#game-stop").prop("disabled",false);
+                $(this).css("background-color", "#2bf259");
+                $(this).val("Started");
+                running = true;
+                doTimer();
+            });
+
+            $("#game-stop").click(function(){
+                if(running){
+                    $(this).prop("disabled",true);
+                    $(this).css("background-color", "#ad0800");
+                    $(this).val("Stopped");
+
+                    running = false;
+                    timeLeft = 0;
+                    endGame();
+                }
+            });
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>

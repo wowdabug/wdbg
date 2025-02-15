@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDBG</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1e1e1e;
+        /* Dark grey background */
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        color: #fff;
+        /* White text */
+      }
+
+      .navbar {
+        background-color: #111;
+        /* Black navbar */
+        padding: 10px 0;
+      }
+
+      .navbar a {
+        color: #ddd;
+        /* Light grey text */
+        text-decoration: none;
+        padding: 10px 15px;
+        display: inline-block;
+        font-size: 16px;
+      }
+
+      .navbar a:hover {
+        background-color: #333;
+        /* Darker grey hover effect */
+        border-radius: 5px;
+      }
+
+      h1 {
+        margin: 20px 0;
+        color: #fff;
+        font-size: 28px;
+      }
+
+      .category {
+        background: #222;
+        margin: 10px auto;
+        padding: 10px;
+        max-width: 1100px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        text-align: left;
+      }
+
+      .category h2 {
+        margin: 0;
+        padding: 10px;
+        background: #333;
+        cursor: pointer;
+        font-size: 20px;
+        border-radius: 8px;
+      }
+
+      .category h2:hover {
+        background: #444;
+      }
+
+      .games-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        display: none;
+        /* Initially hidden */
+      }
+
+      .game-box {
+        background: #2a2a2a;
+        /* Dark grey card */
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+
+      .game-box img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+
+      .game-box a {
+        display: block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #ddd;
+        /* Light grey text */
+        font-weight: bold;
+      }
+
+      .game-box a:hover {
+        color: #f39c12;
+        /* Orange accent on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="links.html">Links</a>
+    </div>
+    <h1>WDB Games <small>
+        <span id="commit-count">loading</span>
+      </small>
+    </h1>
+    <div class="category">
+      <h2 onclick="toggleCategory(this)">Featured Games</h2>
+      <div class="games-container">
+        <div class="game-box">
+          <img src="images/2048.png" alt="2048">
+          <a href="games/2048">2048</a>
+        </div>
+        <div class="game-box">
+          <img src="images/cookie_clicker.png" alt="Cookie Clicker">
+          <a href="games/cookie_clicker">Cookie Clicker</a>
+        </div>
+        <div class="game-box">
+          <img src="images/polytrack.png" alt="PolyTrack">
+          <a href="games/polytrack">PolyTrack</a>
+        </div>
+        <div class="game-box">
+          <img src="images/retro_bowl.png" alt="Retro Bowl">
+          <a href="games/retro_bowl">Retro Bowl</a>
+        </div>
+        <div class="game-box">
+          <img src="images/slope.png" alt="Slope">
+          <a href="games/slope">Slope</a>
+        </div>
+        <div class="game-box">
+          <img src="images/slow_roads.png" alt="Slow Roads">
+          <a href="games/slow_roads">Slow Roads</a>
+        </div>
+        <div class="game-box">
+          <img src="images/snow_rider.png" alt="Snow Rider">
+          <a href="games/snow_rider">Snow Rider</a>
+        </div>
+        <div class="game-box">
+          <img src="images/tetris_nes.png" alt="Tetris (NES)">
+          <a href="games/tetris_nes">Tetris (NES)</a>
+        </div>
+      </div>
+    </div>
+    <div class="category">
+      <h2 onclick="toggleCategory(this)">Puzzle & Strategy Games</h2>
+      <div class="games-container">
+        <div class="game-box">
+          <img src="images/2048.png" alt="2048">
+          <a href="games/2048">2048</a>
+        </div>
+        <div class="game-box">
+          <img src="images/countries_quiz.png" alt="Countries Quiz">
+          <a href="games/countries_quiz">Countries Quiz</a>
+        </div>
+        <div class="game-box">
+          <img src="images/bitlife.png" alt="Bitlife">
+          <a href="games/bitlife">Bitlife</a>
+        </div>
+        <div class="game-box">
+          <img src="images/bloxorz.png" alt="Bloxorz">
+          <a href="games/flash/bloxorz.html">Bloxorz</a>
+        </div>
+        <div class="game-box">
+          <img src="images/globle.png" alt="Globle">
+          <a href="https://olliechick.co.nz/globle/">Globle</a>
+        </div>
+        <div class="game-box">
+          <img src="images/minesweeper.png" alt="Minesweeper">
+          <a href="games/minesweeper">Minesweeper</a>
+        </div>
+        <div class="game-box">
+          <img src="images/twhg.png" alt="TWHG">
+          <a href="games/flash/twhg.html">TWHG</a>
+        </div>
+        <div class="game-box">
+          <img src="images/wordle.png" alt="Wordle">
+          <a href="games/wordle">Wordle</a>
+        </div>
+        <div class="game-box">
+          <img src="images/worldle.png" alt="Worldle">
+          <a href="games/worldle">Worldle</a>
+        </div>
+      </div>
+    </div>
+    <div class="category">
+      <h2 onclick="toggleCategory(this)">Emulator Games</h2>
+      <div class="games-container">
+        <div class="game-box">
+          <img src="images/a_link_to_the_past.png" alt="A Link to the Past">
+          <a href="games/a_link_to_the_past">A Link to the Past</a>
+        </div>
+        <div class="game-box">
+          <img src="images/breakout.png" alt="Breakout">
+          <a href="games/breakout">Breakout</a>
+        </div>
+        <div class="game-box">
+          <img src="images/mario_64.png" alt="Mario 64">
+          <a href="games/mario_64">Mario 64</a>
+        </div>
+        <div class="game-box">
+          <img src="images/mario_kart_64.png" alt="Mario Kart 64">
+          <a href="games/mario_kart_64">Mario Kart 64</a>
+        </div>
+        <div class="game-box">
+          <img src="images/ocarina_of_time.png" alt="Ocarina of Time">
+          <a href="games/ocarina_of_time">Ocarina of Time</a>
+        </div>
+        <div class="game-box">
+          <img src="images/paper_mario.png" alt="Paper Mario">
+          <a href="games/paper_mario">Paper Mario</a>
+        </div>
+        <div class="game-box">
+          <img src="images/pokemon_emerald.png" alt="Pokemon Emerald">
+          <a href="games/pokemon_emerald">Pokemon Emerald</a>
+        </div>
+        <div class="game-box">
+          <img src="images/punch_out.png" alt="Punch Out">
+          <a href="games/punch_out">Punch Out</a>
+        </div>
+        <div class="game-box">
+          <img src="images/sonic_the_hedgehog.png" alt="Sonic the Hedgehog">
+          <a href="games/sonic_the_hedgehog">Sonic</a>
+        </div>
+        <div class="game-box">
+          <img src="images/super_mario_all_stars.png" alt="Super Mario All-Stars">
+          <a href="games/super_mario_all_stars">Super Mario All-Stars</a>
+        </div>
+        <div class="game-box">
+          <img src="images/super_mario_bros.png" alt="Super Mario Bros">
+          <a href="games/super_mario_bros">Super Mario Bros</a>
+        </div>
+        <div class="game-box">
+          <img src="images/super_mario_world.png" alt="Super Mario World">
+          <a href="games/super_mario_world">Super Mario World</a>
+        </div>
+        <div class="game-box">
+          <img src="images/tetris_gb.png" alt="Tetris (GB)">
+          <a href="games/tetris_gb">Tetris (GB)</a>
+        </div>
+        <div class="game-box">
+          <img src="images/tetris.png" alt="Tetris (NES)">
+          <a href="games/tetris_nes">Tetris (NES)</a>
+        </div>
+      </div>
+    </div>
+    <div class="category">
+      <h2 onclick="toggleCategory(this)">Sports Games</h2>
+      <div class="games-container">
+        <div class="game-box">
+          <img src="images/basket_random.png" alt="Basket Random">
+          <a href="games/basket_random">Basket Random</a>
+        </div>
+        <div class="game-box">
+          <img src="images/pen_football.png" alt="Pen Football">
+          <a href="games/pen_football">Pen Football</a>
+        </div>
+        <div class="game-box">
+          <img src="images/retro_bowl.png" alt="Retro Bowl">
+          <a href="games/retro_bowl">Retro Bowl</a>
+        </div>
+        <div class="game-box">
+          <img src="images/soccer_random.png" alt="Soccer Random">
+          <a href="games/soccer_random">Soccer Random</a>
+        </div>
+      </div>
+    </div>
+    <div class="category">
+      <h2 onclick="toggleCategory(this)">Idle Games</h2>
+      <div class="games-container">
+        <div class="game-box">
+          <img src="images/cookie_clicker.png" alt="Cookie Clicker">
+          <a href="games/cookie_clicker">Cookie Clicker</a>
+        </div>
+        <div class="game-box">
+          <img src="images/hexaclicker.png" alt="HexaClicker">
+          <a href="games/hexaclicker">HexaClicker</a>
+        </div>
+        <div class="game-box">
+          <img src="images/idle_breakout.png" alt="Idle Breakout">
+          <a href="games/idle_breakout">Idle Breakout</a>
+        </div>
+        <div class="game-box">
+          <img src="images/idle_dice.png" alt="Idle Dice">
+          <a href="games/idle_dice">Idle Dice</a>
+        </div>
+        <div class="game-box">
+          <img src="images/planet_clicker.png" alt="Planet Clicker">
+          <a href="games/planet_clicker">Planet Clicker</a>
+        </div>
+        <div class="game-box">
+          <img src="images/spacebar_clicker.png" alt="Spacebar Clicker">
+          <a href="games/spacebar_clicker">Spacebar Clicker</a>
+        </div>
+        <div class="game-box">
+          <img src="images/the_final_earth_2.png" alt="The Final Earth 2">
+          <a href="games/the_final_earth_2">The Final Earth 2</a>
+        </div>
+      </div>
+    </div>
+    <div class="category">
+      <h2 onclick="toggleCategory(this)">Other Games</h2>
+      <div class="games-container">
+        <div class="game-box">
+          <img src="images/appel.png" alt="Appel">
+          <a href="games/appel">Appel</a>
+        </div>
+        <div class="game-box">
+          <img src="images/champion_island.png" alt="Champion Island">
+          <a href="https://wowdabug.github.io/dnalsi_noipmahc/">Champion Island</a>
+        </div>
+        <div class="game-box">
+          <img src="images/classicube.png" alt="ClassiCube">
+          <a href="games/classicube">ClassiCube</a>
+        </div>
+        <div class="game-box">
+          <img src="images/death_run.png" alt="Death Run">
+          <a href="games/death_run">Death Run</a>
+        </div>
+        <div class="game-box">
+          <img src="images/dino.png" alt="Dino">
+          <a href="games/dino">Dino</a>
+        </div>
+        <div class="game-box">
+          <img src="images/doodle_jump.png" alt="Doodle Jump">
+          <a href="games/doodle_jump">Doodle Jump</a>
+        </div>
+        <div class="game-box">
+          <img src="images/flight_simulator.png" alt="Flight Simulator">
+          <a href="games/flight_simulator">Flight Simulator</a>
+        </div>
+        <div class="game-box">
+          <img src="images/happy_wheels.png" alt="Happy Wheels">
+          <a href="games/flash/happy_wheels.html">Happy Wheels</a>
+        </div>
+        <div class="game-box">
+          <img src="images/ovo.png" alt="OvO">
+          <a href="games/ovo">OvO</a>
+        </div>
+        <div class="game-box">
+          <img src="images/polytrack.png" alt="PolyTrack">
+          <a href="games/polytrack">PolyTrack</a>
+        </div>
+        <div class="game-box">
+          <img src="images/slope.png" alt="Slope">
+          <a href="games/slope">Slope</a>
+        </div>
+        <div class="game-box">
+          <img src="images/slowroads.png" alt="Slow Roads">
+          <a href="games/slow_roads">Slow Roads</a>
+        </div>
+        <div class="game-box">
+          <img src="images/snow_rider.png" alt="Snow Rider">
+          <a href="games/snow_rider">Snow Rider</a>
+        </div>
+        <div class="game-box">
+          <img src="images/stack.png" alt="Stack">
+          <a href="games/stack">Stack</a>
+        </div>
+        <div class="game-box">
+          <img src="images/surf.png" alt="Surf">
+          <a href="games/surf">Surf</a>
+        </div>
+      </div>
+    </div>
+    <div class="category">
+      <h2 onclick="toggleCategory(this)">Beta Games</h2>
+      <div class="games-container">
+        <div class="game-box">
+          <img src="images/asteroids.png" alt="Asteroids">
+          <a href="games/asteroids">Asteroids</a>
+        </div>
+        <div class="game-box">
+          <img src="images/babel_tower.png" alt="Babel Tower">
+          <a href="https://www.coolmathgames.com/sites/default/files/public_games/47462/">Babel Tower</a>
+        </div>
+        <div class="game-box">
+          <img src="images/just_a_platformer.png" alt="Just a Platformer">
+          <a href="games/just_a_platformer">Just a Platformer</a>
+        </div>
+        <div class="game-box">
+          <img src="images/magic_cat_academy.png" alt="Magic Cat Academy">
+          <a href="games/magic_cat_academy">Magic Cat Academy</a>
+        </div>
+        <div class="game-box">
+          <img src="images/territorial.io.png" alt="Territorial.io">
+          <a href="https://fxclient.github.io/FXclient/">Territorial.io</a>
+        </div>
+      </div>
+    </div>
+    <a href="https://hits.seeyoufarm.com">
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwowdabug.github.io%2Frgbdw%2F&count_bg=%230E0E0E&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false" />
+    </a>
+    <script>
+      function toggleCategory(header) {
+        let gamesContainer = header.nextElementSibling;
+        if (gamesContainer.style.display === "grid") {
+          gamesContainer.style.display = "none";
+        } else {
+          gamesContainer.style.display = "grid";
+        }
+      }
+    </script>
+    <script>
+      async function fetchCommitCount() {
+        const owner = "wowdabug";
+        const repo = "rgbdw";
+        try {
+          const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/commits?per_page=1`, {
+            method: "HEAD"
+          });
+          const linkHeader = response.headers.get("Link");
+          if (linkHeader) {
+            const match = linkHeader.match(/&page=(\d+)>; rel="last"/);
+            if (match) {
+              let commitCount = parseInt(match[1]); // Convert to number
+              // Extract hundreds, tens, and ones places
+              let hundreds = Math.floor(commitCount / 100);
+              let tensOnes = commitCount % 100;
+              // Format and display version
+              document.getElementById("commit-count").textContent = `v${hundreds}.${tensOnes}`;
+              return;
+            }
+          }
+          document.getElementById("commit-count").textContent = "";
+        } catch (error) {
+          console.error("Error fetching commit count:", error);
+          document.getElementById("commit-count").textContent = "";
+        }
+      }
+      fetchCommitCount();
+    </script>
+  </body>
+</html>

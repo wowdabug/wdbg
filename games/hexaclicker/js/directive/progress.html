@@ -1,0 +1,21 @@
+<div class="level-box">
+    <div class="progress" ng-style="{ 'width': Progress.currentLevel.currentHp / Progress.currentLevel.hp * 280 +'px' }" ng-class="{animation: Progress.currentLevel.currentHp > 0}"></div>
+    <div class="progress-label">Lvl {{ Progress.currentLevel.level }} &nbsp; {{ Progress.currentLevel.currentHp | prettify }} / {{ Progress.currentLevel.hp | prettify }}</div>
+    <div class="boss-timer-box" ng-if="Progress.currentLevel.bossTimer.time > 0">
+        <div class="boss-timer-box progress" ng-style="{ 'width': Progress.currentLevel.bossTimer.time / 30 * 280 +'px' }"></div>
+        <div class="boss-timer-box-label">Time: {{ Progress.currentLevel.bossTimer.time }} s</div>
+    </div>
+    <div class="kill-box" ng-if="Progress.currentLevel.kills < 10 && !Progress.currentLevel.boss">
+        <div class="kill-box progress" ng-style="{ 'width': Progress.currentLevel.kills / 10 * 280 +'px' }"></div>
+        <div class="kill-box-label"> Kills: {{ Progress.currentLevel.kills }} / 10</div>
+    </div>
+    <div>
+        <div class="level-step-button" ng-click="Progress.changeLevel(-1)"><i ng-show="Progress.currentLevel.level > 1" class="fa fa-angle-double-left"></i></div>
+        <div class="farm-button">
+            <div ng-click="toggleProgress()" ng-hide="Progress.progressMode">Farm</div>
+            <div ng-click="toggleProgress()" ng-show="Progress.progressMode">Progress</div>
+        </div>
+        <div class="level-step-button" ng-click="Progress.changeLevel(1)"><i ng-show="Progress.currentLevel.level < Progress.maxLevel" class="fa fa-angle-double-right"></i></div>
+    </div>
+
+</div>

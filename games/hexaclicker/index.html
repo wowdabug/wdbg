@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HexaClicker</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta property="og:image" content="http://hexaclicker.github.io/icon.png"/>
+    <meta property="og:image:secure_url" content="https://hexaclicker.github.io/icon.png" />
+</head>
+<body>
+
+<div class="container" ng-app="HexaClicker" ng-controller="GameCtrl">
+    <div class="hex-list">
+        <div class="credit-box">
+            <div style="width: 190px; float: left; margin-right: 10px">
+                <span class="credit-label"><i class="fa fa-dollar"></i> </span><span class="credit-amount">{{ Status.credit | prettify }} |</span>
+            </div>
+            <div style="float: left">
+                <span class="credit-label"><i class="fa fa-bolt"></i> </span><span style="margin-left: 5px;" class="credit-amount">{{ Status.utility }}</span>
+            </div>
+        </div>
+        <div class="toggle-buttons">
+            <div class="toggle-button" ng-click="selectedPurchaseList = 1" ng-class="{selected: selectedPurchaseList == 1}">DPS</div>
+            <div class="toggle-button" ng-click="selectedPurchaseList = 2" ng-class="{selected: selectedPurchaseList == 2}">Utility</div>
+        </div>
+        <div class="purchase-list">
+            <div ng-if="selectedPurchaseList == 1">
+                <div purchase ng-repeat="hexa in Data.getHexas(1)" hexa-id="{{ hexa.id }}" hexa-name="{{ alphabet[$index] }}"></div>
+            </div>
+            <div ng-if="selectedPurchaseList == 2">
+                <div purchase ng-repeat="hexa in Data.getHexas(2)" hexa-id="{{ hexa.id }}" hexa-name="{{ alphabet[$index] }}"></div>
+            </div>
+        </div>
+        <div class="social">
+            <div class="fb-like" data-href="http://hexaclicker.github.io/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true" style="float: left;"></div>
+            <div class="bitcoin" onclick="ga('send', 'event', 'Donate', 'Donate'); window.prompt('My Bitcoin Address','12Y3HawY7GR6UD1naHsNkfbyRWf2ei8t17');">
+                <img src="icon_bitcoin.png" />
+                <div>Donate</div>
+            </div>
+            <div class="reddit">
+                <a href="http://www.reddit.com/r/hexaclicker" target="_blank">Reddit</a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="grid-container">
+        <div class="hex-row" style="padding-left: 150px">
+            <div slot slot-id="19"></div>
+            <div slot slot-id="20"></div>
+            <div slot slot-id="21"></div>
+            <div slot slot-id="22"></div>
+            <div style="clear: both"></div>
+        </div>
+
+        <div class="hex-row odd" style="padding-left: 100px">
+            <div slot slot-id="36"></div>
+            <div slot slot-id="7"></div>
+            <div slot slot-id="8"></div>
+            <div slot slot-id="9"></div>
+            <div slot slot-id="23"></div>
+            <div style="clear: both"></div>
+        </div>
+
+        <div class="hex-row" style="padding-left: 50px">
+            <div slot slot-id="35"></div>
+            <div slot slot-id="18"></div>
+            <div slot slot-id="1"></div>
+            <div slot slot-id="2"></div>
+            <div slot slot-id="10"></div>
+            <div slot slot-id="24"></div>
+            <div style="clear: both"></div>
+        </div>
+
+        <div class="hex-row odd" style="padding-left: 0px">
+            <div slot slot-id="34"></div>
+            <div slot slot-id="17"></div>
+            <div slot slot-id="6"></div>
+            <div clicker></div>
+            <div slot slot-id="3"></div>
+            <div slot slot-id="11"></div>
+            <div slot slot-id="25"></div>
+            <div style="clear: both"></div>
+        </div>
+
+        <div class="hex-row" style="padding-left: 50px">
+            <div slot slot-id="33"></div>
+            <div slot slot-id="16"></div>
+            <div slot slot-id="5"></div>
+            <div slot slot-id="4"></div>
+            <div slot slot-id="12"></div>
+            <div slot slot-id="26"></div>
+            <div style="clear: both"></div>
+        </div>
+
+        <div class="hex-row odd" style="padding-left: 100px">
+            <div slot slot-id="32"></div>
+            <div slot slot-id="15"></div>
+            <div slot slot-id="14"></div>
+            <div slot slot-id="13"></div>
+            <div slot slot-id="27"></div>
+            <div style="clear: both"></div>
+        </div>
+
+        <div class="hex-row" style="padding-left: 150px">
+            <div slot slot-id="31"></div>
+            <div slot slot-id="30"></div>
+            <div slot slot-id="29"></div>
+            <div slot slot-id="28"></div>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+
+    <div class="progress-list">
+        <div class="dps-box">
+            <span class="dps-label">DPS</span><span class="dps-amount">{{ Grid.getDPS(true) | prettify }}</span>
+        </div>
+
+        <div progress></div>
+
+        <div class="selection-container">
+            <div class="selection-title">
+                Selected
+            </div>
+            <div selection></div>
+        </div>
+
+        <div class="grid-list">
+            <div class="grid-button" ng-repeat="grid in Grid.grids" ng-click="Grid.setGrid($index)" ng-class="{ selected: Grid.currentGrid == $index}">
+                Grid: #{{ $index + 1 }} - DPS: {{ grid.getDPS(true) | prettify }}
+            </div>
+            <div class="grid-button" ng-click="createGrid()">
+                Create New Grid - Required level: 80
+            </div>
+            <div style="clear: both"></div>
+        </div>
+
+        <div class="help-box">
+            <button style="margin-left: 10px;" ng-click="resetGame()">Hard reset</button>
+            <button ng-click="exportSave()">Export Save</button>
+            <button ng-click="importSave()">Import Save</button>
+            <ul>
+                <li>Click on the + hexa to deal dmg.</li>
+                <li>Select the hexa you want to buy on the left, then select the slot where you want to place it.</li>
+                <li>Select the slot on the grid to upgrade/activate the hexa.</li>
+                <li>Press CTRL + Left-click to activate the utility hexa</li>
+                <li>Press Shift + Left-click to upgrade the hexa</li>
+                <li>Every utility hexa costs 1 point. You receive utility points every 10 levels</li>
+                <li>You can unlock more slots by reaching lvl 30 and lvl 60.</li>
+                <li>You enable automatic level change by selecting Progress mode and disable it by selecting Farm mode.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js" type="text/javascript"></script>
+    <script src="js/lib/underscore-min.js" type="text/javascript"></script>
+    <script src='https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/javascriptbase64/base64.js' type='text/javascript'></script>
+
+    <script src="js/game.js" type="text/javascript"></script>
+
+    <script src="js/directive/clicker.js" type="text/javascript"></script>
+    <script src="js/directive/progress.js" type="text/javascript"></script>
+    <script src="js/directive/slot.js" type="text/javascript"></script>
+    <script src="js/directive/purchase.js" type="text/javascript"></script>
+    <script src="js/directive/selection.js" type="text/javascript"></script>
+    <script src="js/util.js" type="text/javascript"></script>
+    <script src="js/model/hexa.js" type="text/javascript"></script>
+    <script src="js/data.js" type="text/javascript"></script>
+    <script src="js/grid.js" type="text/javascript"></script>
+    <script src="js/progress.js" type="text/javascript"></script>
+    <script src="js/status.js" type="text/javascript"></script>
+
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-55400053-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<script>
+    //Analytics heartbeat event
+    setInterval(function() {
+        ga('send', 'event', 'HeartBeat', 'HeartBeat');
+    }, 180000);
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_EN/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

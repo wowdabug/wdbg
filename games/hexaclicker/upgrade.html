@@ -1,0 +1,11 @@
+<div class="upgrade active" ng-class="{ 'on-cooldown': $parent.slotData.cooldown > 0 }"
+     ng-mouseenter="$parent.$parent.highlight($parent.slotData.slot, true)"
+     ng-mouseleave="$parent.$parent.highlight($parent.slotData.slot, false)">
+    <svg viewBox="0 0 177 204">
+        <polygon points="2,152 2,52 88.6,2 175.2,52 175.2,152 88.6,202" style="fill: {{ $parent.slotData.hexa.color }}" ng-click="activate()">
+    </svg>
+    <div class="label">
+        <span class="cooldown" ng-show="$parent.slotData.cooldown > 0">{{ $parent.slotData.cooldown }}</span>
+        <div class="upgrade-icon" ng-hide="$parent.slotData.cooldown > 0"><i class="fa fa-crosshairs"></i></div>
+    </div>
+</div>

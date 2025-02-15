@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon-32x32.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDBG - Links</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1e1e1e;
+        /* Dark grey background */
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        color: #fff;
+        /* White text */
+      }
+
+      .navbar {
+        background-color: #111;
+        padding: 10px 0;
+      }
+
+      .navbar a {
+        color: #ddd;
+        text-decoration: none;
+        padding: 10px 15px;
+        display: inline-block;
+        font-size: 16px;
+      }
+
+      .navbar a:hover {
+        background-color: #333;
+        border-radius: 5px;
+      }
+
+      h1 {
+        margin: 20px 0;
+        color: #fff;
+        font-size: 28px;
+      }
+
+      .links-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .link-box {
+        background: #2a2a2a;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+
+      .link-box img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+
+      .link-box a {
+        display: block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #ddd;
+        font-weight: bold;
+      }
+
+      .link-box a:hover {
+        color: #f39c12;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="links.html">Links</a>
+    </div>
+    <h1>Useful Links</h1>
+    <div class="links-container">
+      <div class="link-box">
+        <a href="https://github.com/WowDaBug/rgbdw" target="_blank">Github Repo</a>
+        <p>The code for this website.</p>
+      </div>
+      <div class="link-box">
+        <a href="https://sites.google.com/view/wdbgr/home" target="_blank">Google Sites</a>
+        <p>The Google Sites version of this website.</p>
+      </div>
+      <div class="link-box">
+        <a href="https://forms.gle/YRJeLWnZsV624NGy7" target="_blank">Google Forms</a>
+        <p>Suggest a game or report a bug here!</p>
+      </div>
+    </div>
+  </body>
+</html>

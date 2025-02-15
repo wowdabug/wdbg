@@ -1,0 +1,19 @@
+<div class="purchase-button" ng-click="purchase()" ng-if="achieved()" ng-class="{inactive: !ableToPurchase(), selected: selectedHexaForPurchase == hexa}">
+    <div ng-if="hexa.type == 1">
+        <div class="color-box" ng-style="{'background-color': hexa.color}">{{ name }}</div>
+
+        <div class="stat">
+            DPS: {{ hexa.baseDps | prettify }}
+        </div>
+        <div class="stat">Price: {{ hexa.price | prettify }}</div>
+        <div class="stat">
+            Upgrade: {{ hexa.upgrade | prettify }}
+        </div>
+    </div>
+    <div ng-if="hexa.type == 2">
+        <div class="color-box" ng-style="{'background-color': hexa.color}">{{ name }}</div>
+        <div class="stat">
+            {{ hexa.description }}
+        </div>
+    </div>
+</div>

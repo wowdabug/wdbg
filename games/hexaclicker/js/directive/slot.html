@@ -1,0 +1,33 @@
+<div class="slot" ng-class="{highlighted: isHighlighted()}" ng-mouseover="highlight(slot)" ng-mouseleave="clearHighlight()">
+
+    <div ng-show="!slot.hexaEntity && (!selectedHexaForPurchase || (selectedHexaForPurchase && Status.tier < slot.tier))">
+        <svg viewBox="0 0 177 204">
+            <polygon points="2,152 2,52 88.6,2 175.2,52 175.2,152 88.6,202" style="fill: #373737"/>
+        </svg>
+    </div>
+
+    <div class="active" ng-show="!slot.hexaEntity && selectedHexaForPurchase && Status.tier >= slot.tier" ng-click="buy()">
+        <svg viewBox="0 0 177 204">
+            <polygon points="2,152 2,52 88.6,2 175.2,52 175.2,152 88.6,202" style="fill: #777777"/>
+        </svg>
+    </div>
+
+    <div class="active" ng-show="slot.hexaEntity" ng-click="select($event)" ng-class="{ selected: selectedSlot == slot, cooldown: slot.hexaEntity.cooldown > 0 }">
+        <svg viewBox="0 0 177 204">
+            <polygon points="2,152 2,52 88.6,2 175.2,52 175.2,152 88.6,202" style="fill: {{ slot.hexaEntity.hexa.color }}"/>
+        </svg>
+
+        <div class="label" ng-if="slot.hexaEntity.hexa.type == 1" ng-class="{ affected: slot.effects.length > 0 }">
+            {{ slot.getDPS(true) | prettify }}
+        </div>
+
+        <div class="label" ng-if="slot.hexaEntity.hexa.type == 2" ng-class="{ affected: slot.effects.length > 0 }">
+           <div ng-if="slot.hexaEntity.duration > 0">{{ slot.hexaEntity.duration }}</div>
+           <div ng-if="slot.hexaEntity.duration == 0">
+               <span ng-if="slot.hexaEntity.hexa.active">A</span>
+               <span ng-if="!slot.hexaEntity.hexa.active">P</span>
+           </div>
+        </div>
+    </div>
+
+</div>

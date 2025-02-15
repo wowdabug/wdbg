@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Asteroids</title>
+    <script src="jquery-1.4.1.min.js"></script>
+    <script src="vector_battle_regular.typeface.js"></script>
+    <script src="ipad.js"></script>
+    <script src="game.js"></script>
+    <style>
+      body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      #game-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      canvas {
+        background-color: dimgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-container">
+      <canvas id="canvas" width="780" height="540"></canvas>
+    </div>
+  </body>
+</html>

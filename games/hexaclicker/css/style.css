@@ -1,0 +1,573 @@
+@font-face {
+    font-family:"SourceCodePro-Semibold";
+    src: url("../font/SourceCodePro-Semibold.otf")
+}
+
+body {
+    background-color: #000000;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.slot {
+    width: 100px;
+    height: 115px;
+    float: left;
+    margin-bottom: -33px;
+}
+
+.clicker-slot svg {
+    fill: #7fea7f;
+}
+
+.clicker-slot polygon:hover {
+    stroke: #7fea7f;
+    cursor: pointer;
+}
+
+.clicker-slot polygon:active {
+    stroke: #000000;
+}
+
+.slot .clicker-label {
+    position: relative;
+    top: -105px;
+    left: 28px;
+    z-index: 2;
+    pointer-events:none;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.slot .label {
+    width: 100px;
+    position: relative;
+    top: -74px;
+    z-index: 2;
+    pointer-events:none;
+    font-size: 21px;
+    font-weight: bold;
+    font-family:"SourceCodePro-Semibold";
+    text-align: center;
+}
+
+.empty polygon {
+    fill: #5b5b5b;
+}
+
+.slot.active polygon {
+    fill: #7f7f7f
+}
+
+.active polygon:hover {
+    stroke: #7fea7f;
+    cursor: pointer;
+}
+
+.selected polygon {
+    stroke: #7fea7f;
+    cursor: pointer;
+}
+
+.active polygon:active {
+    stroke: #000000;
+}
+
+.highlighted polygon {
+    stroke: #75f3ff;
+}
+
+#alert {color: #39f !important;}
+@-webkit-keyframes colours {
+    0% {stroke: #5b0000;}
+    50% {stroke: #FF0000;}
+    100% {stroke: #5b0000;}
+
+}
+@-moz-keyframes colours {
+    0% {stroke: #5b0000;}
+    50% {stroke: #FF0000;}
+    100% {stroke: #5b0000;}
+
+}
+
+#alert {
+
+}
+
+
+.slot.sell polygon {
+    stroke: #FF0000;
+    cursor: pointer;
+
+    -webkit-animation-direction: normal;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: colours;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-direction: normal;
+    -moz-animation-duration: 1s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-name: colours;
+    -moz-animation-timing-function: ease;
+    cursor: not-allowed;
+}
+
+svg {
+    width: 100px;
+    height: 115px;
+    fill: #373737;
+    stroke:#000000;
+    stroke-width:4px;
+}
+
+
+
+
+.credit-box {
+    width: 270px;
+    height: 65px;
+    float: left;
+    margin-left: 10px;
+    padding-left: 10px;
+    background-color: #373737;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    font-size: 23px;
+    line-height: 65px;
+    font-family: "SourceCodePro-Semibold";
+}
+
+.dps-box {
+    width: 270px;
+    height: 65px;
+    float: left;
+    margin-left: 10px;
+    padding-left: 10px;
+    background-color: #373737;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    font-size: 30px;
+    line-height: 65px;
+    font-family: "SourceCodePro-Semibold";
+}
+
+.credit-amount {
+    float: right;
+    margin-right: 5px;
+}
+
+.dps-amount {
+    float: right;
+    margin-right: 5px;
+}
+
+.purchase-button {
+    width: 280px;
+    height: 65px;
+    float: left;
+    margin-left: 10px;
+    background-color: #373737;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.purchase-button:hover {
+    background-color: #4d4d4d;
+}
+
+.level-box {
+    width: 280px;
+    height: 110px;
+    float: left;
+    margin-left: 10px;
+    background-color: #373737;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.level-box .progress {
+    height: 40px;
+    background-color: #7fea7f;
+}
+
+.level-box .progress.animation {
+    -webkit-transition: width 0.1s linear; /* For Safari 3.1 to 6.0 */
+    transition: width 0.1s linear;
+}
+
+.level-box .progress-label {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 17px;
+    font-family: "SourceCodePro-Semibold";
+    line-height: 40px;
+    margin-left: 10px;
+}
+
+.level-box.aura-title {
+    margin-top: 65px;
+    font-size: 30px;
+    line-height: 65px;
+    font-family: "SourceCodePro-Semibold";
+}
+
+.kill-box {
+    margin-top: 5px;
+    width: 280px;
+    height: 20px;
+    text-align: center;
+    position: relative;
+    background-color: #005050;
+}
+
+.kill-box .progress {
+    height: 20px;
+    background-color: #00ffff;
+}
+
+.kill-box-label {
+    width: 280px;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 17px;
+    font-family: "SourceCodePro-Semibold";
+    line-height: 20px;
+}
+
+.level-box .progress.animation {
+    -webkit-transition: width 0.1s linear; /* For Safari 3.1 to 6.0 */
+    transition: width 0.1s linear;
+}
+
+.boss-timer-box {
+    margin-top: 5px;
+    width: 280px;
+    height: 20px;
+    text-align: center;
+    position: relative;
+    background-color: #005050;
+}
+
+.boss-timer-box .progress {
+    height: 20px;
+    background-color: #00ffff;
+}
+
+.boss-timer-box-label {
+    width: 280px;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 17px;
+    font-family: "SourceCodePro-Semibold";
+    line-height: 20px;
+}
+
+.purchase-button.inactive {
+    opacity: 0.5;
+}
+
+.purchase-button.selected {
+    border: 1px solid #7fea7f;
+}
+
+
+.hex-list {
+    width: 300px;
+    height: 700px;
+    float: left;
+}
+
+.progress-list {
+    width: 300px;
+    height: 700px;
+    float: left;
+}
+
+.container {
+    width: 1330px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.grid-container {
+    width: 700px;
+    height: 700px;
+    padding: 5px;
+    padding-left: 25px;
+    float: left;
+}
+
+.hex-row {
+    padding-top: 5px;
+}
+
+
+.color-box {
+    width: 65px;
+    height: 65px;
+    float: left;
+    text-align: center;
+    line-height: 65px;
+    font-family: "SourceCodePro-Semibold";
+    font-size: 30px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    opacity: 0.9;
+}
+
+.purchase-button .color-box:hover {
+    opacity: 1;
+}
+
+.purchase-button .lvlup {
+    float: right;
+    width: 60px;
+    height: 65px;
+    text-align: center;
+    line-height: 65px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: -45px;
+}
+
+.purchase-button .stat {
+    margin-left: 14px;
+    margin-right: 6px;
+    width: 195px;
+    font-size: 17px;
+    float: left;
+}
+
+
+.upgrade {
+    cursor: pointer;
+}
+
+.upgrade.on-cooldown {
+    opacity: 0.8;
+}
+
+.upgrade.active {
+    height: 117px;
+}
+
+.upgrade .upgrade-icon {
+    font-size: 50px;
+    margin-top: -12px;
+}
+
+.slot .affected {
+    color: #FFFFFF;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.slot .cooldown {
+    opacity: 0.8;
+}
+
+.farm-button {
+    float: left;
+    height: 28px;
+    width: 200px;
+    cursor: pointer;
+    text-align: center;
+    font-family: "SourceCodePro-Semibold";
+    line-height: 28px;
+    background-color: #ea8a00;
+    margin-top: 8px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.farm-button:hover {
+    opacity: 0.9;
+}
+
+.level-step-button {
+    margin-top: 8px;
+    float: left;
+    width: 40px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.purchase-list {
+    width: 310px;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.help-box {
+    float: left;
+    margin-top: 20px;
+    height: 100px;
+    width: 280px;
+    color: white;
+    font-weight: bold;
+    font-family: "SourceCodePro-Semibold";
+    font-size: 13px;
+}
+
+.preview {
+    color: #7fea7f;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.preview.insufficient {
+    color: #FF0000;
+}
+
+.selection-container {
+    width: 260px;
+    height: 90px;
+    float: left;
+    background-color: #373737;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.selection-title {
+    color: #FFFFFF;
+    font-family: "SourceCodePro-Semibold";
+    font-size: 17px;
+    width: 150px;
+    float: left;
+}
+
+.selection-box {
+    width: 280px;
+    height: 100px;
+    float: left;
+    margin-top: 5px;
+}
+
+.selection-label {
+    margin-left: 5px;
+    float: left;
+    width: 150px;
+}
+
+.sell-button {
+    font-family: "SourceCodePro-Semibold";
+    float: right;
+    margin-top: -25px;
+    margin-right: 20px;
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background-color: #5b0000;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.sell-button:hover {
+    background-color: #830000;
+}
+
+.sell-button.inactive-sell {
+    background-color: #8c8c8c;
+}
+
+.grid-list {
+    width: 260px;
+    float: left;
+    background-color: #373737;
+    margin-left: 10px;
+    padding: 5px 10px 10px 10px;
+    margin-top: 5px;
+    color: #FFFFFF;
+    font-family: "SourceCodePro-Semibold";
+}
+
+.grid-button {
+    float: left;
+    width: 260px;
+    height: 60px;
+    background-color: #4d4d4d;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.grid-button.selected {
+    background-color: #6a6a6a;
+}
+
+.grid-button:hover {
+    background-color: #6a6a6a;
+}
+
+.toggle-buttons {
+    margin-left: 5px;
+    height: 35px;
+    float: left;
+}
+
+.toggle-button {
+    margin-left: 5px;
+    width: 138px;
+    height: 30px;
+    float: left;
+    background-color: #373737;
+    color: #FFFFFF;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+    font-family: "SourceCodePro-Semibold";
+}
+
+.toggle-button.selected {
+    background-color: #4d4d4d;
+}
+
+.toggle-button:hover {
+    opacity: 0.9;
+}
+
+.social {
+    margin-top: 10px;
+}
+
+.bitcoin {
+    cursor: pointer;
+    float: left;
+    color: white;
+    font-family: "SourceCodePro-Semibold";
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.bitcoin div {
+    float: left;
+}
+
+.bitcoin img {
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+
+.reddit a{
+    color: white;
+    font-family: "SourceCodePro-Semibold";
+    margin-left: 10px;
+}
