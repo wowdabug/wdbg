@@ -424,7 +424,7 @@
           if (linkHeader) {
             const match = linkHeader.match(/&page=(\d+)>; rel="last"/);
             if (match) {
-              document.getElementById("commit-count").textContent = `v0.${match[1]}`;
+              document.getElementById("commit-count").textContent = `v${match[1]}`;
               return;
             }
           }
