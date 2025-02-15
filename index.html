@@ -112,9 +112,11 @@
       <a href="downloads.html">Downloads</a>
       <a href="links.html">Links</a>
     </div>
-    <h1>WDB Games <small>
-        <span id="commit-count">loading</span>
-      </small>
+    <h1>WDB Games <div style="display:none;">
+        <small>
+          <span id="commit">loading</span>
+        </small>
+      </div>
     </h1>
     <div class="category">
       <h2 onclick="toggleCategory(this)">Featured Games</h2>
@@ -340,7 +342,7 @@
           <img src="images/happy_wheels.png" alt="Happy Wheels">
           <a href="games/flash/happy_wheels.html">Happy Wheels</a>
         </div>
-		<div class="game-box">
+        <div class="game-box">
           <img src="images/just_a_platformer.png" alt="Just a Platformer">
           <a href="games/just_a_platformer">Just a Platformer</a>
         </div>
@@ -389,7 +391,7 @@
           <img src="images/babel_tower.png" alt="Babel Tower">
           <a href="games/babel_tower">Babel Tower</a>
         </div>
-	    <div class="game-box">
+        <div class="game-box">
           <img src="images/globle.png" alt="Globle">
           <a href="games/globle">Globle</a>
         </div>
@@ -397,12 +399,13 @@
           <img src="images/territorial.io.png" alt="Territorial.io">
           <a href="games/territorial.io/">Territorial.io</a>
         </div>
-		<div class="game-box">
+        <div class="game-box">
           <img src="images/level_devil.png" alt="Level Devil">
           <a href="games/level_devil">Level Devil</a>
         </div>
       </div>
     </div>
+    <img id="badge" alt="Static Badge" src="https://img.shields.io/badge/commit-0-brightgreen?color=0E0E0E">
     <a href="https://hits.seeyoufarm.com">
       <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwowdabug.github.io%2Frgbdw%2F&count_bg=%230E0E0E&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false" />
     </a>
@@ -428,17 +431,34 @@
           if (linkHeader) {
             const match = linkHeader.match(/&page=(\d+)>; rel="last"/);
             if (match) {
-              document.getElementById("commit-count").textContent = `v${match[1]}`;
+              document.getElementById("commit").textContent = `${match[1]}`;
               return;
             }
           }
-          document.getElementById("commit-count").textContent = "";
+          document.getElementById("commit").textContent = "";
         } catch (error) {
           console.error("Error fetching commit count:", error);
-          document.getElementById("commit-count").textContent = "";
+          document.getElementById("commit").textContent = "";
         }
       }
       fetchCommitCount();
+    </script>
+    <script>
+      const badgeImage = document.getElementById("badge");
+      const customTextElement = document.getElementById("commit");
+      // Function to update badge based on text content
+      const updateBadge = () => {
+        const customText = customTextElement.textContent || "default"; // Default if no text is present
+        badgeImage.src = `https://img.shields.io/badge/commit-${customText}-brightgreen?color=0E0E0E`;
+      };
+      // Initial badge update
+      updateBadge();
+      // Set up MutationObserver to watch for changes in the content of the customTextId element
+      const observer = new MutationObserver(updateBadge);
+      observer.observe(customTextElement, {
+        childList: true,
+        subtree: true
+      });
     </script>
   </body>
 </html>
