@@ -69,12 +69,12 @@
 
       .games-container {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(180px, max-content));
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 20px;
         padding: 20px;
-        display: none; /* Initially hidden */
-        justify-content: center;
-}
+        display: none;
+        /* Initially hidden */
+      }
 
       .game-box {
         background: #2a2a2a;
@@ -189,23 +189,6 @@
         <div class="game-box">
           <img src="images/worldle.png" alt="Worldle">
           <a href="games/worldle">Worldle</a>
-        </div>
-      </div>
-    </div>
-	 <div class="category">
-      <h2 onclick="toggleCategory(this)">Platformer Games</h2>
-      <div class="games-container">
-        <div class="game-box">
-          <img src="images/appel.png" alt="Appel">
-          <a href="games/appel">Appel</a>
-        </div>
-        <div class="game-box">
-          <img src="images/just_a_platformer.png" alt="Just a Platformer">
-          <a href="games/just_a_platformer">Just a Platformer</a>
-        </div>
-        <div class="game-box">
-          <img src="images/ovo.png" alt="OvO">
-          <a href="games/ovo">OvO</a>
         </div>
       </div>
     </div>
@@ -328,6 +311,10 @@
       <h2 onclick="toggleCategory(this)">Other Games</h2>
       <div class="games-container">
         <div class="game-box">
+          <img src="images/appel.png" alt="Appel">
+          <a href="games/appel">Appel</a>
+        </div>
+        <div class="game-box">
           <img src="images/champion_island.png" alt="Champion Island">
           <a href="games/champion_island">Champion Island</a>
         </div>
@@ -356,8 +343,16 @@
           <a href="games/flash/happy_wheels.html">Happy Wheels</a>
         </div>
         <div class="game-box">
+          <img src="images/just_a_platformer.png" alt="Just a Platformer">
+          <a href="games/just_a_platformer">Just a Platformer</a>
+        </div>
+        <div class="game-box">
           <img src="images/magic_cat_academy.png" alt="Magic Cat Academy">
           <a href="games/magic_cat_academy">Magic Cat Academy</a>
+        </div>
+        <div class="game-box">
+          <img src="images/ovo.png" alt="OvO">
+          <a href="games/ovo">OvO</a>
         </div>
         <div class="game-box">
           <img src="images/polytrack.png" alt="PolyTrack">
