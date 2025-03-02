@@ -9,23 +9,20 @@
       body {
         font-family: Arial, sans-serif;
         background-color: #1e1e1e;
-        /* Dark grey background */
         margin: 0;
         padding: 0;
         text-align: center;
         color: #fff;
-        /* White text */
+        transition: background 0.3s, color 0.3s;
       }
 
       .navbar {
         background-color: #111;
-        /* Black navbar */
         padding: 10px 0;
       }
 
       .navbar a {
         color: #ddd;
-        /* Light grey text */
         text-decoration: none;
         padding: 10px 15px;
         display: inline-block;
@@ -34,13 +31,11 @@
 
       .navbar a:hover {
         background-color: #333;
-        /* Darker grey hover effect */
         border-radius: 5px;
       }
 
       h1 {
         margin: 20px 0;
-        color: #fff;
         font-size: 28px;
       }
 
@@ -78,36 +73,95 @@
 
       .game-box {
         background: #2a2a2a;
-        /* Dark grey card */
         padding: 10px;
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         text-align: center;
       }
 
-.game-box img {
-    width: 100%;
-    height: 176px; /* Set a fixed height */
-    object-fit: cover; /* Crop the image to fit */
-    border-radius: 5px;
-}
+      .game-box img {
+        width: 100%;
+        height: 176px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
 
       .game-box a {
         display: block;
         margin-top: 10px;
         text-decoration: none;
         color: #ddd;
-        /* Light grey text */
         font-weight: bold;
       }
 
       .game-box a:hover {
         color: #f39c12;
-        /* Orange accent on hover */
+      }
+
+      /* Light Mode Styles */
+      .light-mode {
+        background-color: white;
+        color: black;
+      }
+
+      .light-mode .navbar {
+        background-color: #f1f1f1;
+      }
+      
+      .light-mode .navbar a:hover {
+        background-color: #ddd;
+        border-radius: 5px;
+      }
+
+      .light-mode .navbar a {
+        color: #333;
+      }
+
+      .light-mode .category {
+        background: #ddd;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .light-mode .category h2 {
+        background: #f1f1f1;
+      }
+
+      .light-mode .category h2:hover {
+        background: #ccc;
+      }
+
+      .light-mode .game-box {
+        background: #f1f1f1;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .light-mode .game-box a {
+        color: #333;
+      }
+
+      .light-mode .game-box a:hover {
+        color: #d35400;
+      }
+
+      /* Toggle Button */
+      #theme-toggle {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      #theme-toggle:hover {
+        transform: scale(1.1);
       }
     </style>
   </head>
-  <body>
+   <body>
+       <button id="theme-toggle">🌙</button>
     <div class="navbar">
       <a href="index.html">Home</a>
       <a href="downloads.html">Downloads</a>
@@ -464,6 +518,32 @@
         childList: true,
         subtree: true
       });
+    </script>
+        <script>
+      const toggleButton = document.getElementById('theme-toggle');
+      const body = document.body;
+
+      toggleButton.addEventListener('click', () => {
+          body.classList.toggle('dark-mode');
+          body.classList.toggle('light-mode');
+
+          if (body.classList.contains('dark-mode')) {
+              toggleButton.textContent = '🌙';
+              localStorage.setItem('theme', 'dark');
+          } else {
+              toggleButton.textContent = '☀️';
+              localStorage.setItem('theme', 'light');
+          }
+      });
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+          body.classList.add(savedTheme + '-mode');
+          toggleButton.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+      } else {
+          body.classList.add('dark-mode'); // Default mode
+      }
     </script>
   </body>
 </html>
