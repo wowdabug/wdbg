@@ -1,0 +1,13 @@
+{
+"companyName": "DefaultCompany",
+"productName": "Pixels Filling Squares 3",
+"dataUrl": "bin.data.unityweb",
+"asmCodeUrl": "bin.asm.code.unityweb",
+"asmMemoryUrl": "bin.asm.memory.unityweb",
+"asmFrameworkUrl": "bin.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}

@@ -1,0 +1,51 @@
+button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+ 
+div#inputOverlay{
+  text-align:center;
+  margin:0;  
+  top: 0;
+  width:800px;
+  height:600px;
+  background-color: #323232;
+  z-index: 1;
+  position: fixed;
+}
+
+div#codeOverlay{
+  text-align:center;
+  margin:0;  
+  top: 0;
+  width:800px;
+  height:600px;
+  background-color: #323232;
+  z-index: 1;
+  position: fixed;
+}
+
+div#buildOverlay{
+  text-align:center;
+  margin:0;  
+  top: 0;
+  width:800px;
+  height:600px;
+  background-color: #323232;
+  z-index: 1;
+  position: fixed;
+}
+ 
+textArea{
+  width:500px;
+  height:350px;
+  padding:5px;
+  margin:10px;
+}
