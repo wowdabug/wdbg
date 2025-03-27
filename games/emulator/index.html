@@ -16,8 +16,15 @@
             border: none;
         }
     </style>
+    <script>
+        function updateIframeSrc() {
+            const params = new URLSearchParams(window.location.search);
+            const iframe = document.getElementById("emulatorFrame");
+            iframe.src = "https://wowdabug.github.io/emulator?" + params.toString();
+        }
+    </script>
 </head>
-<body>
-    <iframe src="https://wowdabug.github.io/emulator" title="Emulator"></iframe>
+<body onload="updateIframeSrc()">
+    <iframe id="emulatorFrame" title="Emulator"></iframe>
 </body>
 </html>
