@@ -207,7 +207,7 @@
       <div class="games-container">
         <div class="game-box">
           <img src="images/emulator.png" alt="Emulator">
-          <a href="games/emulator">Emulator (has more games)</a>
+          <a href="games/emulator">Emulator</a>
         </div>
         <div class="game-box">
           <img src="images/adventure.png" alt="Adventure">
@@ -429,7 +429,7 @@
     </div>
     <img id="badge" alt="Static Badge" src="https://img.shields.io/badge/version-0-brightgreen?color=0E0E0E">
 <a href="https://hits.sh/github.com/wowdabug/wdbg/">
-    <img alt="Hits" src="https://hits.sh/github.com/wowdabug/wdbg.svg?color=0E0E0E"/>
+    <img alt="views" src="https://hits.sh/github.com/wowdabug/wdbg.svg?color=0E0E0E&label=views"/>
 </a>
     <script>
       function toggleCategory(header) {
@@ -468,14 +468,11 @@
     <script>
       const badgeImage = document.getElementById("badge");
       const customTextElement = document.getElementById("commit");
-      // Function to update badge based on text content
       const updateBadge = () => {
-        const customText = customTextElement.textContent || "default"; // Default if no text is present
+        const customText = customTextElement.textContent || "default";
         badgeImage.src = `https://img.shields.io/badge/version-${customText}-brightgreen?color=0E0E0E`;
       };
-      // Initial badge update
       updateBadge();
-      // Set up MutationObserver to watch for changes in the content of the customTextId element
       const observer = new MutationObserver(updateBadge);
       observer.observe(customTextElement, {
         childList: true,
