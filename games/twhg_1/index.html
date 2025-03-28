@@ -62,29 +62,36 @@
         fnSendMsg(event);
       });
     </script>
-    <script>
-      function resizeCanvas() {
-        const canvas = document.getElementById("twhgCanvas");
-        let width = window.innerWidth;
-        let height = window.innerHeight;
+<script>
+  function resizeCanvas() {
+    const canvas = document.getElementById("twhgCanvas");
+    const ctx = canvas.getContext("2d");
 
-        // Maintain 3:4 aspect ratio
-        if (width / height > 3 / 4) {
-          canvas.height = height;
-          canvas.width = (height * 3) / 4;
-        } else {
-          canvas.width = width;
-          canvas.height = (width * 4) / 3;
-        }
+    // Get screen size
+    let screenWidth = window.innerWidth;
+    let screenHeight = window.innerHeight;
 
-        // Optional: Clear the canvas after resize
-        const ctx = canvas.getContext("2d");
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-      }
+    // Maintain 4:3 aspect ratio
+    let newWidth = screenWidth;
+    let newHeight = (screenWidth * 3) / 4;
 
-      // Resize on load and window resize
-      window.addEventListener("resize", resizeCanvas);
-      window.addEventListener("load", resizeCanvas);
-    </script>
+    if (newHeight > screenHeight) {
+      newHeight = screenHeight;
+      newWidth = (screenHeight * 4) / 3;
+    }
+
+    // Set canvas size
+    canvas.width = newWidth;
+    canvas.height = newHeight;
+
+    // Optional: Clear and redraw canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  // Resize on load and window resize
+  window.addEventListener("load", resizeCanvas);
+  window.addEventListener("resize", resizeCanvas);
+</script>
+
   </body>
 </html>
