@@ -16,16 +16,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        overflow: hidden; /* Hide overflow in case the canvas is outside the screen */
+        overflow: hidden; /* Hide overflow if canvas is larger than screen */
       }
 
       canvas {
-        width: 800px;  /* Fixed width */
+        width: 800px; /* Fixed width */
         height: 600px; /* Fixed height */
-        display: block;
-        margin: 0 auto; /* Ensure no unwanted margin or offset */
+        display: block; /* Ensure no extra margin */
       }
     </style>
+    
     <script language="javascript" src="/js/main.js" type="text/javascript"></script>
     <script language="javascript" src="js/jquery.min.js" type="text/javascript"></script>
     <script language="javascript" src="js/jquery.hotkeys.js" type="text/javascript"></script>
