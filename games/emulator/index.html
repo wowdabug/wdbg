@@ -17,14 +17,15 @@
         }
     </style>
     <script>
-        function updateIframeSrc() {
+        document.addEventListener("DOMContentLoaded", function () {
             const params = new URLSearchParams(window.location.search);
-            const iframe = document.getElementById("emulatorFrame");
-            iframe.src = "https://wowdabug.github.io/emulator?" + params.toString();
-        }
+            const emulatorUrl = "https://wowdabug.github.io/emulator?" + params.toString();
+            document.getElementById("emulatorFrame").src = emulatorUrl;
+        });
     </script>
 </head>
-<body onload="updateIframeSrc()">
+<body>
     <iframe id="emulatorFrame" title="Emulator"></iframe>
 </body>
 </html>
+
