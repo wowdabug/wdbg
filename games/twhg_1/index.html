@@ -13,16 +13,15 @@
       body, html {
         height: 100%;
         margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden; /* Hide overflow if canvas is larger than screen */
+        position: relative;
       }
 
       canvas {
-        width: 800px; /* Fixed width */
-        height: 600px; /* Fixed height */
-        display: block; /* Ensure no extra margin */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -300px; /* Half the canvas height (600px / 2 = 300px) */
+        margin-left: -400px; /* Half the canvas width (800px / 2 = 400px) */
       }
     </style>
     
