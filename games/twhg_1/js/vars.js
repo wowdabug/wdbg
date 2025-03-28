@@ -15,31 +15,8 @@ var mobile = false;
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-let CANVAS_WIDTH, CANVAS_HEIGHT;
-
-function updateCanvasSize() {
-    let screenWidth = window.innerWidth;
-    let screenHeight = window.innerHeight;
-
-    // Maintain 4:3 aspect ratio
-    CANVAS_WIDTH = screenWidth;
-    CANVAS_HEIGHT = (screenWidth * 3) / 4;
-
-    if (CANVAS_HEIGHT > screenHeight) {
-        CANVAS_HEIGHT = screenHeight;
-        CANVAS_WIDTH = (screenHeight * 4) / 3;
-    }
-
-    // Update the canvas size in the game
-    const canvas = document.getElementById("twhgCanvas");
-    canvas.width = CANVAS_WIDTH;
-    canvas.height = CANVAS_HEIGHT;
-}
-
-// Call resize on window load and resize events
-window.addEventListener("load", updateCanvasSize);
-window.addEventListener("resize", updateCanvasSize);
-
+const CANVAS_WIDTH = 800;
+const CANVAS_HEIGHT = 600;
 const FPS = 40;
 const BAR_HEIGHT = 50;
 const BAR_TEXT_FIX = 10;
