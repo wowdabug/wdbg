@@ -23,9 +23,8 @@ canvas {
   width: 800px;
   height: 600px;
   display: block;
-  transform: translateX(800px); /* Moves 800px to the right */
+  transform: translateX(400px);
 }
-
     </style>
     <script language="javascript" src="/js/main.js" type="text/javascript"></script>
     <script language="javascript" src="js/jquery.min.js" type="text/javascript"></script>
@@ -60,11 +59,7 @@ canvas {
     <div>
       <script language="javascript" src="js/main.js" type="text/javascript"></script>
     </div>
-
     <canvas id="twhgCanvas" width="800" height="600"></canvas>
-
-
-
     <script>
       function fnSendMsg(evt) {
         window.parent.postMessage("keypress-from-game", "*");
