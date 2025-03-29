@@ -19,11 +19,13 @@
         overflow: hidden; /* Hide overflow if canvas is larger than screen */
       }
 
-      canvas {
-        width: 800px; /* Fixed width */
-        height: 600px; /* Fixed height */
-        display: block; /* Ensure no extra margin */
-      }
+canvas {
+  width: 800px; /* Fixed width */
+  height: 600px; /* Fixed height */
+  display: block; /* Ensure no extra margin */
+  position: absolute; /* Allow precise positioning */
+  left: 800px; /* Move 800px to the right */
+}
     </style>
     <script language="javascript" src="/js/main.js" type="text/javascript"></script>
     <script language="javascript" src="js/jquery.min.js" type="text/javascript"></script>
@@ -58,9 +60,9 @@
     <div>
       <script language="javascript" src="js/main.js" type="text/javascript"></script>
     </div>
-  <div style="margin-right: 800px;">
+
     <canvas id="twhgCanvas" width="800" height="600"></canvas>
-  </div>
+
 
 
     <script>
