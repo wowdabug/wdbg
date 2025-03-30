@@ -52,32 +52,32 @@
         }
     </style>
     <script>
-async function loadChangelog() {
-    const response = await fetch('changelog.md');
-    const text = await response.text();
-    const container = document.getElementById('changelog');
+        async function loadChangelog() {
+            const response = await fetch('changelog.md');
+            const text = await response.text();
+            const container = document.getElementById('changelog');
 
-    // Ensure each version is properly detected by splitting at "## " but keeping the first entry
-    let entries = text.split(/\n## /).map(e => e.trim()).filter(e => e);
+            // Split the text into entries by each version using the "## " delimiter
+            let entries = text.split('## ').filter(entry => entry.trim());
 
-    entries.forEach(entry => {
-        let lines = entry.split('\n');
-        let title = lines.shift().replace(/^## /, '').trim(); // Ensure the version title is properly formatted
-        let content = lines
-            .filter(line => line.startsWith('-')) // Only process lines starting with "-"
-            .map(line => `<p>${line.substring(1).trim()}</p>`) // Remove "-" and trim spaces
-            .join('');
-
-        if (title && content) {
-            let div = document.createElement('div');
-            div.classList.add('changelog-entry');
-            div.innerHTML = `<h2>${title}</h2>${content}`;
-            container.appendChild(div);
+            // Loop through each changelog entry
+            entries.forEach(entry => {
+                let lines = entry.split('\n');
+                let title = lines.shift().trim(); // Get the first line as the version title
+                let content = lines
+                    .filter(line => line.startsWith('-')) // Filter lines that start with '-'
+                    .map(line => `<p>${line.substring(1).trim()}</p>`) // Remove the '-' and trim whitespace
+                    .join('');
+                
+                // Create the HTML for this changelog entry
+                let div = document.createElement('div');
+                div.classList.add('changelog-entry');
+                div.innerHTML = `<h2>${title}</h2>${content}`;
+                container.appendChild(div);
+            });
         }
-    });
-}
 
-document.addEventListener('DOMContentLoaded', loadChangelog);
+        document.addEventListener('DOMContentLoaded', loadChangelog);
     </script>
 </head>
 <body>
