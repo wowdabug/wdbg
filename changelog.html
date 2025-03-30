@@ -52,26 +52,32 @@
         }
     </style>
     <script>
-        async function loadChangelog() {
-            const response = await fetch('resources/changelog.md');
-            const text = await response.text();
-            const container = document.getElementById('changelog');
-            
-            let entries = text.split('\n## ');
-            entries.shift(); 
-            
-            entries.forEach(entry => {
-                let lines = entry.split('\n');
-                let title = lines.shift();
-                let content = lines.filter(line => line.startsWith('-')).map(line => `<p>${line}</p>`).join('');
-                
-                let div = document.createElement('div');
-                div.classList.add('changelog-entry');
-                div.innerHTML = `<h2>${title}</h2>${content}`;
-                container.appendChild(div);
-            });
+async function loadChangelog() {
+    const response = await fetch('changelog.md');
+    const text = await response.text();
+    const container = document.getElementById('changelog');
+
+    // Ensure each version is properly detected by splitting at "## " but keeping the first entry
+    let entries = text.split(/\n## /).map(e => e.trim()).filter(e => e);
+
+    entries.forEach(entry => {
+        let lines = entry.split('\n');
+        let title = lines.shift().replace(/^## /, '').trim(); // Ensure the version title is properly formatted
+        let content = lines
+            .filter(line => line.startsWith('-')) // Only process lines starting with "-"
+            .map(line => `<p>${line.substring(1).trim()}</p>`) // Remove "-" and trim spaces
+            .join('');
+
+        if (title && content) {
+            let div = document.createElement('div');
+            div.classList.add('changelog-entry');
+            div.innerHTML = `<h2>${title}</h2>${content}`;
+            container.appendChild(div);
         }
-        document.addEventListener('DOMContentLoaded', loadChangelog);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', loadChangelog);
     </script>
 </head>
 <body>
