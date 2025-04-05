@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://wowdabug.github.io/wdbg/scripts/title_favicon.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WDBG</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -64,36 +64,13 @@
     </div>
     <button onclick="saveSettings()">Save Settings</button>
   </div>
-
   <script>
     function saveSettings() {
       const title = document.getElementById('pageTitle').value;
       const favicon = document.getElementById('faviconURL').value;
       localStorage.setItem('customTitle', title);
       localStorage.setItem('customFavicon', favicon);
-      applySettings();
-      alert('Settings saved!');
     }
-
-    function applySettings() {
-      const title = localStorage.getItem('customTitle');
-      const favicon = localStorage.getItem('customFavicon');
-
-      if (title) document.title = title;
-
-      if (favicon) {
-        let link = document.querySelector("link[rel~='icon']");
-        if (!link) {
-          link = document.createElement('link');
-          link.rel = 'icon';
-          document.head.appendChild(link);
-        }
-        link.href = favicon;
-      }
-    }
-
-    // Apply saved settings on load
-    applySettings();
   </script>
 </body>
 </html>
