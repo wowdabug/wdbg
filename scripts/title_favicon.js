@@ -4,8 +4,6 @@
     const favicon = localStorage.getItem('customFavicon');
     if (title) {
         document.title = title;
-    } else {
-        document.title = defaultTitle;
     }
     if (favicon) {
         let link = document.querySelector("link[rel~='icon']");
@@ -22,6 +20,7 @@
             link.rel = 'icon';
             document.head.appendChild(link);
         }
+        link.href = defaultFavicon;
     }
 })();
 
