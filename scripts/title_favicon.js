@@ -1,23 +1,30 @@
-<script>
 (function applyCustomSettings() {
-    document.addEventListener('DOMContentLoaded', () => {
-        const customTitle = localStorage.getItem('customTitle');
-        const customFavicon = localStorage.getItem('customFavicon');
-        const defaultFavicon = 'https://wowdabug.github.io/wdbg/images/favicon-32x32.png';
+    const defaultTitle = "WDBG";
+    const defaultFavicon = "https://wowdabug.github.io/wdbg/images/favicon-32x32.png";
+    const title = localStorage.getItem('customTitle');
+    const favicon = localStorage.getItem('customFavicon');
 
-        if (customTitle) {
-            document.title = customTitle;
-        }
+    if (title) {
+        document.title = title;
+    } else {
+        document.title = defaultTitle;
+    }
 
+    if (favicon) {
         let link = document.querySelector("link[rel~='icon']");
         if (!link) {
             link = document.createElement('link');
             link.rel = 'icon';
-            link.type = 'image/png';
             document.head.appendChild(link);
         }
-
-        link.href = customFavicon || defaultFavicon;
-    });
+        link.href = favicon;
+    } else {
+        let link = document.querySelector("link[rel~='icon']");
+        if (!link) {
+            link = document.createElement('link');
+            link.rel = 'icon';
+            document.head.appendChild(link);
+        }
+        link.href = defaultFavicon;
+    }
 })();
-</script>
