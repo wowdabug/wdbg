@@ -1,5 +1,4 @@
 (function applyCustomSettings() {
-    const defaultTitle = "WDBG";
     const defaultFavicon = "https://wowdabug.github.io/wdbg/images/favicon-32x32.png";
     const title = localStorage.getItem('customTitle');
     const favicon = localStorage.getItem('customFavicon');
@@ -23,7 +22,6 @@
             link.rel = 'icon';
             document.head.appendChild(link);
         }
-        link.href = defaultFavicon;
     }
 })();
 
