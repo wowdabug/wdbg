@@ -997,7 +997,7 @@ Game = {
       }
     },
     end_game: function () {
-      Text.renderText('GAME OVER', 50, Game.canvasWidth/2 - 160, Game.canvasHeight/2 + 10);
+      Text.renderText('GAME OVER', 50, 309, Game.canvasHeight / 2 + 10);
       if (this.timer == null) {
         this.timer = Date.now();
       }
