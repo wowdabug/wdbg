@@ -921,7 +921,7 @@ waiting: function () {
   const fontSize = 36;
 
   // Estimate width manually (you can fine-tune this number)
-  const approxCharWidth = fontSize * 0.6; // average width of a character
+  const approxCharWidth = fontSize * 0.5; // average width of a character
   const textWidth = message.length * approxCharWidth;
   const x = (Game.canvasWidth - textWidth) / 2;
   const y = Game.canvasHeight / 2;
