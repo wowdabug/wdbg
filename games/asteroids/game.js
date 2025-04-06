@@ -1161,7 +1161,7 @@ $(function () {
 
     // score
     var score_text = ''+Game.score;
-Text.renderText(score_text, 18, Game.canvasWidth - score_text.length * 9 - 2, 20);
+Text.renderText(score_text, 18, Game.canvasWidth - score_text.length * 9 - 4, 20);
 
     // extra dudes
     for (i = 0; i < Game.lives; i++) {
