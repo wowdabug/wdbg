@@ -84,11 +84,11 @@
   <div class="settings-container">
     <div class="setting-group">
       <label for="pageTitle">Page Title</label>
-      <input type="text" id="pageTitle" placeholder="Enter custom page title">
+<input type="text" id="titleInput" placeholder="Enter custom title">
     </div>
     <div class="setting-group">
       <label for="faviconURL">Favicon URL</label>
-      <input type="text" id="faviconURL" placeholder="Enter favicon image URL">
+<input type="text" id="faviconInput" placeholder="Enter custom favicon URL">
     </div>
     <button onclick="saveSettings()">Save Settings</button>
   </div>
@@ -100,5 +100,17 @@
       localStorage.setItem('customFavicon', favicon);
     }
   </script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const titleInput = document.getElementById('titleInput');
+    const faviconInput = document.getElementById('faviconInput');
+
+    const savedTitle = localStorage.getItem('customTitle');
+    const savedFavicon = localStorage.getItem('customFavicon');
+
+    if (savedTitle) titleInput.value = savedTitle;
+    if (savedFavicon) faviconInput.value = savedFavicon;
+});
+</script>
 </body>
 </html>
