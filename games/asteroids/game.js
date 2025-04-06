@@ -916,25 +916,13 @@ Game = {
       Game.spawnAsteroids(5);
       this.state = 'waiting';
     },
-waiting: function () {
-  const message = window.ipad ? 'Touch Screen to Start' : 'Press Space to Start';
-  const fontSize = 36;
-
-  // Estimate width manually (you can fine-tune this number)
-  const approxCharWidth = fontSize * 0.6; // average width of a character
-  const textWidth = message.length * approxCharWidth;
-  const x = (Game.canvasWidth - textWidth) / 2;
-  const y = Game.canvasHeight / 2;
-
-  Text.renderText(message, fontSize, x, y);
-
-  if (KEY_STATUS.space || window.gameStart) {
-    KEY_STATUS.space = false;
-    window.gameStart = false;
-    this.state = 'start';
-  }
-}
-
+    waiting: function () {
+      Text.renderText(window.ipad ? 'Touch Screen to Start' : 'Press Space to Start', 36, Game.canvasWidth/2 - 270, Game.canvasHeight/2);
+      if (KEY_STATUS.space || window.gameStart) {
+        KEY_STATUS.space = false; // hack so we don't shoot right away
+        window.gameStart = false;
+        this.state = 'start';
+      }
     },
     start: function () {
       for (var i = 0; i < Game.sprites.length; i++) {
