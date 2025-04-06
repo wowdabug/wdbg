@@ -918,13 +918,15 @@ Game = {
     },
 waiting: function () {
   const message = window.ipad ? 'Touch Screen to Start' : 'Press Space to Start';
+  const fontSize = 36;
 
-  const charWidth = 18; // 16px per char + ~2px spacing
-  const textWidth = message.length * charWidth;
+  // Estimate width manually (you can fine-tune this number)
+  const approxCharWidth = fontSize * 0.6; // average width of a character
+  const textWidth = message.length * approxCharWidth;
   const x = (Game.canvasWidth - textWidth) / 2;
   const y = Game.canvasHeight / 2;
 
-  Text.renderText(message, 36, x, y);
+  Text.renderText(message, fontSize, x, y);
 
   if (KEY_STATUS.space || window.gameStart) {
     KEY_STATUS.space = false;
@@ -932,7 +934,6 @@ waiting: function () {
     this.state = 'start';
   }
 }
-
 
     },
     start: function () {
