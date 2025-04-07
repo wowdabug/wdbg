@@ -18331,10 +18331,6 @@ window.onload = function() {
                 <div id="categoryControls"></div>
                 <div id="elementControls"></div>
             </div>
-            <div id="extraInfo"><small><a href="https://sandboxels.r74n.com/changelog" id="changelogButton" target="_blank">Changelog</a> • <a href="https://sandboxels.R74n.com/feedback" target="_blank" style="color:lime;" id="feedbackButton">Feedback</a> • <a href="https://sandboxels.wiki.gg/" target="_blank" id="wikiButton" title="Official Sandboxels Wiki - wiki.gg" style="color:white;">Wiki</a> • <a id="moreSocial" href="https://twitter.com/R74nCom" rel="me" target="_blank">Twitter</a> • <a href="https://discord.gg/ejUc6YPQuS" target="_blank" style="color:#2f60ff;">Discord</a><span id="install-button" style="display:none">&nbsp;• <a onclick="deferredPrompt.prompt(); return false" href="#" style="text-shadow: 0px 2px 10px #ff00ff; cursor:pointer">Install Offline</a></span>
-                <!--<br><br><a style="color:lime" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeYMbngtbBHZ7hkz8jpbHl7TiAItqukrhtntKgAHjH30fY08A/viewform?usp=sf_link">FILL OUT THE CENSUS<span style="color:red">(NEW)</span></a>-->
-                <!--<br><br><a style="color:lime" target="_blank" href="https://r74n.com/">WISHLIST ON STEAM<span style="color:red">(NEW)</span></a>-->
-            </small></div>
             <script>
                 // version check
                 if (!settings["lastversion"] || settings["lastversion"]!==currentversion) {
@@ -18591,7 +18587,6 @@ Cancer, Landmine, Grenade, Smoke Grenade">?</span>
             };
             affRequest.send();
         </script> -->
-        <p id="langSelectP">🌐 <span id="langSelectLabel">Language</span> <a href="https://sandboxels.R74n.com/translate" target="_blank">[BETA]</a>: <select onchange="if (this.value === 'en'){setSetting('lang',null)}else{setSetting('lang',this.value)}location.reload()" id="langSelect">
             <option selected value="en">English (American)</option>
             <option value="en_gb">English (British)</option>
             <option value="en_ca">English (Canadian)</option>
@@ -18644,39 +18639,6 @@ Cancer, Landmine, Grenade, Smoke Grenade">?</span>
                 }
             })
         </script>
-    </div>
-
-    <div id="bottomLeftBox">
-        <h2 id="introTitle">Sandboxels Introduction</h2>
-        <p id="intro1"><strong><def>Sandboxels</def></strong> is a free falling-sand simulator that can be played in your browser. It features heat simulation, electricity, density, chemical reactions, cooking, and fire spread. With over 500 unique elements to play with, Sandboxels is a great way to pass the time and relax.</p>
-        <p id="intro2">There are thousands of interactions between the many materials, plants, animals, fluids, and powders in the game.</p>
-        <p id="intro3">Falling-sand games are a genre of sandbox games characterized by falling particles of various types.</p>
-        <p id="intro4">Simply click or use your touchscreen to select a category, like <strong>Liquids</strong>, then pick an element, like <strong>Water</strong>. Drag on the canvas above to place your pixels, and watch them interact with others!</p>
-        <img id="introImage" src="icons/wallpaper.webp" style="width:100%" alt="Rainforest landscape made in Sandboxels" title="Rainforest landscape made in Sandboxels">
-        <p id="introLinks">More links: <a href="https://sandboxels.R74n.com/help" rel="help">Help</a> • <a href="https://sandboxels.R74n.com/tips">Tips</a> • <a href="https://sandboxels.R74n.com/mod-list">Mods</a> • <a href="https://sandboxels.R74n.com/mobile-use">Mobile</a> • <a href="https://sandboxels.R74n.com/offline-use">Offline</a> • <a href="https://R74n.com/privacy">Privacy</a></p>
-    </div>
-    <div id="bottomRightBox">
-        <h2>Controls</h2>
-        <table id="controlsTable">
-            <tr><td>Draw pixels</td>   <td><kbd>Left Click</kbd></td></tr>
-            <tr><td>Erase pixels</td>   <td><kbd>Right Click</kbd></td></tr>
-            <tr><td>Pick element</td>   <td><kbd>Middle Click</kbd></td></tr>
-            <tr><td>Pause simulation</td>   <td><kbd>Space</kbd> or <kbd>P</kbd></td></tr>
-            <tr><td>Intensify effect</td>   <td><kbd>Shift</kbd> + <kbd style="background-color:red;">Heat</kbd>/<kbd style="background-color:blue;">Cool</kbd>/<kbd style="background-color:#c1cfb6;color:black">Drag</kbd>/<kbd style="background-color:#fff4b5;color:black">Mix</kbd></td></tr>
-            <tr><td>Draw line</td>   <td><kbd>Shift</kbd> + <kbd>Click</kbd></td></tr>
-            <tr><td>Change cursor size</td>   <td><kbd>Scroll</kbd> or <kbd>+</kbd><kbd>-</kbd> or <kbd>[</kbd><kbd>]</kbd></td></tr>
-            <tr><td>Change category</td>   <td><kbd>←</kbd><kbd>→</kbd></td></tr>
-            <tr><td>Select by name</td>   <td><kbd>E</kbd></td></tr>
-            <tr><td>Element info</td>   <td><kbd>I</kbd> or <kbd>/</kbd></td></tr>
-            <tr><td>Open settings</td>   <td><kbd>\</kbd></td></tr>
-            <tr><td>Reset canvas</td>   <td><kbd>R</kbd></td></tr>
-            <tr><td>Single step</td>   <td><kbd>&gt;</kbd></td></tr>
-            <tr><td>Fullscreen</td>   <td><kbd>F</kbd> or <kbd>F11</kbd></td></tr>
-            <tr><td>Change view</td>   <td><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd></td></tr>
-            <tr><td>Toggle GUI</td>   <td><kbd>F1</kbd></td></tr>
-            <tr><td>Capture screenshot</td>   <td><kbd>C</kbd> or <kbd>F2</kbd></td></tr>
-            <tr><td colspan="2" style="text-align:center"><strong><a href="https://sandboxels.r74n.com/controls" target="_blank" title="Open the controls file">More controls</a></strong></td></tr>
-        </table>
     </div>
 </div>
 </div>
