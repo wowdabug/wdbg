@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-		<title>CrazyCattle3D</title>
+		<title>Crazy Cattle 3D</title>
 		<style>
 html, body, #canvas {
 	margin: 0;
@@ -90,8 +90,8 @@ body {
 	z-index: 1;
 }
 		</style>
-		<link id="-gd-engine-icon" rel="icon" type="image/png" href="CrazyCattle3D.icon.png" />
-<link rel="apple-touch-icon" href="CrazyCattle3D.apple-touch-icon.png"/>
+		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
+<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
 
 	</head>
 	<body>
@@ -104,15 +104,22 @@ body {
 		</noscript>
 
 		<div id="status">
-			<img id="status-splash" class="show-image--true fullsize--true use-filter--true" src="CrazyCattle3D.png" alt="">
+			<img id="status-splash" class="show-image--true fullsize--true use-filter--true" src="index.png" alt="">
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
 		</div>
 
-		<script src="CrazyCattle3D.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":true,"executable":"CrazyCattle3D","experimentalVK":false,"fileSizes":{"CrazyCattle3D.pck":25321904,"CrazyCattle3D.wasm":43699190},"focusCanvas":true,"gdextensionLibs":[]};
-const GODOT_THREADS_ENABLED = false;
+if (!window.SharedArrayBuffer) {
+	document.getElementById('status').style.display = 'none';
+	setTimeout(() => document.getElementById('status').style.display = '', 1500);
+}
+</script>
+<script src="coi-serviceworker.min.js"></script>
+<script src="index.js"></script>
+		<script>
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":27619776,"index.wasm":1650612},"focusCanvas":true,"gdextensionLibs":[]};
+const GODOT_THREADS_ENABLED = true;
 const engine = new Engine(GODOT_CONFIG);
 
 (function () {
