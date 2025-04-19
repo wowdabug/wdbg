@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
@@ -22,14 +21,14 @@
 			  width: 5px;
 			  display: 'none';
 		  }
-		  
+
 	  </style>
 
-	<script type="text/javascript" src="//cdn.wanted5games.com/api/game.js"></script>
+	<script type="text/javascript" src="game.js"></script>
 	</head>
 
-	<body>
-	
+	<body style="overflow:hidden;">
+
 
 	<script type="text/javascript">
 	document.domain = 'wanted5games.com';
@@ -59,11 +58,11 @@
 		<input id="highscore" type="text" />
 		<script type="text/javascript" src="js/phaser.min.js"></script>
 		<script type="text/javascript" src="js/fulltilt.min.js"></script>
-		<script type="text/javascript" src="js/build/production.min.js"></script> 
+		<script type="text/javascript" src="js/build/production.min.js"></script>
 		<script type="text/javascript" src="js/NoSleep.min.js"></script>
-		<script src="js/main.js"></script>  
-	
-		<script> 
+		<script src="js/main.js"></script>
+
+		<script>
 		var noSleep = new NoSleep();
 
 function enableNoSleep() {
@@ -76,6 +75,7 @@ document.addEventListener('touchstart', enableNoSleep, false);
 
 
 	</script>
-
+  <script src="js/analytics_ubg_v1_4.js"></script>
+  <script src="js/ubg235_client_v1_1.js"></script>
 	</body>
 </html>
