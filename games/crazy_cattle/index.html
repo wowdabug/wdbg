@@ -3,12 +3,21 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+		<title>CrazyCattle3D</title>
 		<style>
 html, body, #canvas {
 	margin: 0;
 	padding: 0;
 	border: 0;
 }
+
+body {
+	color: white;
+	background-color: black;
+	overflow: hidden;
+	touch-action: none;
+}
+
 #canvas {
 	display: block;
 }
@@ -81,6 +90,8 @@ html, body, #canvas {
 	z-index: 1;
 }
 		</style>
+		<link id="-gd-engine-icon" rel="icon" type="image/png" href="CrazyCattle3D.icon.png" />
+<link rel="apple-touch-icon" href="CrazyCattle3D.apple-touch-icon.png"/>
 
 	</head>
 	<body>
@@ -93,22 +104,15 @@ html, body, #canvas {
 		</noscript>
 
 		<div id="status">
-			<img id="status-splash" class="show-image--true fullsize--true use-filter--true" src="index.png" alt="">
+			<img id="status-splash" class="show-image--true fullsize--true use-filter--true" src="CrazyCattle3D.png" alt="">
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
 		</div>
 
+		<script src="CrazyCattle3D.js"></script>
 		<script>
-if (!window.SharedArrayBuffer) {
-	document.getElementById('status').style.display = 'none';
-	setTimeout(() => document.getElementById('status').style.display = '', 1500);
-}
-</script>
-<script src="coi-serviceworker.min.js"></script>
-<script src="index.js"></script>
-		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":39414368,"index.wasm":1650612},"focusCanvas":true,"gdextensionLibs":[]};
-const GODOT_THREADS_ENABLED = true;
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":true,"executable":"CrazyCattle3D","experimentalVK":false,"fileSizes":{"CrazyCattle3D.pck":25321904,"CrazyCattle3D.wasm":43699190},"focusCanvas":true,"gdextensionLibs":[]};
+const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
 (function () {
@@ -211,10 +215,6 @@ const engine = new Engine(GODOT_CONFIG);
 	}
 }());
 		</script>
-		<script src="https://cattle-chat.onrender.com/socket.io/socket.io.js"></script>
-        <script>window.CHAT_SERVER_URL = 'https://cattle-chat.onrender.com';</script>
-        <script src="https://cattle-chat.onrender.com/chat-overlay-bundled.js"></script>
-        <script defer src="https://literate-manatee.pikapod.net/script.js" data-website-id="89d4a4ff-d4cc-4a21-b175-2f6d53a297fc"></script>
 	</body>
 </html>
 
