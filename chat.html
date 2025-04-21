@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Chat App</title>
+    <script src="https://www.gstatic.com/firebasejs/9.17.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.0/firebase-firestore.js"></script>
+</head>
+<body>
+
+<h1>Firebase Chat App</h1>
+
+<!-- Server Section -->
+<div id="server-section">
+    <label for="serverName">Create a Server:</label>
+    <input type="text" id="serverName" placeholder="Enter server name">
+    <button onclick="createServer()">Create Server</button>
+
+    <h3>Or Join an Existing Server:</h3>
+    <input type="text" id="joinServerName" placeholder="Enter server name">
+    <button onclick="joinServer()">Join Server</button>
+</div>
+
+<!-- Chat Section -->
+<div id="chat-section" style="display:none;">
+    <h2>Welcome to <span id="current-server"></span></h2>
+    <div id="chat-container" style="border: 1px solid #ccc; height: 300px; overflow-y: scroll;"></div>
+    <textarea id="messageInput" placeholder="Type your message..." rows="3" style="width: 100%;"></textarea>
+    <button onclick="sendMessage()">Send Message</button>
+    <button onclick="leaveServer()">Leave Server</button>
+</div>
+
+<script>
+// Firebase config
+      const firebaseConfig = {
+        apiKey: "AIzaSyBKmpmd450Wly7mBl5uMB9K7TKeIwzkJLk",
+        authDomain: "chat-7ba8c.firebaseapp.com",
+        databaseURL: "https://chat-7ba8c-default-rtdb.firebaseio.com",
+        projectId: "chat-7ba8c",
+        storageBucket: "chat-7ba8c.firebasestorage.app",
+        messagingSenderId: "605557322783",
+        appId: "1:605557322783:web:945ab35987b6f29250d12a"
+};
+
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// Variables
+let currentServer = "";
+
+// Create a server
+function createServer() {
+    const serverName = document.getElementById('serverName').value;
+    if (serverName.trim() === "") {
+        alert("Please enter a valid server name");
+        return;
+    }
+    currentServer = serverName;
+    db.collection("servers").doc(serverName).set({
+        name: serverName,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(() => {
+        joinServer();
+    }).catch(error => {
+        alert(error.message);
+    });
+}
+
+// Join an existing server
+function joinServer() {
+    const serverName = document.getElementById('joinServerName').value;
+    if (serverName.trim() === "") {
+        alert("Please enter a valid server name");
+        return;
+    }
+    currentServer = serverName;
+    document.getElementById('server-section').style.display = 'none';
+    document.getElementById('chat-section').style.display = 'block';
+    document.getElementById('current-server').textContent = serverName;
+    loadMessages();
+}
+
+// Load messages from Firestore
+function loadMessages() {
+    db.collection("servers").doc(currentServer).collection("messages")
+        .orderBy("timestamp")
+        .onSnapshot(snapshot => {
+            const chatContainer = document.getElementById('chat-container');
+            chatContainer.innerHTML = '';
+            snapshot.forEach(doc => {
+                const message = doc.data();
+                const messageElement = document.createElement('div');
+                messageElement.textContent = `${message.text}`;
+                chatContainer.appendChild(messageElement);
+            });
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        });
+}
+
+// Send a message
+function sendMessage() {
+    const messageText = document.getElementById('messageInput').value;
+    if (messageText.trim() === "") {
+        return;
+    }
+    db.collection("servers").doc(currentServer).collection("messages").add({
+        text: messageText,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(() => {
+        document.getElementById('messageInput').value = '';
+    }).catch(error => {
+        alert(error.message);
+    });
+}
+
+// Leave the server
+function leaveServer() {
+    document.getElementById('chat-section').style.display = 'none';
+    document.getElementById('server-section').style.display = 'block';
+    currentServer = "";
+    document.getElementById('joinServerName').value = '';
+}
+</script>
+
+</body>
+</html>
