@@ -471,9 +471,9 @@
         <p>The code for this website</p>
       </div>
     </div>
-<!-- Firebase scripts -->
-<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+
 
 <!-- View Counter Display -->
 <span id="viewCount">Loading...</span>
@@ -489,21 +489,23 @@ const firebaseConfig = {
   messagingSenderId: "605557322783",
   appId: "1:605557322783:web:945ab35987b6f29250d12a"
   };
+  };
 
   // Initialize Firebase
-  const app = firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);
   const db = firebase.database();
 
-  // Unique key for this page (change "home" to something else per page)
   const pageKey = "views/home";
-
-  // Increment the view count
   const countRef = db.ref(pageKey);
-  countRef.transaction(current => (current || 0) + 1);
 
-  // Show the updated view count
+  countRef.transaction(current => (current || 0) + 1)
+    .then(() => console.log("View count incremented!"))
+    .catch(err => console.error("Failed to increment:", err));
+
   countRef.on("value", snapshot => {
-    document.getElementById("viewCount").innerText = snapshot.val() + " views";
+    const views = snapshot.val();
+    console.log("Current views:", views);
+    document.getElementById("viewCount").innerText = views + " views";
   });
 </script>
 
