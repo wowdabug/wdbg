@@ -471,16 +471,16 @@
         <p>The code for this website</p>
       </div>
     </div>
+<!-- Firebase SDKs (compat versions for <script> tags) -->
 <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
-
 
 <!-- View Counter Display -->
 <span id="viewCount">Loading...</span>
 
 <script>
-  // Your Firebase config (replace this with your actual values)
-const firebaseConfig = {
+  // 🔧 Your Firebase config here
+  const firebaseConfig = {
   apiKey: "AIzaSyBKmpmd450Wly7mBl5uMB9K7TKeIwzkJLk",
   authDomain: "chat-7ba8c.firebaseapp.com",
   databaseURL: "https://chat-7ba8c-default-rtdb.firebaseio.com",
@@ -489,22 +489,21 @@ const firebaseConfig = {
   messagingSenderId: "605557322783",
   appId: "1:605557322783:web:945ab35987b6f29250d12a"
   };
-  };
 
-  // Initialize Firebase
+  // ✅ Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   const db = firebase.database();
 
+  // 👀 Page view key (change per page if needed)
   const pageKey = "views/home";
   const countRef = db.ref(pageKey);
 
-  countRef.transaction(current => (current || 0) + 1)
-    .then(() => console.log("View count incremented!"))
-    .catch(err => console.error("Failed to increment:", err));
+  // ➕ Increment on visit
+  countRef.transaction(current => (current || 0) + 1);
 
+  // 🔄 Show count
   countRef.on("value", snapshot => {
     const views = snapshot.val();
-    console.log("Current views:", views);
     document.getElementById("viewCount").innerText = views + " views";
   });
 </script>
