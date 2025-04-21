@@ -471,6 +471,42 @@
         <p>The code for this website</p>
       </div>
     </div>
+<!-- Firebase scripts -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+
+<!-- View Counter Display -->
+<span id="viewCount">Loading...</span>
+
+<script>
+  // Your Firebase config (replace this with your actual values)
+const firebaseConfig = {
+  apiKey: "AIzaSyBKmpmd450Wly7mBl5uMB9K7TKeIwzkJLk",
+  authDomain: "chat-7ba8c.firebaseapp.com",
+  databaseURL: "https://chat-7ba8c-default-rtdb.firebaseio.com",
+  projectId: "chat-7ba8c",
+  storageBucket: "chat-7ba8c.firebasestorage.app",
+  messagingSenderId: "605557322783",
+  appId: "1:605557322783:web:945ab35987b6f29250d12a"
+  };
+
+  // Initialize Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  // Unique key for this page (change "home" to something else per page)
+  const pageKey = "views/home";
+
+  // Increment the view count
+  const countRef = db.ref(pageKey);
+  countRef.transaction(current => (current || 0) + 1);
+
+  // Show the updated view count
+  countRef.on("value", snapshot => {
+    document.getElementById("viewCount").innerText = snapshot.val() + " views";
+  });
+</script>
+
 	<!--
     <img id="badge" alt="Static Badge" src="https://img.shields.io/badge/version-0-brightgreen?color=0E0E0E">
 <a href="https://hits.sh/github.com/wowdabug/wdbg/">
