@@ -1,21 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  body { margin: 0; background: #111; display: flex; justify-content: center; align-items: center; height: 100vh; position: relative; }
-  #game { width: 100vmin; height: 100vmin; display: grid; grid-template-columns: repeat(10, 1fr); grid-template-rows: repeat(10, 1fr); gap: 0; }
-  .cell { width: 100%; height: 100%; background: #333; }
-  .snake { background: lime; }
-  .food { background: red; }
-  #overlay { position: absolute; color: white; font-size: 2em; text-align: center; display: none; }
-</style>
-</head>
-<body>
-<div id="game"></div>
-<div id="overlay"></div>
-<script>
 const game = document.getElementById('game');
 const overlay = document.getElementById('overlay');
 const cells = [];
@@ -26,7 +8,6 @@ let interval = null;
 let running = false;
 let justStarted = true;
 
-// Create grid
 for (let i = 0; i < 100; i++) {
   const cell = document.createElement('div');
   cell.classList.add('cell');
@@ -107,6 +88,3 @@ document.addEventListener('keydown', e => {
     changeDirection(e);
   }
 });
-</script>
-</body>
-</html>
