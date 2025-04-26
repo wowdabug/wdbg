@@ -1,14 +1,15 @@
 const game = document.getElementById('game');
 const overlay = document.getElementById('overlay');
 const cells = [];
+const gridSize = 16;
 let snake = [0];
 let direction = 1;
+let nextDirection = 1;
 let food = null;
 let interval = null;
 let running = false;
-let justStarted = true;
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < gridSize * gridSize; i++) {
   const cell = document.createElement('div');
   cell.classList.add('cell');
   game.appendChild(cell);
@@ -17,7 +18,7 @@ for (let i = 0; i < 100; i++) {
 
 function placeFood() {
   do {
-    food = Math.floor(Math.random() * 100);
+    food = Math.floor(Math.random() * (gridSize * gridSize));
   } while (snake.includes(food));
   cells[food].classList.add('food');
 }
@@ -28,13 +29,15 @@ function drawSnake() {
 }
 
 function move() {
+  direction = nextDirection;
+
   const head = snake[snake.length - 1];
   let next = head + direction;
 
-  if (direction === 1 && head % 10 === 9) next = head - 9;
-  if (direction === -1 && head % 10 === 0) next = head + 9;
-  if (direction === 10 && head >= 90) next = head - 90;
-  if (direction === -10 && head < 10) next = head + 90;
+  if (direction === 1 && (head % gridSize) === gridSize - 1) next = head - (gridSize - 1);
+  if (direction === -1 && (head % gridSize) === 0) next = head + (gridSize - 1);
+  if (direction === gridSize && head >= (gridSize * (gridSize - 1))) next = head - (gridSize * (gridSize - 1));
+  if (direction === -gridSize && head < gridSize) next = head + (gridSize * (gridSize - 1));
 
   if (snake.includes(next)) {
     stopGame();
@@ -51,28 +54,28 @@ function move() {
   }
 
   drawSnake();
-  justStarted = false;
 }
 
 function changeDirection(e) {
   if (!running) return;
-  if (e.key === 'ArrowUp' && direction !== 10) direction = -10;
-  if (e.key === 'ArrowDown' && direction !== -10) direction = 10;
-  if (e.key === 'ArrowLeft' && direction !== 1) direction = -1;
-  if (e.key === 'ArrowRight' && direction !== -1) direction = 1;
+  const key = e.key;
+  if ((key === 'ArrowUp' || key === 'w') && direction !== gridSize) nextDirection = -gridSize;
+  if ((key === 'ArrowDown' || key === 's') && direction !== -gridSize) nextDirection = gridSize;
+  if ((key === 'ArrowLeft' || key === 'a') && direction !== 1) nextDirection = -1;
+  if ((key === 'ArrowRight' || key === 'd') && direction !== -1) nextDirection = 1;
 }
 
 function startGame() {
   snake = [0];
   direction = 1;
+  nextDirection = 1;
   running = true;
-  justStarted = true;
   cells.forEach(c => c.classList.remove('snake', 'food'));
   placeFood();
   drawSnake();
   overlay.style.display = 'none';
   clearInterval(interval);
-  interval = setInterval(move, 100);
+  interval = setInterval(move, 64);
 }
 
 function stopGame() {
@@ -84,7 +87,8 @@ function stopGame() {
 document.addEventListener('keydown', e => {
   if (!running) {
     startGame();
-  } else if (!justStarted) {
+    changeDirection(e);
+  } else {
     changeDirection(e);
   }
 });
