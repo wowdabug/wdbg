@@ -1,0 +1,2 @@
+//For MOBILE SINGLEPLAYER, set to 1. For DESKTOP MULTIPLAYER, set to 0.
+0
