@@ -11,15 +11,19 @@
   --move-indicator-size: 13px;
   --pico-display: none;
 }
-body, html {
-  height: 100%;
-  margin: 0;
-  background-color: #111;
-}
+/* @media only screen and (max-width: 760px) {
+  .pico-btn {
+    display: none !important;
+  }
+  .trackpad {
+    display: none !important;
+  }
+} */
 canvas#canvas { width: 512px; height: 512px; }
 .pico8_el {
 	float:left;
-	width: calc(100vw/3);
+	width: calc(100vw/3); /*92px
+	display:inline-block;*/
   margin: 0px;
 	padding: 0px;
 	text-align: center;
@@ -71,9 +75,9 @@ body {
    display: none;
  }*/
   
-center div[style] {
-  width: 100% !important;
-}
+ center div[style] {
+   width: 100% !important;
+ }
 center > div > canvas#canvas {
     position: fixed;
     transform: translate(-50%, var(--canvas-offset));
@@ -82,17 +86,14 @@ center > div > canvas#canvas {
     height: calc(100vw - var(--canvas-size));
     cursor: none;
 }
+.fullscreen-only:fullscreen {
+		display: block;
+}
+.fullscreen-only:not(:fullscreen) {
+		display: none;
+}
 img {
     display: none;
-}
-#play-btn {
-  background-image: url(images/play_icon.png);
-  width: 100px;
-  height: 100px;
-  background-color: black;
-  background-size: cover;
-  border: none;
-  margin-top: 200px;
 }
 .pico8_el_container {
   position: absolute;
@@ -173,62 +174,18 @@ img {
   transform-origin: center;
   transition: transform 0.25s;
 }
-.gamepad {
-	width: 250px;
-	height: 250px;
-	position: absolute;
-	right: 11px;
-	bottom: 11px;
-	z-index: 200;
-  overflow: hidden;
-  margin: 0px;
-  padding: 0px;
-  visibility: hidden;
-  touch-action: none;
-}
-.gamepad div {
-  position: absolute;
-  visibility: visible;
-  width: 34%;
-  height: 34%;
-  border: var(--border-size) solid #FFF1E8;
-  transform-origin: center center;
-  background-repeat: no-repeat;
-  background-position: center center;
-  box-sizing: border-box;
-  background-size: auto;
-  touch-action: none;
-}
-.gamepad .up, .gamepad .down {
-  left: 50%;
-  transform: translateX(-50%);
-  background-size: 50%;
-}
-.gamepad .left, .gamepad .right {
-  top: 50%;
-  transform: translateY(-50%);
-  background-size: 40%;
-}
-.gamepad .up { top: 0px; background-image: url(./images/playUp.png); }
-.gamepad .right { right: 0px; background-image: url(./images/playRight.png); }
-.gamepad .down { bottom: 0px; background-image: url(./images/playDown.png); }
-.gamepad .left { left: 0px; background-image: url(./images/playLeft.png); }
-.options {
-  position: absolute;
-  top: 5px;
-  left: calc(50% - (100vh - var(--canvas-size)) / 2 - 50px);
+.fullscreen {
+  position: fixed;
+  bottom: 17px;
+  right: 10px;
   background-color: #111;
   border: none;
   color: #FFF1E8;
   font-size: 24px;
-  width: 45px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
-.options:focus {
-  outline: none;
-}
-.options img {
-  width: 100%;
+.mute {
+  transform: translateY(-40px);
 }
 #move-indicator {
   font-size: var(--move-indicator-size);
@@ -262,8 +219,6 @@ img {
 .touch-not-supported .show-if-touch { display: none !important; }
 .touch-supported .show-if-not-touch { display: none !important; }
 
-.hide { display: none !important; }
-
  @media only screen and (orientation: landscape) {
   center > div > canvas#canvas {
     width: auto;
@@ -293,12 +248,4 @@ img {
   .pico-btn {
     font-size: 10px !important;
   }
-}
-
-* {
-	image-rendering: pixelated !important;
-}
-
-*:focus {
-  outline: none;
 }
