@@ -1,4 +1,9 @@
 ## Update 4/25/2025
+- Added Dodge
+- Added Plug Away
+- Added Tag
+
+## Update 4/25/2025
 - Added FNAF
 - Added Stickman Hook
 
