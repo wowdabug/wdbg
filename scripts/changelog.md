@@ -1,3 +1,8 @@
+## Update 5/13/2025
+- Added Angry Birds
+- Added Mr. Mine
+- Added Sand Game
+
 ## Update 4/26/2025
 - Added Dodge
 - Added Plug Away
