@@ -188,19 +188,17 @@
     if (savedPanicKey) panicKeyInput.value = savedPanicKey;
     if (savedPanicUrl) panicUrlInput.value = savedPanicUrl;
 
-  panicKeyInput.addEventListener('focus', () => {
-  const captureKey = (e) => {
-    e.preventDefault();
-    panicKeyInput.value = e.key;
-  };
-
-  document.addEventListener('keydown', captureKey);
-
-  panicKeyInput.addEventListener('blur', () => {
-    document.removeEventListener('keydown', captureKey);
-  }, { once: true });
-});
-
+    panicKeyInput.addEventListener('focus', () => {
+      const captureKey = (e) => {
+        e.preventDefault();
+        panicKeyInput.value = e.key;
+        document.removeEventListener('keydown', captureKey);
+      };
+      setTimeout(() => {
+        document.addEventListener('keydown', captureKey);
+      }, 50);
+    });
+  });
 
   document.addEventListener('keydown', (e) => {
     const activeTag = document.activeElement.tagName.toLowerCase();
