@@ -122,7 +122,7 @@
     </div>
     <div class="setting-group">
       <label>Panic Keybind</label>
-      <input type="text" id="panicKeyInput" maxlength="1" placeholder="p">
+      <input type="text" id="panicKeyInput" maxlength="1" placeholder="a">
     </div>
     <div class="setting-group">
       <label>Panic Keybind URL</label>
@@ -138,6 +138,15 @@
         <button onclick="applyPreset('Schoology', 'https://www.powerschool.com/favicon.ico')">Schoology</button>
       </div>
     </div>
+<div class="setting-group">
+  <label>Panic Keybind Presets</label>
+  <div class="preset-buttons">
+    <button onclick="applyPanicPreset('', 'https://www.google.com')">Google</button>
+    <button onclick="applyPanicPreset('', 'https://www.bing.com')">Bing</button>
+    <button onclick="applyPanicPreset('', 'https://myapps.classlink.com/home')">Classlink</button>
+    <button onclick="applyPanicPreset('', 'https://mnps.schoology.com/home')">Schoology</button>
+  </div>
+</div>
     <button onclick="saveSettings()">Save Settings</button>
   </div>
 
@@ -157,6 +166,11 @@
     function applyPreset(title, favicon) {
       document.getElementById('titleInput').value = title;
       document.getElementById('faviconInput').value = favicon;
+    }
+
+    function applyPanicPreset(key, url) {
+      document.getElementById('panicKeyInput').value = key;
+      document.getElementById('panicUrlInput').value = url;
     }
 
     document.addEventListener('DOMContentLoaded', () => {
