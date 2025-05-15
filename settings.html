@@ -121,12 +121,12 @@
         <input type="text" id="faviconInput" placeholder="https://wowdabug.github.io/wdbg/images/favicon.png">
       </div>
       <div class="setting-group">
-        <label>Panic Keybind</label>
-        <input type="text" id="panicKeyInput" maxlength="1" placeholder="a">
+        <label for="panicKeyInput">Panic Keybind</label>
+        <input type="text" id="panicKeyInput" placeholder="" readonly>
       </div>
       <div class="setting-group">
         <label>Panic Keybind URL</label>
-        <input type="text" id="panicUrlInput" placeholder="https://www.google.com">
+        <input type="text" id="panicUrlInput" placeholder="">
       </div>
       <div class="setting-group">
         <label>Title and Favicon Presets</label>
@@ -172,18 +172,27 @@
         document.getElementById('panicUrlInput').value = url;
       }
       document.addEventListener('DOMContentLoaded', () => {
-        const titleInput = document.getElementById('titleInput');
-        const faviconInput = document.getElementById('faviconInput');
-        const panicKeyInput = document.getElementById('panicKeyInput');
-        const panicUrlInput = document.getElementById('panicUrlInput');
-        const savedTitle = localStorage.getItem('customTitle');
-        const savedFavicon = localStorage.getItem('customFavicon');
-        const savedPanicKey = localStorage.getItem('panicKey');
-        const savedPanicUrl = localStorage.getItem('panicUrl');
-        if (savedTitle) titleInput.value = savedTitle;
-        if (savedFavicon) faviconInput.value = savedFavicon;
-        if (savedPanicKey) panicKeyInput.value = savedPanicKey;
-        if (savedPanicUrl) panicUrlInput.value = savedPanicUrl;
+      const titleInput = document.getElementById('titleInput');
+      const faviconInput = document.getElementById('faviconInput');
+      const panicKeyInput = document.getElementById('panicKeyInput');
+      const panicUrlInput = document.getElementById('panicUrlInput');
+      const savedTitle = localStorage.getItem('customTitle');
+      const savedFavicon = localStorage.getItem('customFavicon');
+      const savedPanicKey = localStorage.getItem('panicKey');
+      const savedPanicUrl = localStorage.getItem('panicUrl');
+      if (savedTitle) titleInput.value = savedTitle;
+      if (savedFavicon) faviconInput.value = savedFavicon;
+      if (savedPanicKey) panicKeyInput.value = savedPanicKey;
+      if (savedPanicUrl) panicUrlInput.value = savedPanicUrl;
+      panicKeyInput.addEventListener('focus', () => {
+        function captureKey(e) {
+          e.preventDefault();
+          panicKeyInput.value = e.key;
+          document.removeEventListener('keydown', captureKey);
+        }
+        document.addEventListener('keydown', captureKey);
+      });
+      });
       });
       document.addEventListener('keydown', (e) => {
         const panicKey = localStorage.getItem('panicKey');
