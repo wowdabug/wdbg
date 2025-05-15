@@ -32,7 +32,7 @@ document.addEventListener('keydown', (e) => {
   const panicKey = localStorage.getItem('panicKey');
   const panicUrl = localStorage.getItem('panicUrl');
   if (panicKey && panicUrl && e.key === panicKey) {
-    window.location.href = panicUrl;
+  window.open(panicUrl, '_blank');
   }
 });
 })();
