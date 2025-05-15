@@ -27,4 +27,13 @@
         }
         link.href = defaultFavicon;
     }
+
+    // Add panic keybind logic
+    document.addEventListener('keydown', (e) => {
+        const panicKey = localStorage.getItem('panicKey');
+        const panicUrl = localStorage.getItem('panicUrl');
+        if (panicKey && panicUrl && e.key.toLowerCase() === panicKey.toLowerCase()) {
+            window.location.href = panicUrl;
+        }
+    });
 })();
