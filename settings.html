@@ -188,19 +188,15 @@
     if (savedPanicKey) panicKeyInput.value = savedPanicKey;
     if (savedPanicUrl) panicUrlInput.value = savedPanicUrl;
 
-    // Make the field read-only so you never accidentally type into it
     panicKeyInput.readOnly = true;
 
-    // When you press any key while focused here, grab it and store it
     panicKeyInput.addEventListener('keydown', e => {
       e.preventDefault();
       const key = e.key.toLowerCase();
       panicKeyInput.value = key;
-      localStorage.setItem('panicKey', key);
     });
-  }); // <- THIS was missing
+  });
 
-  // Global key listener
   document.addEventListener('keydown', e => {
     const tag = document.activeElement.tagName.toLowerCase();
     if (tag === 'input' || tag === 'textarea') return;
@@ -208,7 +204,7 @@
     const panicKey = localStorage.getItem('panicKey');
     const panicUrl = localStorage.getItem('panicUrl');
     if (panicKey && panicUrl && e.key.toLowerCase() === panicKey) {
-      window.open(panicUrl, '_blank'); // open in new tab
+      window.open(panicUrl, '_blank');
     }
   });
 </script>
