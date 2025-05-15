@@ -1,75 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>WDBG</title>
     <script src="https://wowdabug.github.io/wdbg/scripts/title_favicon.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e1e;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        h1 {
-            font-size: 50px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 20px;
-        }
-        a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #686df2;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 0px 0;
-        }
-        #game {
-            width: 300px;
-            height: 300px;
-            margin: 20px auto;
-            display: grid;
-            grid-template-columns: repeat(16, 1fr);
-            grid-template-rows: repeat(16, 1fr);
-            gap: 0;
-            background: #111;
-        }
-        .cell {
-            width: 100%;
-            height: 100%;
-            background: #333;
-        }
-        .snake {
-            background: lime;
-        }
-        .food {
-            background: red;
-        }
-        #overlay {
-            position: absolute;
-            top: 400px;
-            left: 0;
-            right: 0;
-            color: white;
-            font-size: 2em;
-            text-align: center;
-            display: none;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1e1e1e;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 50px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #ddd;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      a:hover {
+        color: #686df2;
+      }
+
+      #game {
+        width: 300px;
+        height: 300px;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: repeat(16, 1fr);
+        grid-template-rows: repeat(16, 1fr);
+        gap: 0;
+        background: #111;
+      }
+
+      .cell {
+        width: 100%;
+        height: 100%;
+        background: #333;
+      }
+
+      .snake {
+        background: lime;
+      }
+
+      .food {
+        background: red;
+      }
+
+      #overlay {
+        position: absolute;
+        top: 400px;
+        left: 0;
+        right: 0;
+        color: white;
+        font-size: 2em;
+        text-align: center;
+        display: none;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>404 - Page Not Found</h1>
-    <p>Press any key to start the snake game!</p>
+    <p>Press any key to start the snake game! <a href="https://wowdabug.github.io/wdbg/index.html">Go to Home</a>
+    </p>
     <div id="game"></div>
     <div id="overlay"></div>
-    <a href="https://wowdabug.github.io/wdbg/index.html">Go to Home</a>
-    <script src="https://wowdabug.github.io/wdbg/scripts/snake.js"></script>
-</body>
+    <script>
+      const game = document.getElementById('game');
+      const overlay = document.getElementById('overlay');
+      const cells = [];
+      const gridSize = 16;
+      let snake = [0];
+      let direction = 1;
+      let nextDirection = 1;
+      let food = null;
+      let interval = null;
+      let running = false;
+      for (let i = 0; i < gridSize * gridSize; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        game.appendChild(cell);
+        cells.push(cell);
+      }
+
+      function placeFood() {
+        do {
+          food = Math.floor(Math.random() * (gridSize * gridSize));
+        } while (snake.includes(food));
+        cells[food].classList.add('food');
+      }
+
+      function drawSnake() {
+        cells.forEach(c => c.classList.remove('snake'));
+        snake.forEach(i => cells[i].classList.add('snake'));
+      }
+
+      function move() {
+        direction = nextDirection;
+        const head = snake[snake.length - 1];
+        let next = head + direction;
+        if (direction === 1 && (head % gridSize) === gridSize - 1) next = head - (gridSize - 1);
+        if (direction === -1 && (head % gridSize) === 0) next = head + (gridSize - 1);
+        if (direction === gridSize && head >= (gridSize * (gridSize - 1))) next = head - (gridSize * (gridSize - 1));
+        if (direction === -gridSize && head < gridSize) next = head + (gridSize * (gridSize - 1));
+        if (snake.includes(next)) {
+          stopGame();
+          return;
+        }
+        snake.push(next);
+        if (next === food) {
+          cells[food].classList.remove('food');
+          placeFood();
+        } else {
+          snake.shift();
+        }
+        drawSnake();
+      }
+
+      function changeDirection(e) {
+        if (!running) return;
+        const key = e.key;
+        if ((key === 'ArrowUp' || key === 'w') && direction !== gridSize) nextDirection = -gridSize;
+        if ((key === 'ArrowDown' || key === 's') && direction !== -gridSize) nextDirection = gridSize;
+        if ((key === 'ArrowLeft' || key === 'a') && direction !== 1) nextDirection = -1;
+        if ((key === 'ArrowRight' || key === 'd') && direction !== -1) nextDirection = 1;
+      }
+
+      function startGame() {
+        snake = [0];
+        direction = 1;
+        nextDirection = 1;
+        running = true;
+        cells.forEach(c => c.classList.remove('snake', 'food'));
+        placeFood();
+        drawSnake();
+        overlay.style.display = 'none';
+        clearInterval(interval);
+        interval = setInterval(move, 64);
+      }
+
+      function stopGame() {
+        running = false;
+        clearInterval(interval);
+        overlay.style.display = 'block';
+      }
+      document.addEventListener('keydown', e => {
+        if (!running) {
+          startGame();
+          changeDirection(e);
+        } else {
+          changeDirection(e);
+        }
+      });
+    </script>
+  </body>
 </html>
