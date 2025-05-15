@@ -103,101 +103,95 @@
       }
     </style>
   </head>
-<body>
-  <div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="downloads.html">Downloads</a>
-    <a href="settings.html">Settings</a>
-    <a href="changelog.html">Changelog</a>
-  </div>
-  <h1>Settings</h1>
-  <div class="settings-container">
-    <div class="setting-group">
-      <label for="titleInput">Page Title</label>
-      <input type="text" id="titleInput" placeholder="WDBG">
+  <body>
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="settings.html">Settings</a>
+      <a href="changelog.html">Changelog</a>
     </div>
-    <div class="setting-group">
-      <label for="faviconInput">Favicon URL</label>
-      <input type="text" id="faviconInput" placeholder="https://wowdabug.github.io/wdbg/images/favicon.png">
-    </div>
-    <div class="setting-group">
-      <label>Panic Keybind</label>
-      <input type="text" id="panicKeyInput" maxlength="1" placeholder="a">
-    </div>
-    <div class="setting-group">
-      <label>Panic Keybind URL</label>
-      <input type="text" id="panicUrlInput" placeholder="https://www.google.com">
-    </div>
-    <div class="setting-group">
-      <label>Title and Favicon Presets</label>
-      <div class="preset-buttons">
-        <button onclick="applyPreset('', '')">Default</button>
-        <button onclick="applyPreset('Google', 'https://www.google.com/favicon.ico')">Google</button>
-        <button onclick="applyPreset('Search', 'https://www.bing.com/sa/simg/favicon-trans-bg-blue-mg.ico')">Bing</button>
-        <button onclick="applyPreset('Classlink', 'https://myapps.classlink.com/favicon.ico')">Classlink</button>
-        <button onclick="applyPreset('Schoology', 'https://www.powerschool.com/favicon.ico')">Schoology</button>
+    <h1>Settings</h1>
+    <div class="settings-container">
+      <div class="setting-group">
+        <label for="titleInput">Page Title</label>
+        <input type="text" id="titleInput" placeholder="WDBG">
       </div>
+      <div class="setting-group">
+        <label for="faviconInput">Favicon URL</label>
+        <input type="text" id="faviconInput" placeholder="https://wowdabug.github.io/wdbg/images/favicon.png">
+      </div>
+      <div class="setting-group">
+        <label>Panic Keybind</label>
+        <input type="text" id="panicKeyInput" maxlength="1" placeholder="a">
+      </div>
+      <div class="setting-group">
+        <label>Panic Keybind URL</label>
+        <input type="text" id="panicUrlInput" placeholder="https://www.google.com">
+      </div>
+      <div class="setting-group">
+        <label>Title and Favicon Presets</label>
+        <div class="preset-buttons">
+          <button onclick="applyPreset('', '')">Default</button>
+          <button onclick="applyPreset('Google', 'https://www.google.com/favicon.ico')">Google</button>
+          <button onclick="applyPreset('Search', 'https://www.bing.com/sa/simg/favicon-trans-bg-blue-mg.ico')">Bing</button>
+          <button onclick="applyPreset('Classlink', 'https://myapps.classlink.com/favicon.ico')">Classlink</button>
+          <button onclick="applyPreset('Schoology', 'https://www.powerschool.com/favicon.ico')">Schoology</button>
+        </div>
+      </div>
+      <div class="setting-group">
+        <label>Panic Keybind Presets</label>
+        <div class="preset-buttons">
+          <button onclick="applyPanicPreset('', '')">Default</button>
+          <button onclick="applyPanicPreset('', 'https://www.google.com')">Google</button>
+          <button onclick="applyPanicPreset('', 'https://www.bing.com')">Bing</button>
+          <button onclick="applyPanicPreset('', 'https://myapps.classlink.com/home')">Classlink</button>
+          <button onclick="applyPanicPreset('', 'https://mnps.schoology.com/home')">Schoology</button>
+        </div>
+      </div>
+      <button onclick="saveSettings()">Save Settings</button>
     </div>
-<div class="setting-group">
-  <label>Panic Keybind Presets</label>
-  <div class="preset-buttons">
-    <button onclick="applyPanicPreset('', 'https://www.google.com')">Google</button>
-    <button onclick="applyPanicPreset('', 'https://www.bing.com')">Bing</button>
-    <button onclick="applyPanicPreset('', 'https://myapps.classlink.com/home')">Classlink</button>
-    <button onclick="applyPanicPreset('', 'https://mnps.schoology.com/home')">Schoology</button>
-  </div>
-</div>
-    <button onclick="saveSettings()">Save Settings</button>
-  </div>
-
-  <script>
-    function saveSettings() {
-      const title = document.getElementById('titleInput').value;
-      const favicon = document.getElementById('faviconInput').value;
-      const panicKey = document.getElementById('panicKeyInput').value;
-      const panicUrl = document.getElementById('panicUrlInput').value;
-
-      localStorage.setItem('customTitle', title);
-      localStorage.setItem('customFavicon', favicon);
-      localStorage.setItem('panicKey', panicKey);
-      localStorage.setItem('panicUrl', panicUrl);
-    }
-
-    function applyPreset(title, favicon) {
-      document.getElementById('titleInput').value = title;
-      document.getElementById('faviconInput').value = favicon;
-    }
-
-    function applyPanicPreset(key, url) {
-      document.getElementById('panicKeyInput').value = key;
-      document.getElementById('panicUrlInput').value = url;
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const titleInput = document.getElementById('titleInput');
-      const faviconInput = document.getElementById('faviconInput');
-      const panicKeyInput = document.getElementById('panicKeyInput');
-      const panicUrlInput = document.getElementById('panicUrlInput');
-
-      const savedTitle = localStorage.getItem('customTitle');
-      const savedFavicon = localStorage.getItem('customFavicon');
-      const savedPanicKey = localStorage.getItem('panicKey');
-      const savedPanicUrl = localStorage.getItem('panicUrl');
-
-      if (savedTitle) titleInput.value = savedTitle;
-      if (savedFavicon) faviconInput.value = savedFavicon;
-      if (savedPanicKey) panicKeyInput.value = savedPanicKey;
-      if (savedPanicUrl) panicUrlInput.value = savedPanicUrl;
-    });
-
-    document.addEventListener('keydown', (e) => {
-      const panicKey = localStorage.getItem('panicKey');
-      const panicUrl = localStorage.getItem('panicUrl');
-      if (panicKey && panicUrl && e.key.toLowerCase() === panicKey.toLowerCase()) {
-        window.location.href = panicUrl;
+    <script>
+      function saveSettings() {
+        const title = document.getElementById('titleInput').value;
+        const favicon = document.getElementById('faviconInput').value;
+        const panicKey = document.getElementById('panicKeyInput').value;
+        const panicUrl = document.getElementById('panicUrlInput').value;
+        localStorage.setItem('customTitle', title);
+        localStorage.setItem('customFavicon', favicon);
+        localStorage.setItem('panicKey', panicKey);
+        localStorage.setItem('panicUrl', panicUrl);
       }
-    });
-  </script>
-</body>
 
+      function applyPreset(title, favicon) {
+        document.getElementById('titleInput').value = title;
+        document.getElementById('faviconInput').value = favicon;
+      }
+
+      function applyPanicPreset(key, url) {
+        document.getElementById('panicKeyInput').value = key;
+        document.getElementById('panicUrlInput').value = url;
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        const titleInput = document.getElementById('titleInput');
+        const faviconInput = document.getElementById('faviconInput');
+        const panicKeyInput = document.getElementById('panicKeyInput');
+        const panicUrlInput = document.getElementById('panicUrlInput');
+        const savedTitle = localStorage.getItem('customTitle');
+        const savedFavicon = localStorage.getItem('customFavicon');
+        const savedPanicKey = localStorage.getItem('panicKey');
+        const savedPanicUrl = localStorage.getItem('panicUrl');
+        if (savedTitle) titleInput.value = savedTitle;
+        if (savedFavicon) faviconInput.value = savedFavicon;
+        if (savedPanicKey) panicKeyInput.value = savedPanicKey;
+        if (savedPanicUrl) panicUrlInput.value = savedPanicUrl;
+      });
+      document.addEventListener('keydown', (e) => {
+        const panicKey = localStorage.getItem('panicKey');
+        const panicUrl = localStorage.getItem('panicUrl');
+        if (panicKey && panicUrl && e.key.toLowerCase() === panicKey.toLowerCase()) {
+          window.location.href = panicUrl;
+        }
+      });
+    </script>
+  </body>
 </html>
