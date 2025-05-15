@@ -1,30 +1,28 @@
+<script>
 (function applyCustomSettings() {
-    const defaultTitle = "WDBG";
-    const defaultFavicon = "https://wowdabug.github.io/wdbg/images/favicon.png";
-    const title = localStorage.getItem('customTitle');
-    const favicon = localStorage.getItem('customFavicon');
+  const defaultTitle = "WDBG";
+  const defaultFavicon = "https://wowdabug.github.io/wdbg/images/favicon.png";
+  const title = localStorage.getItem('customTitle');
+  const favicon = localStorage.getItem('customFavicon');
+  const keybind = localStorage.getItem('customKeybind');
+  const keybindUrl = localStorage.getItem('customKeybindUrl');
 
-    if (title) {
-        document.title = title;
-    } else {
-        document.title = defaultTitle;
-    }
+  document.title = title || defaultTitle;
 
-    if (favicon) {
-        let link = document.querySelector("link[rel~='icon']");
-        if (!link) {
-            link = document.createElement('link');
-            link.rel = 'icon';
-            document.head.appendChild(link);
-        }
-        link.href = favicon;
-    } else {
-        let link = document.querySelector("link[rel~='icon']");
-        if (!link) {
-            link = document.createElement('link');
-            link.rel = 'icon';
-            document.head.appendChild(link);
-        }
-        link.href = defaultFavicon;
-    }
+  let link = document.querySelector("link[rel~='icon']");
+  if (!link) {
+    link = document.createElement('link');
+    link.rel = 'icon';
+    document.head.appendChild(link);
+  }
+  link.href = favicon || defaultFavicon;
+
+  if (keybind && keybindUrl) {
+    document.addEventListener('keydown', (e) => {
+      if (e.key.toLowerCase() === keybind && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        window.location.replace(keybindUrl);
+      }
+    });
+  }
 })();
+</script>

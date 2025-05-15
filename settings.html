@@ -105,10 +105,10 @@
   </head>
   <body>
     <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="downloads.html">Downloads</a>
-        <a href="settings.html">Settings</a>
-        <a href="changelog.html">Changelog</a>
+      <a href="index.html">Home</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="settings.html">Settings</a>
+      <a href="changelog.html">Changelog</a>
     </div>
     <h1>Settings</h1>
     <div class="settings-container">
@@ -130,14 +130,26 @@
           <button onclick="applyPreset('Schoology', 'https://www.powerschool.com/favicon.ico')">Schoology</button>
         </div>
       </div>
+      <div class="setting-group">
+        <label for="keybindInput">Keybind</label>
+        <input type="text" id="keybindInput" maxlength="1" placeholder="">
+      </div>
+      <div class="setting-group">
+        <label for="keybindUrlInput">Keybind URL</label>
+        <input type="text" id="keybindUrlInput" placeholder="">
+      </div>
       <button onclick="saveSettings()">Save Settings</button>
     </div>
     <script>
       function saveSettings() {
         const title = document.getElementById('titleInput').value;
         const favicon = document.getElementById('faviconInput').value;
+        const keybind = document.getElementById('keybindInput').value.toLowerCase();
+        const keybindUrl = document.getElementById('keybindUrlInput').value;
         localStorage.setItem('customTitle', title);
         localStorage.setItem('customFavicon', favicon);
+        localStorage.setItem('customKeybind', keybind);
+        localStorage.setItem('customKeybindUrl', keybindUrl);
       }
 
       function applyPreset(title, favicon) {
@@ -151,6 +163,12 @@
         const savedFavicon = localStorage.getItem('customFavicon');
         if (savedTitle) titleInput.value = savedTitle;
         if (savedFavicon) faviconInput.value = savedFavicon;
+        const keybindInput = document.getElementById('keybindInput');
+        const keybindUrlInput = document.getElementById('keybindUrlInput');
+        const savedKeybind = localStorage.getItem('customKeybind');
+        const savedKeybindUrl = localStorage.getItem('customKeybindUrl');
+        if (savedKeybind) keybindInput.value = savedKeybind;
+        if (savedKeybindUrl) keybindUrlInput.value = savedKeybindUrl;
       });
     </script>
   </body>
