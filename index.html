@@ -144,12 +144,7 @@
       <a href="settings.html">Settings</a>
       <a href="changelog.html">Changelog</a>
     </div>
-    <h1>WDB Games <div>
-        <small>
-          <span id="viewCount">0 views</span>
-        </small>
-      </div>
-    </h1>
+    <h1>WDB Games · <span id="viewCount">0 Views</span></h1>
     <div class="category">
       <h2 onclick="toggleCategory(this)">Featured Games</h2>
       <div class="games-container">
@@ -531,7 +526,7 @@
       countRef.transaction(current => (current || 0) + 1);
       countRef.on("value", snapshot => {
         const views = snapshot.val();
-        document.getElementById("viewCount").innerText = views + " views";
+        document.getElementById("viewCount").innerText = views + " Views";
       });
     </script>
     <script>
