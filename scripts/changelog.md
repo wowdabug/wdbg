@@ -1,3 +1,9 @@
+## Update 5/14/2025
+- Added Handulum+
+- Added Mini Golf
+- Added Moto X3M
+- Added Plug Away 2
+
 ## Update 5/13/2025
 - Added Angry Birds
 - Added Mr. Mine
