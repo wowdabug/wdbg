@@ -2,33 +2,24 @@
 (function applyCustomSettings() {
   const defaultTitle = "WDBG";
   const defaultFavicon = "https://wowdabug.github.io/wdbg/images/favicon.png";
-
-  const title = localStorage.getItem('customTitle') || defaultTitle;
-  const favicon = localStorage.getItem('customFavicon') || defaultFavicon;
+  const title = localStorage.getItem('customTitle');
+  const favicon = localStorage.getItem('customFavicon');
   const keybind = localStorage.getItem('customKeybind');
   const keybindUrl = localStorage.getItem('customKeybindUrl');
 
-  // Apply title
-  document.title = title;
+  document.title = title || defaultTitle;
 
-  // Apply favicon
-  let link = document.querySelector("link[rel='icon']") || document.createElement('link');
-  link.type = 'image/x-icon';
-  link.rel = 'icon';
-  link.href = favicon;
-  if (!document.querySelector("link[rel='icon']")) {
+  let link = document.querySelector("link[rel~='icon']");
+  if (!link) {
+    link = document.createElement('link');
+    link.rel = 'icon';
     document.head.appendChild(link);
   }
+  link.href = favicon || defaultFavicon;
 
-  // Add keybind listener
   if (keybind && keybindUrl) {
     document.addEventListener('keydown', (e) => {
-      if (
-        e.key.toLowerCase() === keybind.toLowerCase() &&
-        !e.ctrlKey &&
-        !e.altKey &&
-        !e.metaKey
-      ) {
+      if (e.key.toLowerCase() === keybind && !e.ctrlKey && !e.metaKey && !e.altKey) {
         window.location.replace(keybindUrl);
       }
     });
