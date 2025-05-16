@@ -28,11 +28,14 @@
         link.href = defaultFavicon;
     }
 
-document.addEventListener('keydown', (e) => {
-  const panicKey = localStorage.getItem('panicKey');
-  const panicUrl = localStorage.getItem('panicUrl');
-  if (panicKey && panicUrl && e.key === panicKey) {
-  window.open(panicUrl, '_blank');
+  document.addEventListener('keydown', e => {
+    const tag = document.activeElement.tagName.toLowerCase();
+    if (tag === 'input' || tag === 'textarea') return;
+
+    const panicKey = localStorage.getItem('panicKey');
+    const panicUrl = localStorage.getItem('panicUrl');
+    if (panicKey && panicUrl && e.key.toLowerCase() === panicKey) {
+      window.open(panicUrl, '_blank');
   }
 });
 })();
