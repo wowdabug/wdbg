@@ -150,52 +150,46 @@
       </div>
       <button onclick="saveSettings()">Save Settings</button>
     </div>
-<script>
-  function saveSettings() {
-    const title = document.getElementById('titleInput').value;
-    const favicon = document.getElementById('faviconInput').value;
-    const panicKey = document.getElementById('panicKeyInput').value;
-    const panicUrl = document.getElementById('panicUrlInput').value;
-    localStorage.setItem('customTitle', title);
-    localStorage.setItem('customFavicon', favicon);
-    localStorage.setItem('panicKey', panicKey);
-    localStorage.setItem('panicUrl', panicUrl);
-  }
+    <script>
+      function saveSettings() {
+        const title = document.getElementById('titleInput').value;
+        const favicon = document.getElementById('faviconInput').value;
+        const panicKey = document.getElementById('panicKeyInput').value;
+        const panicUrl = document.getElementById('panicUrlInput').value;
+        localStorage.setItem('customTitle', title);
+        localStorage.setItem('customFavicon', favicon);
+        localStorage.setItem('panicKey', panicKey);
+        localStorage.setItem('panicUrl', panicUrl);
+      }
 
-  function applyPreset(title, favicon) {
-    document.getElementById('titleInput').value = title;
-    document.getElementById('faviconInput').value = favicon;
-  }
+      function applyPreset(title, favicon) {
+        document.getElementById('titleInput').value = title;
+        document.getElementById('faviconInput').value = favicon;
+      }
 
-  function applyPanicPreset(key, url) {
-    document.getElementById('panicKeyInput').value = key;
-    document.getElementById('panicUrlInput').value = url;
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const titleInput = document.getElementById('titleInput');
-    const faviconInput = document.getElementById('faviconInput');
-    const panicKeyInput = document.getElementById('panicKeyInput');
-    const panicUrlInput = document.getElementById('panicUrlInput');
-
-    const savedTitle = localStorage.getItem('customTitle');
-    const savedFavicon = localStorage.getItem('customFavicon');
-    const savedPanicKey = localStorage.getItem('panicKey');
-    const savedPanicUrl = localStorage.getItem('panicUrl');
-
-    if (savedTitle) titleInput.value = savedTitle;
-    if (savedFavicon) faviconInput.value = savedFavicon;
-    if (savedPanicKey) panicKeyInput.value = savedPanicKey;
-    if (savedPanicUrl) panicUrlInput.value = savedPanicUrl;
-
-    panicKeyInput.readOnly = true;
-
-    panicKeyInput.addEventListener('keydown', e => {
-      e.preventDefault();
-      const key = e.key.toLowerCase();
-      panicKeyInput.value = key;
-    });
-  });
-</script>
+      function applyPanicPreset(key, url) {
+        document.getElementById('panicUrlInput').value = url;
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        const titleInput = document.getElementById('titleInput');
+        const faviconInput = document.getElementById('faviconInput');
+        const panicKeyInput = document.getElementById('panicKeyInput');
+        const panicUrlInput = document.getElementById('panicUrlInput');
+        const savedTitle = localStorage.getItem('customTitle');
+        const savedFavicon = localStorage.getItem('customFavicon');
+        const savedPanicKey = localStorage.getItem('panicKey');
+        const savedPanicUrl = localStorage.getItem('panicUrl');
+        if (savedTitle) titleInput.value = savedTitle;
+        if (savedFavicon) faviconInput.value = savedFavicon;
+        if (savedPanicKey) panicKeyInput.value = savedPanicKey;
+        if (savedPanicUrl) panicUrlInput.value = savedPanicUrl;
+        panicKeyInput.readOnly = true;
+        panicKeyInput.addEventListener('keydown', e => {
+          e.preventDefault();
+          const key = e.key.toLowerCase();
+          panicKeyInput.value = key;
+        });
+      });
+    </script>
   </body>
 </html>
