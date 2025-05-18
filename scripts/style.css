@@ -1,0 +1,180 @@
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1e1e1e;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        color: #fff;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      .navbar {
+        background-color: #111;
+        padding: 10px 0;
+      }
+
+      .navbar a {
+        color: #ddd;
+        text-decoration: none;
+        padding: 10px 15px;
+        display: inline-block;
+        font-size: 16px;
+      }
+
+      .navbar a:hover {
+        background-color: #333;
+        border-radius: 5px;
+      }
+
+      h1 {
+        margin: 20px 0;
+        font-size: 28px;
+      }
+
+      .category {
+        background: #222;
+        margin: 10px auto;
+        padding: 10px;
+        max-width: 1100px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        text-align: left;
+      }
+
+      .category h2 {
+        margin: 0;
+        padding: 10px;
+        background: #333;
+        cursor: pointer;
+        font-size: 20px;
+        border-radius: 8px;
+      }
+
+      .category h2:hover {
+        background: #444;
+      }
+
+      .games-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        display: none;
+        justify-content: center;
+      }
+
+      .game-box {
+        background: #2a2a2a;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+
+      .game-box img {
+        width: 100%;
+        height: 176px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .game-box a {
+        display: block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #ddd;
+        font-weight: bold;
+        font-size: 17px;
+      }
+
+      .game-box a:hover {
+        color: #686df2;
+      }
+
+      .links-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 0px;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding-bottom: 10px;
+      }
+
+      .link-box {
+        background: #2a2a2a;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+
+      .link-box img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+
+      .link-box a {
+        display: block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #ddd;
+        font-weight: bold;
+      }
+
+      .link-box a:hover {
+        color: #686df2;
+      }
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    #searchContainer {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+    }
+
+    #searchIcon {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+
+    #searchBox {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      padding: 8px;
+      width: 200px;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 6px;
+      box-sizing: border-box;
+    }
+
+    #suggestions {
+      margin-top: 6px;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+
+    .suggestion {
+      padding: 6px;
+      cursor: pointer;
+    }
+
+    .suggestion:hover {
+      background-color: #eee;
+    }
