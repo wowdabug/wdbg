@@ -8,13 +8,6 @@
     <link rel="stylesheet" href="scripts/style.css">
   </head>
   <body>
-<div id="searchContainer">
-  <img id="searchIcon" src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search" onclick="toggleSearch()" />
-  <div id="searchBox">
-    <input type="text" id="searchInput" placeholder="Search..." oninput="updateSuggestions()">
-    <div id="suggestions"></div>
-  </div>
-</div>
     <div class="navbar">
       <a href="index.html">Home</a>
       <a href="downloads.html">Downloads</a>
@@ -428,37 +421,5 @@
         }
       }
     </script>
-<script>
-  const urlList = [
-    { title: "Sonic the Hedgehog", url: "/games/sonic" },
-    { title: "Super Mario Bros", url: "/games/mario" },
-    { title: "Space Invaders", url: "/games/space-invaders" },
-    { title: "Tetris", url: "/games/tetris" },
-    { title: "Pac-Man", url: "/games/pacman" },
-    { title: "Donkey Kong", url: "/games/donkey-kong" }
-  ];
-
-  function toggleSearch() {
-    const box = document.getElementById("searchBox");
-    box.style.display = box.style.display === "block" ? "none" : "block";
-    if (box.style.display === "block") {
-      document.getElementById("searchInput").focus();
-    }
-  }
-
-  function updateSuggestions() {
-    const query = document.getElementById("searchInput").value.toLowerCase();
-    const suggestions = urlList.filter(item => item.title.toLowerCase().includes(query));
-    const container = document.getElementById("suggestions");
-    container.innerHTML = "";
-    suggestions.forEach(item => {
-      const div = document.createElement("div");
-      div.className = "suggestion";
-      div.textContent = item.title;
-      div.onclick = () => window.location.href = item.url;
-      container.appendChild(div);
-    });
-  }
-</script>
   </body>
 </html>
