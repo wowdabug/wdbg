@@ -1,5 +1,6 @@
 ## Update 5/19/2025
 - Added BTD5
+- Added Granny
 - Added The Fancy Pants Adventure
 - Added The Henry Stickmin Collection
 
