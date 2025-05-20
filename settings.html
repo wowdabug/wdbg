@@ -5,103 +5,7 @@
     <script src="scripts/title_favicon.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      .navbar {
-        background-color: #111;
-        padding: 10px 0;
-      }
-
-      .navbar a {
-        color: #ddd;
-        text-decoration: none;
-        padding: 10px 15px;
-        display: inline-block;
-        font-size: 16px;
-      }
-
-      .navbar a:hover {
-        background-color: #333;
-        border-radius: 5px;
-      }
-
-      h1 {
-        margin: 20px 0;
-        font-size: 28px;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #1e1e1e;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        color: #fff;
-        transition: background 0.3s, color 0.3s;
-      }
-
-      .settings-container {
-        max-width: 760px;
-        margin: 0px auto;
-        padding: 20px;
-        background-color: #2a2a2a;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        text-align: left;
-      }
-
-      .setting-group {
-        margin-bottom: 20px;
-      }
-
-      label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-
-      input[type="text"] {
-        width: 98%;
-        padding: 8px;
-        background-color: #1e1e1e;
-        color: #fff;
-        border: 1px solid #444;
-        border-radius: 4px;
-      }
-
-      button {
-        background-color: #686df2;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 0px;
-      }
-
-      button:hover {
-        background-color: #5a61e0;
-      }
-
-      .preset-buttons {
-        margin-top: 0px;
-      }
-
-      .preset-buttons h2 {
-        font-size: 18px;
-        margin-bottom: 10px;
-      }
-
-      .preset-buttons button {
-        margin: 0px;
-        padding: 8px 14px;
-        font-size: 14px;
-        background-color: #333;
-      }
-
-      .preset-buttons button:hover {
-        background-color: #444;
-      }
-    </style>
+    <link rel="stylesheet" href="scripts/style.css">
   </head>
   <body>
     <div class="navbar">
@@ -129,7 +33,7 @@
         <input type="text" id="panicUrlInput" placeholder="">
       </div>
       <div class="setting-group">
-        <label>Title and Favicon Presets</label>
+        <label>Title and Favicon URL Presets</label>
         <div class="preset-buttons">
           <button onclick="applyPreset('', '')">Default</button>
           <button onclick="applyPreset('Google', 'https://www.google.com/favicon.ico')">Google</button>
@@ -139,7 +43,7 @@
         </div>
       </div>
       <div class="setting-group">
-        <label>Panic Keybind Presets</label>
+        <label>Panic Keybind URL Presets</label>
         <div class="preset-buttons">
           <button onclick="applyPanicPreset('', '')">Default</button>
           <button onclick="applyPanicPreset('', 'https://www.google.com')">Google</button>
