@@ -1,3 +1,13 @@
+## Update 5/19/2025
+- Added BTD5
+- Added The Fancy Pants Adventure
+- Added The Henry Stickmin Collection
+
+## Update 5/18/2025
+- Added ADOFAI
+- Added Battleship
+- Added Crossy Road
+
 ## Update 5/14/2025
 - Added Handulum+
 - Added Mini Golf
