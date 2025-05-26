@@ -7,7 +7,6 @@
 ## Update 5/18/2025
 - Added ADOFAI
 - Added Battleship
-- Added Crossy Road
 
 ## Update 5/14/2025
 - Added Handulum+
