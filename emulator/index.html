@@ -1,167 +1,34 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-<title>Emulator</title>
-<script src="../scripts/title_favicon.js"></script>
+    <title>WDBG</title>
+    <script src="../scripts/title_favicon.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../scripts/style.css">
     <style>
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        height: 100%;
-      }
-
-      #gameSelector {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        z-index: 1000;
-      }
-
-      #game {
-        width: 100%;
-        height: 100%;
-        background-color: #000;
-      }
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
   </head>
-  <body style="background-color:#333333;">
-    <select id="gameSelector" onchange="loadGame()">
-      <option value="" disabled selected>Select a game</option>
-	  <!-- Adventure -->
-      <option value="Adventure|atari2600|roms/Adventure (USA).a26">Adventure</option>
-	  <!-- Banjo-Kazooie -->
-      <option value="Banjo-Kazooie|n64|roms/Banjo-Kazooie (USA) (Rev A).n64">Banjo-Kazooie</option>
-	  <!-- Bomberman -->
-      <option value="Bomberman|nes|roms/Bomberman (USA).nes">Bomberman</option>
-	  <!-- Breakout -->
-      <option value="Breakout|atari2600|roms/Breakout.bin">Breakout</option>
-	  <!-- Donkey Kong -->
-	  <option value="Donkey Kong|arcade|roms/dkong.zip">Donkey Kong</option>
-      <option value="Donkey Kong Country|snes|roms/Donkey Kong Country (USA) (Rev 2).sfc">Donkey Kong Country</option>
-      <option value="Donkey Kong 64|n64|roms/Donkey Kong 64 (USA).z64">Donkey Kong 64</option>
-      <!-- Frogger -->
-	  <option value="Frogger|arcade|roms/frogger.zip">Frogger</option>
-      <!-- Galaga -->
-	  <option value="Galaga|arcade|roms/galaga.zip">Galaga</option>
-      <!-- Mario -->
-      <option value="Mario Bros|nes|roms/Mario Bros. (USA) (GameCube Edition).nes">Mario Bros</option>
-      <option value="Super Mario Bros|nes|roms/Super Mario Bros (E).nes">Super Mario Bros</option>
-      <option value="Super Mario Bros 2|nes|roms/Super Mario Bros. 2 (USA) (Rev 1).nes">Super Mario Bros 2</option>
-      <option value="Super Mario Bros 3|nes|roms/Super Mario Bros. 3 (USA) (Rev 1).nes">Super Mario Bros 3</option>
-	  <option value="Dr. Mario (GB)|gb|roms/Dr. Mario (World).gb">Dr. Mario (GB)</option>
-      <option value="Dr. Mario (NES)|nes|roms/Dr. Mario (Japan, USA).nes">Dr. Mario (NES)</option>
-      <option value="Super Mario World|snes|roms/Super Mario World (U).smc">Super Mario World</option>
-	  <option value="Super Mario World 2|snes|roms/Super Mario World 2 - Yoshi's Island (USA).sfc">Super Mario World 2</option>
-      <option value="Super Mario All-Stars|snes|roms/Super Mario All Stars (U).smc">Super Mario All-Stars</option>
-      <option value="Super Mario 64|n64|roms/Super Mario 64 (USA).z64">Super Mario 64</option>
-      <option value="Mario Kart 64|n64|roms/Mario Kart 64 (USA).n64">Mario Kart 64</option>
-      <option value="Paper Mario|n64|roms/Paper Mario (USA).n64">Paper Mario</option>
-	  <!-- Pacman -->
-	  <option value="Pacman|arcade|roms/pacman.zip">Pacman</option>
-      <!-- Pitfall! -->
-	  <option value="Pitfall!|atari2600|roms/Pitfall! - Pitfall Harry's Jungle Adventure (USA).a26">Pitfall!</option>
-      <!-- Pokemon -->	
-      <option value="Pokemon Red|gb|roms/Pokemon Red (U) [S][BF].gb">Pokemon Red</option>
-      <option value="Pokemon Blue|gb|roms/Pokemon Blue.gb">Pokemon Blue</option>
-	  <option value="Pokemon Yellow|gb|roms/Pokemon - Yellow Version (USA, Europe).gbc">Pokemon Yellow</option>
-      <option value="Pokemon Emerald|gba|roms/Pokemon - Emerald Version (USA, Europe).gba">Pokemon Emerald</option>
-      <option value="Pokemon FireRed|gba|roms/1695 - Pokemon Fire Red (U)(Independent).gba">Pokemon FireRed</option>
-      <option value="Pokemon LeafGreen|gba|roms/Pokemon - Leaf Green Version (U) (V1.1).gba">Pokemon LeafGreen</option>
-	  <!-- Punch Out -->
-      <option value="Punch Out|nes|roms/Mike Tyson's Punch-Out!! (Japan, USA).nes">Punch Out</option>
-	  <!-- Sonic -->
-      <option value="Sonic the Hedgehog|segaMD|roms/Sonic The Hedgehog (USA, Europe)">Sonic the Hedgehog</option>
-      <option value="Sonic the Hedgehog 2|segaMD|roms/Sonic The Hedgehog 2 (World) (Rev A)">Sonic the Hedgehog 2</option>
-      <option value="Sonic the Hedgehog 3|segaMD|roms/Sonic The Hedgehog 3 (Europe)">Sonic the Hedgehog 3</option>
-      <option value="Sonic & Knuckles|segaMD|roms/Sonic & Knuckles (World)">Sonic & Knuckles</option>
-      <option value="Sonic Advance|gba|roms/Sonic Advance (USA) (En,Ja).gba">Sonic Advance</option>
-	  <!-- Space Invaders -->
-	  <option value="Space Invaders|arcade|roms/invaders.zip">Space Invaders</option>
-	  <!-- Super Smash Bros -->
-      <option value="Super Smash Bros|n64|roms/Super Smash Bros. (USA).n64">Super Smash Bros</option>
-      <!-- Tetris -->
-      <option value="Tetris (GB)|gb|roms/Tetris.gb">Tetris (GB)</option>
-      <option value="Tetris (NES)|nes|roms/Tetris (USA).nes">Tetris (NES)</option>
-	  <!-- Zelda -->
-      <option value="The Legend of Zelda|nes|roms/Legend of Zelda, The (USA).nes">The Legend of Zelda</option>
-      <option value="A Link to the Past|snes|roms/Legend of Zelda, The - A Link to the Past (USA).sfc">A Link to the Past</option>
-      <option value="Ocarina of Time|n64|roms/Legend of Zelda, The - Ocarina of Time (USA).n64">Ocarina of Time</option>
-      <option value="Majora's Mask|n64|roms/Legend of Zelda, The - Majora's Mask (USA).n64">Majora's Mask</option>
-    </select>
-    <div id="game"></div>
-    <script>
-      function getQueryParam(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-      }
-
-      function loadGame(preselected) {
-        var select = document.getElementById("gameSelector");
-        if (preselected) {
-          select.value = preselected;
-        }
-        if (!select.value) return;
-        stopCurrentGame();
-        document.getElementById("game").innerHTML = "";
-        var selectedGame = select.value.split("|");
-        var gameName = selectedGame[0];
-        var core = selectedGame[1];
-        var gameUrl = selectedGame[2];
-        EJS_player = "#game";
-        EJS_core = core;
-        EJS_gameName = gameName.replace(/_/g, " ");
-        EJS_color = "#0064ff";
-        EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
-        EJS_gameUrl = gameUrl;
-        var existingScript = document.getElementById("emulatorScript");
-        if (existingScript) {
-          existingScript.remove();
-        }
-        var scriptTag = document.createElement("script");
-        scriptTag.src = "https://cdn.emulatorjs.org/stable/data/loader.js";
-        scriptTag.id = "emulatorScript";
-        document.body.appendChild(scriptTag);
-      }
-
-      function stopCurrentGame() {
-        if (typeof Emulator !== 'undefined') {
-          if (Emulator.isRunning()) {
-            Emulator.stop();
-          }
-          Emulator.reset();
-        }
-        clearTimeoutsAndIntervals();
-      }
-
-      function clearTimeoutsAndIntervals() {
-        var highest = setTimeout(() => {});
-        for (var i = 0; i < highest; i++) {
-          clearTimeout(i);
-          clearInterval(i);
-        }
-      }
-
-      function loadGameFromURL() {
-        var gameParam = getQueryParam("g");
-        var hideSelector = getQueryParam("hs");
-        var select = document.getElementById("gameSelector");
-        if (hideSelector === "true") {
-          select.style.display = "none";
-        }
-        if (gameParam) {
-          gameParam = gameParam.replace(/_/g, " ");
-          for (var i = 0; i < select.options.length; i++) {
-            if (select.options[i].text.trim().toLowerCase() === decodeURIComponent(gameParam).trim().toLowerCase()) {
-              select.value = select.options[i].value;
-              loadGame(select.options[i].value);
-              return;
-            }
-          }
-        }
-        document.getElementById("gameSelector").selectedIndex = 0;
-      }
-      window.onload = loadGameFromURL;
-    </script>
+  <body>
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="games.html">Games</a>
+      <a href="emulator.html">Emulator</a>
+      <a href="flash.html">Flash</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="settings.html">Settings</a>
+      <a href="changelog.html">Changelog</a>
+    </div>
+	<iframe src="emulator.html" title="Emulator"></iframe>
   </body>
 </html>
+
