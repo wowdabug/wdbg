@@ -33,16 +33,12 @@
   </style>
 
   <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      window.RufflePlayer = window.RufflePlayer || {};
-      window.RufflePlayer.config = {
-        autoplay: "on"
-      };
-      const ruffle = window.RufflePlayer.newest();
-      ruffle.configure({});
-    });
-  </script>
+<script>
+  window.RufflePlayer = window.RufflePlayer || {};
+  window.RufflePlayer.config = {
+    autoplay: "on"
+  };
+</script>
 </head>
 
   <body>
