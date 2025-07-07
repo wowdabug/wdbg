@@ -60,7 +60,7 @@
         player.setAttribute("autoplay", "true");
         player.setAttribute("allowfullscreen", "true");
         player.style.border = "none";
-        player.load(swfUrl);
+        player.setAttribute("src", swfUrl);
 
         gameContainer.appendChild(player);
       }
