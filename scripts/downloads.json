@@ -19,6 +19,7 @@
       { "title": "Parkour Grid", "link": "files/parkour_grid.mcworld", "image": "../images/parkour_grid.png" },
       { "title": "Skyblock", "link": "files/skyblock.mcworld", "image": "../images/skyblock.png" },
       { "title": "One Block Skyblock", "link": "files/one_block_skyblock.mcworld", "image": "../images/one_block_skyblock.png" },
+      { "title": "Void World", "link": "files/void_world.mcworld", "image": "../images/void_world.png" },
       { "title": "Skywars Compiled 1", "link": "files/skywars_1.mcworld", "image": "../images/skywars_1.png" },
       { "title": "Skywars Compiled 2", "link": "files/skywars_2.mcworld", "image": "../images/skywars_2.png" },
       { "title": "Skywars Compiled 3", "link": "files/skywars_3.mcworld", "image": "../images/skywars_3.png" },

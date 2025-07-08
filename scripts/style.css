@@ -54,10 +54,17 @@ h1 {
   background: #444;
 }
 
-.games-container,
-.downloads-container {
+.games-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.downloads-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 20px;
   padding: 20px;
   justify-content: center;
@@ -96,7 +103,8 @@ h1 {
 
 .game-box a:hover,
 .download-box a:hover,
-.link-box a:hover {
+.link-box a:hover,
+.bigbox a:hover {
   color: #686df2;
 }
 
@@ -261,8 +269,4 @@ button:hover {
   color: #ddd;
   font-weight: bold;
   font-size: 18px;
-}
-
-.bigbox a:hover {
-  color: #686df2;
 }
