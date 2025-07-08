@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WDBG</title>
+    <script src="scripts/title_favicon.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scripts/style.css">
+    <script>
+      function toggleCategory(categoryId) {
+        const content = document.getElementById(categoryId);
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="../index.html">Home</a>
+      <a href="../games">Games</a>
+      <a href="../emulator">Emulator</a>
+      <a href="../downloads">Downloads</a>
+    </div>
+    <h1>Downloads</h1>
+    <div class="category">
+      <h2 onclick="toggleCategory('games-category')">Offline Games</h2>
+      <div class="collapsible-content" id="games-category">
+        <div class="downloads-container">
+          <div class="download-box">
+            <img src="images/appel.png" alt="Appel">
+            <a href="files/appel.html" download>Appel</a>
+          </div>
+          <div class="download-box">
+            <img src="images/mini_golf.png" alt="Mini Golf">
+            <a href="files/mini_golf.html" download>Mini Golf</a>
+          </div>
+          <div class="download-box">
+            <img src="images/paper_minecraft.png" alt="Paper Minecraft">
+            <a href="files/paper_minecraft.html" download>Paper Minecraft</a>
+          </div>
+          <div class="download-box">
+            <img src="images/minecraft_beta_1.3_01.png" alt="Minecraft Beta 1.3_01">
+            <a href="files/minecraft_beta_1.3_01.html" download>Minecraft Beta 1.3_01</a>
+          </div>
+          <div class="download-box">
+            <img src="images/minecraft_1.5.2.png" alt="Minecraft Release 1.5.2">
+            <a href="files/minecraft_1.5.2.html" download>Minecraft Release 1.5.2</a>
+          </div>
+          <div class="download-box">
+            <img src="images/minecraft_1.8.8.png" alt="Minecraft Release 1.8.8">
+            <a href="files/minecraft_1.8.8.html" download>Minecraft Release 1.8.8</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="category">
+      <h2 onclick="toggleCategory('maps-category')">Minecraft Maps</h2>
+      <div class="collapsible-content" id="maps-category">
+        <div class="downloads-container">
+          <div class="download-box">
+            <img src="images/bedwars.png" alt="Bedwars">
+            <a href="files/bedwars.mcworld" download>Bedwars</a>
+          </div>
+          <div class="download-box">
+            <img src="images/medieval_bedwars.png" alt="Medieval Bedwars">
+            <a href="files/medieval_bedwars.mcworld" download>Medieval Bedwars</a>
+          </div>
+          <div class="download-box">
+            <img src="images/parkour_corridor.png" alt="Parkour Corridor">
+            <a href="files/parkour_corridor.mcworld" download>Parkour Corridor</a>
+          </div>
+          <div class="download-box">
+            <img src="images/parkour_grid.png" alt="Parkour Grid">
+            <a href="files/parkour_grid.mcworld" download>Parkour Grid</a>
+          </div>
+          <div class="download-box">
+            <img src="images/skyblock.png" alt="Skyblock">
+            <a href="files/skyblock.mcworld" download>Skyblock</a>
+          </div>
+          <div class="download-box">
+            <img src="images/one_block_skyblock.png" alt="One Block Skyblock">
+            <a href="files/one_block_skyblock.mcworld" download>One Block Skyblock</a>
+          </div>
+          <div class="download-box">
+            <img src="images/skywars_1.png" alt="Skywars Compiled 1">
+            <a href="files/skywars_1.mcworld" download>Skywars Compiled 1</a>
+          </div>
+          <div class="download-box">
+            <img src="images/skywars_2.png" alt="Skywars Compiled 2">
+            <a href="files/skywars_2.mcworld" download>Skywars Compiled 2</a>
+          </div>
+          <div class="download-box">
+            <img src="images/skywars_3.png" alt="Skywars Compiled 3">
+            <a href="files/skywars_3.mcworld" download>Skywars Compiled 3</a>
+          </div>
+          <div class="download-box">
+            <img src="images/lucky_block_skywars.png" alt="Lucky Block Skywars">
+            <a href="files/lucky_block_skywars.mcworld" download>Lucky Block Skywars</a>
+          </div>
+          <div class="download-box">
+            <img src="images/skywars_kits.png" alt="Skywars Kits">
+            <a href="files/skywars_kits.mcworld" download>Skywars Kits</a>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+  </body>
+</html>
