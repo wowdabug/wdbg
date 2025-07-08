@@ -9,7 +9,7 @@
       { "title": "Slope",                      "image": "../images/slope.png",                "link": "slope" },
       { "title": "Slow Roads",                 "image": "../images/slow_roads.png",           "link": "slow_roads" },
       { "title": "Snow Rider",                 "image": "../images/snow_rider.png",           "link": "snow_rider" },
-      { "title": "Big Flappy Tower Tiny Square","image": "../images/big_flappy_tower_tiny_square.png","link":"big_flappy_tower_tiny_square" },
+      { "title": "Big Flappy Tower Tiny Square","image": "../images/big_flappy_tower_tiny_square.png","link":"big_flappy_tower_tiny_square" }
     ]
   },
   {
