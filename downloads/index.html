@@ -2,20 +2,10 @@
 <html lang="en">
   <head>
     <title>WDBG</title>
-    <script src="../scripts/main.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../scripts/style.css">
-    <script>
-      function toggleCategory(categoryId) {
-        const content = document.getElementById(categoryId);
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      }
-    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../scripts/style.css" />
+    <script src="../scripts/main.js" defer></script>
   </head>
   <body>
     <div class="navbar">
@@ -25,11 +15,11 @@
       <a href="../downloads">Downloads</a>
     </div>
     <h1>Downloads</h1>
-    <div id="game-container"></div>
+    <div id="downloads-container"></div>
     <script>
       function toggleCategory(header) {
-        let gamesContainer = header.nextElementSibling;
-        gamesContainer.style.display = gamesContainer.style.display === "grid" ? "none" : "grid";
+        const content = header.nextElementSibling;
+        content.style.display = content.style.display === "grid" ? "none" : "grid";
       }
       async function loadGames() {
         const response = await fetch("../scripts/downloads.json");
@@ -41,20 +31,21 @@
           const header = document.createElement("h2");
           header.textContent = category.category;
           header.onclick = () => toggleCategory(header);
-          const gamesContainer = document.createElement("div");
-          gamesContainer.className = "downloads-container";
-          category.games.forEach(game => {
-            const gameBox = document.createElement("div");
-            gameBox.className = "download-box";
-            gameBox.innerHTML = `
-            
-						<img src="${game.image}" alt="${game.title}">
-							<a href="${game.link}">${game.title}</a>
-          `;
-            gamesContainer.appendChild(gameBox);
+          const downloadsContainer = document.createElement("div");
+          downloadsContainer.className = "downloads-container";
+          downloadsContainer.style.display = "grid";
+          category.downloads.forEach(item => {
+            const downloadBox = document.createElement("div");
+            downloadBox.className = "download-box";
+            downloadBox.innerHTML = `
+          
+			<img src="${item.image}" alt="${item.title}">
+				<a href="${item.link}" download>${item.title}</a>
+        `;
+            downloadsContainer.appendChild(downloadBox);
           });
           section.appendChild(header);
-          section.appendChild(gamesContainer);
+          section.appendChild(downloadsContainer);
           container.appendChild(section);
         });
       }
