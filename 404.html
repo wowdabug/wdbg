@@ -84,7 +84,6 @@
       const overlay = document.getElementById('overlay');
       const cells = [];
       const gridSize = 16;
-      let inputQueue = [];
       let snake = [0];
       let direction = 1;
       let nextDirection = 1;
@@ -111,10 +110,7 @@
       }
 
       function move() {
-        if (inputQueue.length > 0) {
-          const newDir = inputQueue.shift();
-          if (newDir !== -direction) direction = newDir;
-        }
+        direction = nextDirection;
         const head = snake[snake.length - 1];
         let next = head + direction;
         if (direction === 1 && (head % gridSize) === gridSize - 1) next = head - (gridSize - 1);
@@ -138,15 +134,10 @@
       function changeDirection(e) {
         if (!running) return;
         const key = e.key;
-        let newDir = null;
-        if ((key === 'ArrowUp' || key === 'w') && direction !== gridSize) newDir = -gridSize;
-        if ((key === 'ArrowDown' || key === 's') && direction !== -gridSize) newDir = gridSize;
-        if ((key === 'ArrowLeft' || key === 'a') && direction !== 1) newDir = -1;
-        if ((key === 'ArrowRight' || key === 'd') && direction !== -1) newDir = 1;
-        if (newDir !== null) {
-          const lastDir = inputQueue.length > 0 ? inputQueue[inputQueue.length - 1] : direction;
-          if (newDir !== -lastDir) inputQueue.push(newDir);
-        }
+        if ((key === 'ArrowUp' || key === 'w') && direction !== gridSize) nextDirection = -gridSize;
+        if ((key === 'ArrowDown' || key === 's') && direction !== -gridSize) nextDirection = gridSize;
+        if ((key === 'ArrowLeft' || key === 'a') && direction !== 1) nextDirection = -1;
+        if ((key === 'ArrowRight' || key === 'd') && direction !== -1) nextDirection = 1;
       }
 
       function startGame() {
