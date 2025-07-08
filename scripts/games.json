@@ -2,115 +2,115 @@
   {
     "category": "Featured Games",
     "games": [
-      { "title": "2048",                       "image": "../images/2048.png",                 "link": "2048" },
+      { "title": "2048", "image": "../images/2048.png", "link": "2048" },
       { "title": "Big Flappy Tower Tiny Square","image": "../images/big_flappy_tower_tiny_square.png","link":"big_flappy_tower_tiny_square" },
-      { "title": "Cookie Clicker",             "image": "../images/cookie_clicker.png",       "link": "cookie_clicker" },
-      { "title": "PolyTrack",                  "image": "../images/polytrack.png",            "link": "polytrack" },
-      { "title": "Retro Bowl",                 "image": "../images/retro_bowl.png",           "link": "retro_bowl" },
-      { "title": "Slope",                      "image": "../images/slope.png",                "link": "slope" },
-      { "title": "Slow Roads",                 "image": "../images/slow_roads.png",           "link": "slow_roads" },
-      { "title": "Snow Rider",                 "image": "../images/snow_rider.png",           "link": "snow_rider" }
+      { "title": "Cookie Clicker", "image": "../images/cookie_clicker.png", "link": "cookie_clicker" },
+      { "title": "PolyTrack", "image": "../images/polytrack.png", "link": "polytrack" },
+      { "title": "Retro Bowl", "image": "../images/retro_bowl.png", "link": "retro_bowl" },
+      { "title": "Slope", "image": "../images/slope.png", "link": "slope" },
+      { "title": "Slow Roads", "image": "../images/slow_roads.png", "link": "slow_roads" },
+      { "title": "Snow Rider", "image": "../images/snow_rider.png", "link": "snow_rider" }
     ]
   },
   {
     "category": "Other Games",
     "games": [
-      { "title": "Asteroids",                  "image": "../images/asteroids.png",            "link": "asteroids" },
-      { "title": "Baldi's Basics",             "image": "../images/baldis_basics.png",        "link": "baldis_basics" },
-      { "title": "Champion Island",            "image": "../images/champion_island.png",      "link": "champion_island" },
-      { "title": "ClassiCube",                 "image": "../images/classicube.png",           "link": "classicube" },
-      { "title": "Death Run",                  "image": "../images/death_run.png",            "link": "death_run" },
-      { "title": "Dino",                       "image": "../images/dino.png",                 "link": "dino" },
-      { "title": "Dodge",                      "image": "../images/dodge.png",                "link": "dodge" },
-      { "title": "Doodle Jump",                "image": "../images/doodle_jump.png",          "link": "doodle_jump" },
-      { "title": "Happy Wheels",               "image": "../images/happy_wheels.png",         "link": "happy_wheels" },
-      { "title": "Magic Cat Academy",          "image": "../images/magic_cat_academy.png",    "link": "magic_cat_academy" },
-      { "title": "Mini Golf",                  "image": "../images/mini_golf.png",            "link": "mini_golf" },
-      { "title": "Plug Away",                  "image": "../images/plug_away.png",            "link": "plug_away" },
-      { "title": "Plug Away 2",                "image": "../images/plug_away_2.png",          "link": "plug_away_2" },
-      { "title": "PolyTrack",                  "image": "../images/polytrack.png",            "link": "polytrack" },
-      { "title": "Retro Flight Sim",           "image": "../images/retro_flight_sim.png",     "link": "retro_flight_sim/dist" },
-      { "title": "Sandboxels",                 "image": "../images/sandboxels.png",           "link": "sandboxels" },
-      { "title": "Scratch Flight Sim",         "image": "../images/scratch_flight_sim.png",   "link": "scratch_flight_sim" },
-      { "title": "Slope",                      "image": "../images/slope.png",                "link": "slope" },
-      { "title": "Slow Roads",                 "image": "../images/slow_roads.png",           "link": "slow_roads" },
-      { "title": "Snow Rider 3D",              "image": "../images/snow_rider.png",           "link": "snow_rider" },
-      { "title": "Stack",                      "image": "../images/stack.png",                "link": "stack" },
-      { "title": "Stickman Hook",              "image": "../images/stickman_hook.png",        "link": "stickman_hook" },
-      { "title": "Surf",                       "image": "../images/surf.png",                 "link": "surf" }
+      {"title":"Asteroids","image":"../images/asteroids.png","link":"asteroids"},
+      {"title":"Baldi'sBasics","image":"../images/baldis_basics.png","link":"baldis_basics"},
+      {"title":"ChampionIsland","image":"../images/champion_island.png","link":"champion_island"},
+      {"title":"ClassiCube","image":"../images/classicube.png","link":"classicube"},
+      {"title":"DeathRun","image":"../images/death_run.png","link":"death_run"},
+      {"title":"Dino","image":"../images/dino.png","link":"dino"},
+      {"title":"Dodge","image":"../images/dodge.png","link":"dodge"},
+      {"title":"DoodleJump","image":"../images/doodle_jump.png","link":"doodle_jump"},
+      {"title":"HappyWheels","image":"../images/happy_wheels.png","link":"happy_wheels"},
+      {"title":"MagicCatAcademy","image":"../images/magic_cat_academy.png","link":"magic_cat_academy"},
+      {"title":"MiniGolf","image":"../images/mini_golf.png","link":"mini_golf"},
+      {"title":"PlugAway","image":"../images/plug_away.png","link":"plug_away"},
+      {"title":"PlugAway2","image":"../images/plug_away_2.png","link":"plug_away_2"},
+      {"title":"PolyTrack","image":"../images/polytrack.png","link":"polytrack"},
+      {"title":"RetroFlightSim","image":"../images/retro_flight_sim.png","link":"retro_flight_sim/dist"},
+      {"title":"Sandboxels","image":"../images/sandboxels.png","link":"sandboxels"},
+      {"title":"ScratchFlightSim","image":"../images/scratch_flight_sim.png","link":"scratch_flight_sim"},
+      {"title":"Slope","image":"../images/slope.png","link":"slope"},
+      {"title":"SlowRoads","image":"../images/slow_roads.png","link":"slow_roads"},
+      {"title":"SnowRider3D","image":"../images/snow_rider.png","link":"snow_rider"},
+      {"title":"Stack","image":"../images/stack.png","link":"stack"},
+      {"title":"StickmanHook","image":"../images/stickman_hook.png","link":"stickman_hook"},
+      {"title":"Surf","image":"../images/surf.png","link":"surf"}
     ]
   },
   {
     "category": "Puzzle & Strategy Games",
     "games": [
-      { "title": "2048",                       "image": "../images/2048.png",                 "link": "2048" },
-      { "title": "Angry Birds",                "image": "../images/angry_birds.png",          "link": "angry_birds" },
-      { "title": "Countries Quiz",             "image": "../images/countries_quiz.png",       "link": "countries_quiz" },
-      { "title": "Bitlife",                    "image": "../images/bitlife.png",              "link": "bitlife" },
-      { "title": "Bloxorz",                    "image": "../images/bloxorz.png",              "link": "bloxorz" },
-      { "title": "Minesweeper",                "image": "../images/minesweeper.png",          "link": "minesweeper" },
-      { "title": "TWHG",                       "image": "../images/twhg.png",                 "link": "twhg" },
-      { "title": "TWHG 2",                     "image": "../images/twhg_2.png",               "link": "twhg_2" },
-      { "title": "Wordle",                     "image": "../images/wordle.png",               "link": "wordle" },
-      { "title": "Worldle",                    "image": "../images/worldle.png",              "link": "worldle" }
+      {"title":"2048","image":"../images/2048.png","link":"2048"},
+      {"title":"AngryBirds","image":"../images/angry_birds.png","link":"angry_birds"},
+      {"title":"CountriesQuiz","image":"../images/countries_quiz.png","link":"countries_quiz"},
+      {"title":"Bitlife","image":"../images/bitlife.png","link":"bitlife"},
+      {"title":"Bloxorz","image":"../images/bloxorz.png","link":"bloxorz"},
+      {"title":"Minesweeper","image":"../images/minesweeper.png","link":"minesweeper"},
+      {"title":"TWHG","image":"../images/twhg.png","link":"twhg"},
+      {"title":"TWHG2","image":"../images/twhg_2.png","link":"twhg_2"},
+      {"title":"Wordle","image":"../images/wordle.png","link":"wordle"},
+      {"title":"Worldle","image":"../images/worldle.png","link":"worldle"}
     ]
   },
   {
     "category": "Platformer Games",
     "games": [
-      { "title": "Appel",                      "image": "../images/appel.png",                "link": "appel" },
-      { "title": "Big Flappy Tower Tiny Square","image": "../images/big_flappy_tower_tiny_square.png","link":"big_flappy_tower_tiny_square" },
-      { "title": "Big Tower Tiny Square",      "image": "../images/big_tower_tiny_square.png","link":"big_tower_tiny_square" },
-      { "title": "Big Tower Tiny Square 2",    "image": "../images/big_tower_tiny_square_2.png","link":"big_tower_tiny_square_2" },
-      { "title": "Just a Platformer",          "image": "../images/just_a_platformer.png",    "link": "just_a_platformer" },
-      { "title": "Level Devil",                "image": "../images/level_devil.png",          "link": "level_devil" },
-      { "title": "OvO",                        "image": "../images/ovo.png",                  "link": "ovo" },
-      { "title": "Run 3",                      "image": "../images/run_3.png",                "link": "run_3" }
+      {"title":"Appel","image":"../images/appel.png","link":"appel"},
+      {"title":"BigFlappyTowerTinySquare","image":"../images/big_flappy_tower_tiny_square.png","link":"big_flappy_tower_tiny_square"},
+      {"title":"BigTowerTinySquare","image":"../images/big_tower_tiny_square.png","link":"big_tower_tiny_square"},
+      {"title":"BigTowerTinySquare2","image":"../images/big_tower_tiny_square_2.png","link":"big_tower_tiny_square_2"},
+      {"title":"JustaPlatformer","image":"../images/just_a_platformer.png","link":"just_a_platformer"},
+      {"title":"LevelDevil","image":"../images/level_devil.png","link":"level_devil"},
+      {"title":"OvO","image":"../images/ovo.png","link":"ovo"},
+      {"title":"Run3","image":"../images/run_3.png","link":"run_3"}
     ]
   },
   {
     "category": "Sports Games",
     "games": [
-      { "title": "Basket Random",              "image": "../images/basket_random.png",        "link": "basket_random" },
-      { "title": "Pen Football",               "image": "../images/pen_football.png",         "link": "pen_football" },
-      { "title": "Retro Bowl",                 "image": "../images/retro_bowl.png",           "link": "retro_bowl" },
-      { "title": "Soccer Random",              "image": "../images/soccer_random.png",        "link": "soccer_random" },
-      { "title": "Volley Random",              "image": "../images/volley_random.png",        "link": "volley_random" }
+      {"title":"BasketRandom","image":"../images/basket_random.png","link":"basket_random"},
+      {"title":"PenFootball","image":"../images/pen_football.png","link":"pen_football"},
+      {"title":"RetroBowl","image":"../images/retro_bowl.png","link":"retro_bowl"},
+      {"title":"SoccerRandom","image":"../images/soccer_random.png","link":"soccer_random"},
+      {"title":"VolleyRandom","image":"../images/volley_random.png","link":"volley_random"}
     ]
   },
   {
     "category": "Idle Games",
     "games": [
-      { "title": "Babel Tower",                "image": "../images/babel_tower.png",          "link": "babel_tower" },
-      { "title": "Cookie Clicker",             "image": "../images/cookie_clicker.png",       "link": "cookie_clicker" },
-      { "title": "HexaClicker",                "image": "../images/hexaclicker.png",         "link": "hexaclicker" },
-      { "title": "Idle Breakout",              "image": "../images/idle_breakout.png",        "link": "idle_breakout" },
-      { "title": "Idle Dice",                  "image": "../images/idle_dice.png",            "link": "idle_dice" },
-      { "title": "Mr. Mine",                   "image": "../images/mr_mine.png",              "link": "mr_mine" },
-      { "title": "Pixels Filling Squares",     "image": "../images/pixels_filling_squares.png","link":"pixels_filling_squares" },
-      { "title": "Planet Clicker",             "image": "../images/planet_clicker.png",       "link": "planet_clicker" },
-      { "title": "Spacebar Clicker",           "image": "../images/spacebar_clicker.png",     "link": "spacebar_clicker" },
-      { "title": "The Final Earth 2",          "image": "../images/the_final_earth_2.png",    "link": "the_final_earth_2" }
+      {"title":"BabelTower","image":"../images/babel_tower.png","link":"babel_tower"},
+      {"title":"CookieClicker","image":"../images/cookie_clicker.png","link":"cookie_clicker"},
+      {"title":"HexaClicker","image":"../images/hexaclicker.png","link":"hexaclicker"},
+      {"title":"IdleBreakout","image":"../images/idle_breakout.png","link":"idle_breakout"},
+      {"title":"IdleDice","image":"../images/idle_dice.png","link":"idle_dice"},
+      {"title":"Mr.Mine","image":"../images/mr_mine.png","link":"mr_mine"},
+      {"title":"PixelsFillingSquares","image":"../images/pixels_filling_squares.png","link":"pixels_filling_squares"},
+      {"title":"PlanetClicker","image":"../images/planet_clicker.png","link":"planet_clicker"},
+      {"title":"SpacebarClicker","image":"../images/spacebar_clicker.png","link":"spacebar_clicker"},
+      {"title":"TheFinalEarth2","image":"../images/the_final_earth_2.png","link":"the_final_earth_2"}
     ]
   },
   {
     "category": "Beta Games",
     "games": [
-      { "title": "ADOFAI",                     "image": "../images/a_dance_of_fire_and_ice.png","link":"a_dance_of_fire_and_ice" },
-      { "title": "Battleship",                 "image": "../images/battleship.png",           "link": "battleship" },
-      { "title": "BTD5",                       "image": "../images/btd5.png",                 "link": "btd5" },
-      { "title": "CircloO",                    "image": "../images/circloo.png",              "link": "circloo" },
-      { "title": "Crazy Cattle 3D",            "image": "../images/crazy_cattle.png",         "link": "crazy_cattle" },
-      { "title": "FNAF 🔗",                    "image": "../images/fnaf.png",                 "link": "https://wowdabug.github.io/fnaf/" },
-      { "title": "Globle",                     "image": "../images/globle.png",               "link": "globle" },
-      { "title": "Granny",                     "image": "../images/granny.png",               "link": "granny" },
-      { "title": "Handulum+",                  "image": "../images/handulum+.png",            "link": "handulum+" },
-      { "title": "Moto X3M",                   "image": "../images/moto_x3m.png",             "link": "moto_x3m" },
-      { "title": "Sand Game",                  "image": "../images/sand_game.png",            "link": "sand_game" },
-      { "title": "Tag",                        "image": "../images/tag.png",                  "link": "tag" },
-      { "title": "The Binding of Issac",       "image": "../images/the_binding_of_issac.png","link":"the_binding_of_issac" },
-      { "title": "The Fancy Pants Adventure",  "image": "../images/the_fancy_pants_adventure.png","link":"the_fancy_pants_adventure" },
-      { "title": "The Henry Stickmin Collection","image":"../images/the_henry_stickmin_collection.png","link":"the_henry_stickmin_collection" }
+      {"title":"ADOFAI","image":"../images/a_dance_of_fire_and_ice.png","link":"a_dance_of_fire_and_ice"},
+      {"title":"Battleship","image":"../images/battleship.png","link":"battleship"},
+      {"title":"BTD5","image":"../images/btd5.png","link":"btd5"},
+      {"title":"CircloO","image":"../images/circloo.png","link":"circloo"},
+      {"title":"CrazyCattle3D","image":"../images/crazy_cattle.png","link":"crazy_cattle"},
+      {"title":"FNAF🔗","image":"../images/fnaf.png","link":"https://wowdabug.github.io/fnaf/"},
+      {"title":"Globle","image":"../images/globle.png","link":"globle"},
+      {"title":"Granny","image":"../images/granny.png","link":"granny"},
+      {"title":"Handulum+","image":"../images/handulum+.png","link":"handulum+"},
+      {"title":"MotoX3M","image":"../images/moto_x3m.png","link":"moto_x3m"},
+      {"title":"SandGame","image":"../images/sand_game.png","link":"sand_game"},
+      {"title":"Tag","image":"../images/tag.png","link":"tag"},
+      {"title":"TheBindingofIssac","image":"../images/the_binding_of_issac.png","link":"the_binding_of_issac"},
+      {"title":"TheFancyPantsAdventure","image":"../images/the_fancy_pants_adventure.png","link":"the_fancy_pants_adventure"},
+      {"title":"TheHenryStickminCollection","image":"../images/the_henry_stickmin_collection.png","link":"the_henry_stickmin_collection"}
     ]
   }
 ]

@@ -14,46 +14,41 @@
       <a href="../emulator">Emulator</a>
       <a href="../downloads">Downloads</a>
     </div>
-  <div id="game-container"></div>
-  <script>
-    function toggleCategory(header) {
-      let gamesContainer = header.nextElementSibling;
-      gamesContainer.style.display = gamesContainer.style.display === "grid" ? "none" : "grid";
-    }
-
-    async function loadGames() {
-      const response = await fetch("../scripts/games.json");
-      const data = await response.json();
-      const container = document.getElementById("game-container");
-
-      data.forEach(category => {
-        const section = document.createElement("div");
-        section.className = "category";
-
-        const header = document.createElement("h2");
-        header.textContent = category.category;
-        header.onclick = () => toggleCategory(header);
-
-        const gamesContainer = document.createElement("div");
-        gamesContainer.className = "games-container";
-
-        category.games.forEach(game => {
-          const gameBox = document.createElement("div");
-          gameBox.className = "game-box";
-          gameBox.innerHTML = `
-            <img src="${game.image}" alt="${game.title}">
-            <a href="${game.link}">${game.title}</a>
+    <h1>Games</h1>
+    <div id="game-container"></div>
+    <script>
+      function toggleCategory(header) {
+        let gamesContainer = header.nextElementSibling;
+        gamesContainer.style.display = gamesContainer.style.display === "grid" ? "none" : "grid";
+      }
+      async function loadGames() {
+        const response = await fetch("../scripts/games.json");
+        const data = await response.json();
+        const container = document.getElementById("game-container");
+        data.forEach(category => {
+          const section = document.createElement("div");
+          section.className = "category";
+          const header = document.createElement("h2");
+          header.textContent = category.category;
+          header.onclick = () => toggleCategory(header);
+          const gamesContainer = document.createElement("div");
+          gamesContainer.className = "games-container";
+          category.games.forEach(game => {
+            const gameBox = document.createElement("div");
+            gameBox.className = "game-box";
+            gameBox.innerHTML = `
+            
+						<img src="${game.image}" alt="${game.title}">
+							<a href="${game.link}">${game.title}</a>
           `;
-          gamesContainer.appendChild(gameBox);
+            gamesContainer.appendChild(gameBox);
+          });
+          section.appendChild(header);
+          section.appendChild(gamesContainer);
+          container.appendChild(section);
         });
-
-        section.appendChild(header);
-        section.appendChild(gamesContainer);
-        container.appendChild(section);
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", loadGames);
-  </script>
+      }
+      document.addEventListener("DOMContentLoaded", loadGames);
+    </script>
   </body>
 </html>
