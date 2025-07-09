@@ -33,7 +33,7 @@
           header.onclick = () => toggleCategory(header);
           const downloadsContainer = document.createElement("div");
           downloadsContainer.className = "downloads-container";
-          downloadsContainer.style.display = "grid";
+          downloadsContainer.style.display = "none";
           category.downloads.forEach(item => {
             const downloadBox = document.createElement("div");
             downloadBox.className = "download-box";
