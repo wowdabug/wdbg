@@ -25,14 +25,6 @@
         <input type="text" id="faviconInput" placeholder="https://wowdabug.github.io/wdbg/images/favicon.png">
       </div>
       <div class="setting-group">
-        <label for="panicKeyInput">Panic Keybind</label>
-        <input type="text" id="panicKeyInput" placeholder="" readonly>
-      </div>
-      <div class="setting-group">
-        <label>Panic Keybind URL</label>
-        <input type="text" id="panicUrlInput" placeholder="">
-      </div>
-      <div class="setting-group">
         <label>Title and Favicon URL Presets</label>
         <div class="preset-buttons">
           <button onclick="applyPreset('', '')">Default</button>
@@ -41,6 +33,14 @@
           <button onclick="applyPreset('Classlink', 'https://myapps.classlink.com/favicon.ico')">Classlink</button>
           <button onclick="applyPreset('Schoology', 'https://www.powerschool.com/favicon.ico')">Schoology</button>
         </div>
+      </div>
+      <div class="setting-group">
+        <label for="panicKeyInput">Panic Keybind</label>
+        <input type="text" id="panicKeyInput" placeholder="" readonly>
+      </div>
+      <div class="setting-group">
+        <label>Panic Keybind URL</label>
+        <input type="text" id="panicUrlInput" placeholder="">
       </div>
       <div class="setting-group">
         <label>Panic Keybind URL Presets</label>
@@ -52,18 +52,97 @@
           <button onclick="applyPanicPreset('', 'https://mnps.schoology.com/home')">Schoology</button>
         </div>
       </div>
+      <div class="setting-group">
+        <label for="urlAngryBirds">Angry Birds URL</label>
+        <input type="text" id="urlAngryBirds" placeholder="">
+      </div>
+      <div class="setting-group">
+        <label for="urlBrotato">Brotato URL</label>
+        <input type="text" id="urlBrotato" placeholder="">
+      </div>
+      <div class="setting-group">
+        <label for="urlChampionIsland">Champion Island URL</label>
+        <input type="text" id="urlChampionIsland" placeholder="">
+      </div>
+      <div class="setting-group">
+        <label for="urlCrazyCattle">Crazy Cattle 3D URL</label>
+        <input type="text" id="urlCrazyCattle" placeholder="">
+      </div>
+      <div class="setting-group">
+        <label for="urlFnaf">FNaF URL</label>
+        <input type="text" id="urlFnaf" placeholder="">
+      </div>
+      <div class="setting-group">
+        <label for="urlGranny">Granny URL</label>
+        <input type="text" id="urlGranny" placeholder="">
+      </div>
+      <div class="setting-group">
+        <label for="urlJustAPlatformer">Just A Platformer URL</label>
+        <input type="text" id="urlJustAPlatformer" placeholder="">
+      </div>
+      <div class="setting-group">
+        <label for="urlOvo">OvO URL</label>
+        <input type="text" id="urlOvo" placeholder="">
+      </div>
+      <div class="setting-group">
+        <label for="urlPeoplePlayground">People Playground URL</label>
+        <input type="text" id="urlPeoplePlayground" placeholder="">
+      </div>
+      <div class="setting-group">
+        <label for="urlPolytrack">Polytrack URL</label>
+        <input type="text" id="urlPolytrack" placeholder="">
+      </div>
+      <div class="setting-group">
+        <label for="urlRun3">Run 3 URL</label>
+        <input type="text" id="urlRun3" placeholder="">
+      </div>
+      <div class="setting-group">
+        <label for="urlHenryStickmin">The Henry Stickmin Collection URL</label>
+        <input type="text" id="urlHenryStickmin" placeholder="">
+      </div>
+      <div class="setting-group">
+        <label>Game URL Presets</label>
+        <div class="preset-buttons">
+          <button onclick="applyGameUrlPreset('default')">Default</button>
+        </div>
+      </div>
       <button onclick="saveSettings()">Save Settings</button>
     </div>
     <script>
       function saveSettings() {
-        const title = document.getElementById('titleInput').value;
-        const favicon = document.getElementById('faviconInput').value;
-        const panicKey = document.getElementById('panicKeyInput').value;
-        const panicUrl = document.getElementById('panicUrlInput').value;
-        localStorage.setItem('customTitle', title);
-        localStorage.setItem('customFavicon', favicon);
-        localStorage.setItem('panicKey', panicKey);
-        localStorage.setItem('panicUrl', panicUrl);
+        localStorage.setItem('customTitle', document.getElementById('titleInput').value);
+        localStorage.setItem('customFavicon', document.getElementById('faviconInput').value);
+        localStorage.setItem('panicKey', document.getElementById('panicKeyInput').value);
+        localStorage.setItem('panicUrl', document.getElementById('panicUrlInput').value);
+        localStorage.setItem('urlAngryBirds', document.getElementById('urlAngryBirds').value);
+        localStorage.setItem('urlBrotato', document.getElementById('urlBrotato').value);
+        localStorage.setItem('urlChampionIsland', document.getElementById('urlChampionIsland').value);
+        localStorage.setItem('urlCrazyCattle', document.getElementById('urlCrazyCattle').value);
+        localStorage.setItem('urlFnaf', document.getElementById('urlFnaf').value);
+        localStorage.setItem('urlGranny', document.getElementById('urlGranny').value);
+        localStorage.setItem('urlJustAPlatformer', document.getElementById('urlJustAPlatformer').value);
+        localStorage.setItem('urlOvo', document.getElementById('urlOvo').value);
+        localStorage.setItem('urlPeoplePlayground', document.getElementById('urlPeoplePlayground').value);
+        localStorage.setItem('urlPolytrack', document.getElementById('urlPolytrack').value);
+        localStorage.setItem('urlRun3', document.getElementById('urlRun3').value);
+        localStorage.setItem('urlHenryStickmin', document.getElementById('urlHenryStickmin').value);
+      }
+
+      function applyGameUrlPreset(preset) {
+        if (preset === 'default') {
+          document.getElementById('urlAngryBirds').value = '';
+          document.getElementById('urlBrotato').value = '';
+          document.getElementById('urlChampionIsland').value = '';
+          document.getElementById('urlCrazyCattle').value = '';
+          document.getElementById('urlFnaf').value = '';
+          document.getElementById('urlGranny').value = '';
+          document.getElementById('urlJustAPlatformer').value = '';
+          document.getElementById('urlOvo').value = '';
+          document.getElementById('urlPeoplePlayground').value = '';
+          document.getElementById('urlPolytrack').value = '';
+          document.getElementById('urlRun3').value = '';
+          document.getElementById('urlHenryStickmin').value = '';
+        }
       }
 
       function applyPreset(title, favicon) {
@@ -83,6 +162,18 @@
         const savedFavicon = localStorage.getItem('customFavicon');
         const savedPanicKey = localStorage.getItem('panicKey');
         const savedPanicUrl = localStorage.getItem('panicUrl');
+        document.getElementById('urlAngryBirds').value = localStorage.getItem('urlAngryBirds') || 'https://wowdabug.github.io/s2/angry_birds/';
+        document.getElementById('urlBrotato').value = localStorage.getItem('urlBrotato') || 'https://wowdabug.github.io/s1/brotato/';
+        document.getElementById('urlChampionIsland').value = localStorage.getItem('urlChampionIsland') || 'https://wowdabug.github.io/s2/champion_island/';
+        document.getElementById('urlCrazyCattle').value = localStorage.getItem('urlCrazyCattle') || 'https://wowdabug.github.io/s1/crazy_cattle/';
+        document.getElementById('urlFnaf').value = localStorage.getItem('urlFnaf') || 'https://wowdabug.github.io/s3/';
+        document.getElementById('urlGranny').value = localStorage.getItem('urlGranny') || 'https://wowdabug.github.io/s2/granny/';
+        document.getElementById('urlJustAPlatformer').value = localStorage.getItem('urlJustAPlatformer') || 'https://wowdabug.github.io/s2/just_a_platformer/';
+        document.getElementById('urlOvo').value = localStorage.getItem('urlOvo') || 'https://wowdabug.github.io/s2/ovo/';
+        document.getElementById('urlPeoplePlayground').value = localStorage.getItem('urlPeoplePlayground') || 'https://wowdabug.github.io/s1/people_playground/';
+        document.getElementById('urlPolytrack').value = localStorage.getItem('urlPolytrack') || 'https://wowdabug.github.io/s2/polytrack/';
+        document.getElementById('urlRun3').value = localStorage.getItem('urlRun3') || 'https://wowdabug.github.io/s2/run_3/';
+        document.getElementById('urlHenryStickmin').value = localStorage.getItem('urlHenryStickmin') || 'https://wowdabug.github.io/s2/the_henry_stickmin_collection/';
         if (savedTitle) titleInput.value = savedTitle;
         if (savedFavicon) faviconInput.value = savedFavicon;
         if (savedPanicKey) panicKeyInput.value = savedPanicKey;
