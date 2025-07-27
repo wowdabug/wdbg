@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game Loader</title>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/ruffle.js"></script>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      #controls {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="controls">
+      <select id="gameSelect">
+        <option value="">Select a game</option>
+	    <!-- Bloons Tower Defense 5 -->
+        <option value="swfs/btd5.swf">BTD5</option>
+	    <!-- Bloxorz -->
+        <option value="swfs/bloxorz.swf">Bloxorz</option>
+	    <!-- Happy Wheels -->
+        <option value="swfs/happy_wheels.swf">Happy Wheels</option>
+	    <!-- The Binding of Issac -->
+        <option value="swfs/happy_wheels.swf">The Binding of Issac</option>
+	    <!-- The Fancy Pants Adventure -->
+        <option value="swfs/happy_wheels.swf">The Fancy Pants Adventure</option>
+	    <!-- The Henry Stickmin Collection -->
+        <option value="swfs/breaking_the_bank.swf">Breaking the Bank</option>
+        <option value="swfs/escaping_the_prison.swf">Escaping the Prison</option>
+        <option value="swfs/stealing_the_diamond.swf">Stealing the Diamond</option>
+        <option value="swfs/Infiltrating_the_airship.swf">Infiltrating the Airship</option>
+        <option value="swfs/fleeing_the_complex.swf">Fleeing the Complex</option>
+      </select>
+      <button onclick="loadGame()">Play</button>
+    </div>
+    <div id="gameContainer" style="text-align:center; margin-top:60px;"></div>
+    <script>
+      function loadGame() {
+        const game = document.getElementById("gameSelect").value;
+        if (!game) return;
+        const container = document.getElementById("gameContainer");
+        container.innerHTML = `
+
+			<embed src="${game}.swf" width="850" height="600"></embed>
+      `;
+      }
+    </script>
+  </body>
+</html>

@@ -23,7 +23,6 @@
       {"title":"Dino","image":"../images/dino.png","link":"dino"},
       {"title":"Dodge","image":"../images/dodge.png","link":"dodge"},
       {"title":"Doodle Jump","image":"../images/doodle_jump.png","link":"doodle_jump"},
-      {"title":"Happy Wheels","image":"../images/happy_wheels.png","link":"happy_wheels"},
       {"title":"Magic Cat Academy","image":"../images/magic_cat_academy.png","link":"magic_cat_academy"},
       {"title":"Mini Golf","image":"../images/mini_golf.png","link":"mini_golf"},
       {"title":"Plug Away","image":"../images/plug_away.png","link":"plug_away"},
@@ -47,7 +46,6 @@
       {"title":"Angry Birds","image":"../images/angry_birds.png","link":"angry_birds"},
       {"title":"Countries Quiz","image":"../images/countries_quiz.png","link":"countries_quiz"},
       {"title":"Bitlife","image":"../images/bitlife.png","link":"bitlife"},
-      {"title":"Bloxorz","image":"../images/bloxorz.png","link":"bloxorz"},
       {"title":"Minesweeper","image":"../images/minesweeper.png","link":"minesweeper"},
       {"title":"TWHG","image":"../images/twhg.png","link":"twhg"},
       {"title":"TWHG 2","image":"../images/twhg_2.png","link":"twhg_2"},
@@ -98,19 +96,19 @@
     "games": [
       {"title":"ADOFAI","image":"../images/a_dance_of_fire_and_ice.png","link":"a_dance_of_fire_and_ice"},
       {"title":"Battleship","image":"../images/battleship.png","link":"battleship"},
-      {"title":"BTD5","image":"../images/btd5.png","link":"btd5"},
+      {"title":"Brotato","image":"../images/brotato.png","link":"brotato"},
       {"title":"CircloO","image":"../images/circloo.png","link":"circloo"},
       {"title":"Crazy Cattle 3D","image":"../images/crazy_cattle.png","link":"crazy_cattle"},
-      {"title":"FNAF🔗","image":"../images/fnaf.png","link":"https://wowdabug.github.io/fnaf/"},
+      {"title":"FNAF","image":"../images/fnaf.png","link":"fnaf"},
       {"title":"Globle","image":"../images/globle.png","link":"globle"},
       {"title":"Granny","image":"../images/granny.png","link":"granny"},
       {"title":"Handulum+","image":"../images/handulum+.png","link":"handulum+"},
       {"title":"Moto X3M","image":"../images/moto_x3m.png","link":"moto_x3m"},
+      {"title":"People Playground","image":"../images/people_playground.png","link":"people_playground"},
       {"title":"Sand Game","image":"../images/sand_game.png","link":"sand_game"},
       {"title":"Tag","image":"../images/tag.png","link":"tag"},
-      {"title":"The Binding of Issac","image":"../images/the_binding_of_issac.png","link":"the_binding_of_issac"},
-      {"title":"The Fancy Pants Adventure","image":"../images/the_fancy_pants_adventure.png","link":"the_fancy_pants_adventure"},
-      {"title":"The Henry Stickmin Collection","image":"../images/the_henry_stickmin_collection.png","link":"the_henry_stickmin_collection"}
+      {"title":"Undertale","image":"../images/undertale.png","link":"undertale"},
+      {"title":"Universal Paperclips","image":"../images/universal_paperclips.png","link":"universal_paperclips"}
     ]
   }
 ]
