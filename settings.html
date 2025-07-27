@@ -11,9 +11,9 @@
     <div class="navbar">
       <a href="index.html">Home</a>
       <a href="games">Games</a>
+      <a href="downloads">Downloads</a>
       <a href="emulator">Emulator</a>
       <a href="flash">Flash</a>
-      <a href="downloads">Downloads</a>
     </div>
     <h1>Settings</h1>
     <div class="settings-container">
@@ -98,10 +98,6 @@
         <input type="text" id="urlRun3" placeholder="https://wowdabug.github.io/run_3/tn6pS9dCf37xAhkJv/">
       </div>
       <div class="setting-group">
-        <label for="urlHenryStickmin">The Henry Stickmin Collection URL</label>
-        <input type="text" id="urlHenryStickmin" placeholder="https://wowdabug.github.io/s2/the_henry_stickmin_collection/">
-      </div>
-      <div class="setting-group">
         <label for="urlUndertale">Undertale URL</label>
         <input type="text" id="urlUndertale" placeholder="https://wowdabug.github.io/s1/undertale/">
       </div>
@@ -130,7 +126,6 @@
         localStorage.setItem('urlPeoplePlayground', document.getElementById('urlPeoplePlayground').value);
         localStorage.setItem('urlPolytrack', document.getElementById('urlPolytrack').value);
         localStorage.setItem('urlRun3', document.getElementById('urlRun3').value);
-        localStorage.setItem('urlHenryStickmin', document.getElementById('urlHenryStickmin').value);
         localStorage.setItem('urlUndertale', document.getElementById('urlUndertale').value);
       }
 
@@ -147,7 +142,6 @@
           document.getElementById('urlPeoplePlayground').value = '';
           document.getElementById('urlPolytrack').value = '';
           document.getElementById('urlRun3').value = '';
-          document.getElementById('urlHenryStickmin').value = '';
           document.getElementById('urlUndertale').value = '';
         }
       }
@@ -180,8 +174,7 @@
         document.getElementById('urlPeoplePlayground').value = localStorage.getItem('urlPeoplePlayground') || '';
         document.getElementById('urlPolytrack').value = localStorage.getItem('urlPolytrack') || '';
         document.getElementById('urlRun3').value = localStorage.getItem('urlRun3') || '';
-        document.getElementById('urlHenryStickmin').value = localStorage.getItem('urlHenryStickmin') || '';
-        document.getElementById('urlUndertale').value = localStorage.getItem('urlHenryStickmin') || '';
+        document.getElementById('urlUndertale').value = localStorage.getItem('urlUndertale') || '';
         if (savedTitle) titleInput.value = savedTitle;
         if (savedFavicon) faviconInput.value = savedFavicon;
         if (savedPanicKey) panicKeyInput.value = savedPanicKey;
