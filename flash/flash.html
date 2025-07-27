@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Game Loader</title>
-    <script src="../scripts/main.js"></script>
+    <title>Flash</title>
     <script src="../scripts/ruffle.js"></script>
     <style>
+      html,
       body {
-        background-color: #000;
-        color: #fff;
         margin: 0;
+        padding: 0;
+        background: #000;
+        color: #fff;
         font-family: sans-serif;
+        height: 100%;
+        overflow: hidden;
       }
 
       #controls {
         position: absolute;
         top: 10px;
         left: 10px;
+        z-index: 10;
+      }
+
+      #gameContainer {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+      }
+
+      #gameWrapper {
+        width: 850px;
+        height: 600px;
+        transform-origin: top center;
+      }
+
+      object {
+        width: 100%;
+        height: 100%;
+        display: block;
       }
     </style>
   </head>
@@ -42,17 +66,29 @@
       </select>
       <button onclick="loadGame()">Play</button>
     </div>
-    <div id="gameContainer" style="text-align:center; margin-top:60px;"></div>
+    <div id="gameContainer">
+      <div id="gameWrapper"></div>
+    </div>
     <script>
+      function scaleGame() {
+        const wrapper = document.getElementById("gameWrapper");
+        const scaleX = window.innerWidth / 850;
+        const scaleY = window.innerHeight / 600;
+        const scale = Math.min(scaleX, scaleY);
+        wrapper.style.transform = `scale(${scale})`;
+      }
+
       function loadGame() {
         const game = document.getElementById("gameSelect").value;
         if (!game) return;
-        const container = document.getElementById("gameContainer");
-        container.innerHTML = `
+        const wrapper = document.getElementById("gameWrapper");
+        wrapper.innerHTML = `
 
-			<embed src="${game}.swf" width="850" height="600"></embed>
+			<object type="application/x-shockwave-flash" data="${game}" width="850" height="600"></object>
       `;
+        setTimeout(scaleGame, 50);
       }
+      window.addEventListener("resize", scaleGame);
     </script>
   </body>
 </html>
