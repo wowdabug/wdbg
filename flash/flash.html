@@ -17,8 +17,8 @@
 
       #controls {
         position: absolute;
-        top: 10px;
-        left: 10px;
+        top: 20px;
+        left: 20px;
         z-index: 10;
       }
 
@@ -45,7 +45,7 @@
   </head>
   <body>
     <div id="controls">
-      <select id="gameSelect">
+      <select id="gameSelect" onchange="loadGame()>
         <option value="">Select a game</option>
 	    <!-- Bloons Tower Defense 5 -->
         <option value="swfs/btd5.swf">BTD5</option>
@@ -64,7 +64,6 @@
         <option value="swfs/Infiltrating_the_airship.swf">Infiltrating the Airship</option>
         <option value="swfs/fleeing_the_complex.swf">Fleeing the Complex</option>
       </select>
-      <button onclick="loadGame()">Play</button>
     </div>
     <div id="gameContainer">
       <div id="gameWrapper"></div>
