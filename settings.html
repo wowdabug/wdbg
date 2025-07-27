@@ -54,51 +54,55 @@
       </div>
       <div class="setting-group">
         <label for="urlAngryBirds">Angry Birds URL</label>
-        <input type="text" id="urlAngryBirds" placeholder="">
+        <input type="text" id="urlAngryBirds" placeholder="https://wowdabug.github.io/s2/angry_birds/">
       </div>
       <div class="setting-group">
         <label for="urlBrotato">Brotato URL</label>
-        <input type="text" id="urlBrotato" placeholder="">
+        <input type="text" id="urlBrotato" placeholder="https://wowdabug.github.io/s1/brotato/">
       </div>
       <div class="setting-group">
         <label for="urlChampionIsland">Champion Island URL</label>
-        <input type="text" id="urlChampionIsland" placeholder="">
+        <input type="text" id="urlChampionIsland" placeholder="https://wowdabug.github.io/s2/champion_island/">
       </div>
       <div class="setting-group">
         <label for="urlCrazyCattle">Crazy Cattle 3D URL</label>
-        <input type="text" id="urlCrazyCattle" placeholder="">
+        <input type="text" id="urlCrazyCattle" placeholder="https://wowdabug.github.io/s1/crazy_cattle/">
       </div>
       <div class="setting-group">
-        <label for="urlFnaf">FNaF URL</label>
-        <input type="text" id="urlFnaf" placeholder="">
+        <label for="urlFnaf">FNAF URL</label>
+        <input type="text" id="urlFnaf" placeholder="https://wowdabug.github.io/s3/">
       </div>
       <div class="setting-group">
         <label for="urlGranny">Granny URL</label>
-        <input type="text" id="urlGranny" placeholder="">
+        <input type="text" id="urlGranny" placeholder="https://wowdabug.github.io/s2/granny/">
       </div>
       <div class="setting-group">
         <label for="urlJustAPlatformer">Just A Platformer URL</label>
-        <input type="text" id="urlJustAPlatformer" placeholder="">
+        <input type="text" id="urlJustAPlatformer" placeholder="https://wowdabug.github.io/s2/just_a_platformer/">
       </div>
       <div class="setting-group">
         <label for="urlOvo">OvO URL</label>
-        <input type="text" id="urlOvo" placeholder="">
+        <input type="text" id="urlOvo" placeholder="https://wowdabug.github.io/s2/ovo/">
       </div>
       <div class="setting-group">
         <label for="urlPeoplePlayground">People Playground URL</label>
-        <input type="text" id="urlPeoplePlayground" placeholder="">
+        <input type="text" id="urlPeoplePlayground" placeholder="https://wowdabug.github.io/s1/people_playground/">
       </div>
       <div class="setting-group">
         <label for="urlPolytrack">Polytrack URL</label>
-        <input type="text" id="urlPolytrack" placeholder="">
+        <input type="text" id="urlPolytrack" placeholder="https://wowdabug.github.io/s2/polytrack/">
       </div>
       <div class="setting-group">
         <label for="urlRun3">Run 3 URL</label>
-        <input type="text" id="urlRun3" placeholder="">
+        <input type="text" id="urlRun3" placeholder="https://wowdabug.github.io/s2/angry_birds/">
       </div>
       <div class="setting-group">
         <label for="urlHenryStickmin">The Henry Stickmin Collection URL</label>
-        <input type="text" id="urlHenryStickmin" placeholder="">
+        <input type="text" id="urlHenryStickmin" placeholder="https://wowdabug.github.io/s2/the_henry_stickmin_collection/">
+      </div>
+      <div class="setting-group">
+        <label for="urlUndertale">Undertale URL</label>
+        <input type="text" id="urlUndertale" placeholder="https://wowdabug.github.io/s1/undertale/">
       </div>
       <div class="setting-group">
         <label>Game URL Presets</label>
@@ -126,6 +130,7 @@
         localStorage.setItem('urlPolytrack', document.getElementById('urlPolytrack').value);
         localStorage.setItem('urlRun3', document.getElementById('urlRun3').value);
         localStorage.setItem('urlHenryStickmin', document.getElementById('urlHenryStickmin').value);
+        localStorage.setItem('urlUndertale', document.getElementById('urlUndertale').value);
       }
 
       function applyGameUrlPreset(preset) {
@@ -142,6 +147,7 @@
           document.getElementById('urlPolytrack').value = '';
           document.getElementById('urlRun3').value = '';
           document.getElementById('urlHenryStickmin').value = '';
+          document.getElementById('urlUndertale').value = '';
         }
       }
 
@@ -162,18 +168,19 @@
         const savedFavicon = localStorage.getItem('customFavicon');
         const savedPanicKey = localStorage.getItem('panicKey');
         const savedPanicUrl = localStorage.getItem('panicUrl');
-        document.getElementById('urlAngryBirds').value = localStorage.getItem('urlAngryBirds') || 'https://wowdabug.github.io/s2/angry_birds/';
-        document.getElementById('urlBrotato').value = localStorage.getItem('urlBrotato') || 'https://wowdabug.github.io/s1/brotato/';
-        document.getElementById('urlChampionIsland').value = localStorage.getItem('urlChampionIsland') || 'https://wowdabug.github.io/s2/champion_island/';
-        document.getElementById('urlCrazyCattle').value = localStorage.getItem('urlCrazyCattle') || 'https://wowdabug.github.io/s1/crazy_cattle/';
-        document.getElementById('urlFnaf').value = localStorage.getItem('urlFnaf') || 'https://wowdabug.github.io/s3/';
-        document.getElementById('urlGranny').value = localStorage.getItem('urlGranny') || 'https://wowdabug.github.io/s2/granny/';
-        document.getElementById('urlJustAPlatformer').value = localStorage.getItem('urlJustAPlatformer') || 'https://wowdabug.github.io/s2/just_a_platformer/';
-        document.getElementById('urlOvo').value = localStorage.getItem('urlOvo') || 'https://wowdabug.github.io/s2/ovo/';
-        document.getElementById('urlPeoplePlayground').value = localStorage.getItem('urlPeoplePlayground') || 'https://wowdabug.github.io/s1/people_playground/';
-        document.getElementById('urlPolytrack').value = localStorage.getItem('urlPolytrack') || 'https://wowdabug.github.io/s2/polytrack/';
-        document.getElementById('urlRun3').value = localStorage.getItem('urlRun3') || 'https://wowdabug.github.io/s2/run_3/';
-        document.getElementById('urlHenryStickmin').value = localStorage.getItem('urlHenryStickmin') || 'https://wowdabug.github.io/s2/the_henry_stickmin_collection/';
+        document.getElementById('urlAngryBirds').value = localStorage.getItem('urlAngryBirds') || '';
+        document.getElementById('urlBrotato').value = localStorage.getItem('urlBrotato') || '';
+        document.getElementById('urlChampionIsland').value = localStorage.getItem('urlChampionIsland') || '';
+        document.getElementById('urlCrazyCattle').value = localStorage.getItem('urlCrazyCattle') || '';
+        document.getElementById('urlFnaf').value = localStorage.getItem('urlFnaf') || '';
+        document.getElementById('urlGranny').value = localStorage.getItem('urlGranny') || '';
+        document.getElementById('urlJustAPlatformer').value = localStorage.getItem('urlJustAPlatformer') || '';
+        document.getElementById('urlOvo').value = localStorage.getItem('urlOvo') || '';
+        document.getElementById('urlPeoplePlayground').value = localStorage.getItem('urlPeoplePlayground') || '';
+        document.getElementById('urlPolytrack').value = localStorage.getItem('urlPolytrack') || '';
+        document.getElementById('urlRun3').value = localStorage.getItem('urlRun3') || '';
+        document.getElementById('urlHenryStickmin').value = localStorage.getItem('urlHenryStickmin') || '';
+        document.getElementById('urlUndertale').value = localStorage.getItem('urlHenryStickmin') || '';
         if (savedTitle) titleInput.value = savedTitle;
         if (savedFavicon) faviconInput.value = savedFavicon;
         if (savedPanicKey) panicKeyInput.value = savedPanicKey;
