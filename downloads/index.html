@@ -26,15 +26,11 @@
         const response = await fetch("../scripts/downloads.json");
         const data = await response.json();
         const container = document.getElementById("downloads-container");
+
+        const downloadsContainer = document.createElement("div");
+        downloadsContainer.className = "downloads-container";
+
         data.forEach(category => {
-          const section = document.createElement("div");
-          section.className = "category";
-          const header = document.createElement("h2");
-          header.textContent = category.category;
-          header.onclick = () => toggleCategory(header);
-          const downloadsContainer = document.createElement("div");
-          downloadsContainer.className = "downloads-container";
-          downloadsContainer.style.display = "none";
           category.downloads.forEach(item => {
             const downloadBox = document.createElement("div");
             downloadBox.className = "download-box";
@@ -42,14 +38,14 @@
               <img src="${item.image}" alt="${item.title}">
               <div class="download-info">
                 <a href="${item.link}" download>${item.title}</a>
+                <div class="download-url">${item.link}</div>
               </div>
             `;
             downloadsContainer.appendChild(downloadBox);
           });
-          section.appendChild(header);
-          section.appendChild(downloadsContainer);
-          container.appendChild(section);
         });
+
+        container.appendChild(downloadsContainer);
       }
       document.addEventListener("DOMContentLoaded", loadGames);
     </script>

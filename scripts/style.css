@@ -97,6 +97,13 @@ h1 {
   text-decoration: none;
 }
 
+.download-url {
+  font-size: 13px;
+  color: #aaa;
+  word-break: break-all;
+  margin-top: 5px;
+}
+
 .games-container {
   display: none;
 }
