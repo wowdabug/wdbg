@@ -2,26 +2,26 @@
   {
     "category": "Offline Games",
     "downloads": [
-      { "title": "Minecraft Beta 1.3_01", "link": "files/minecraft_beta_1.3_01.html", "image": "../images/minecraft_beta_1.3_01.png" },
-      { "title": "Minecraft Release 1.5.2", "link": "files/minecraft_1.5.2.html", "image": "../images/minecraft_1.5.2.png" },
-      { "title": "Minecraft Release 1.8.8", "link": "files/minecraft_1.8.8.html", "image": "../images/minecraft_1.8.8.png" }
+      { "title": "Minecraft Beta 1.3_01", "link": "https://wowdabug.github.io/s2/files/minecraft_beta_1.3_01.html", "image": "../images/minecraft_beta_1.3_01.png" },
+      { "title": "Minecraft Release 1.5.2", "link": "https://wowdabug.github.io/s2/files/minecraft_1.5.2.html", "image": "../images/minecraft_1.5.2.png" },
+      { "title": "Minecraft Release 1.8.8", "link": "https://wowdabug.github.io/s2/files/minecraft_1.8.8.html", "image": "../images/minecraft_1.8.8.png" }
     ]
   },
   {
     "category": "Minecraft Maps",
     "downloads": [
-      { "title": "Bedwars", "link": "files/bedwars.mcworld", "image": "../images/bedwars.png" },
-      { "title": "Medieval Bedwars", "link": "files/medieval_bedwars.mcworld", "image": "../images/medieval_bedwars.png" },
-      { "title": "Parkour Corridor", "link": "files/parkour_corridor.mcworld", "image": "../images/parkour_corridor.png" },
-      { "title": "Parkour Grid", "link": "files/parkour_grid.mcworld", "image": "../images/parkour_grid.png" },
-      { "title": "Skyblock", "link": "files/skyblock.mcworld", "image": "../images/skyblock.png" },
-      { "title": "One Block Skyblock", "link": "files/one_block_skyblock.mcworld", "image": "../images/one_block_skyblock.png" },
-      { "title": "Void World", "link": "files/void_world.mcworld", "image": "../images/void_world.png" },
-      { "title": "Skywars Compiled 1", "link": "files/skywars_1.mcworld", "image": "../images/skywars_1.png" },
-      { "title": "Skywars Compiled 2", "link": "files/skywars_2.mcworld", "image": "../images/skywars_2.png" },
-      { "title": "Skywars Compiled 3", "link": "files/skywars_3.mcworld", "image": "../images/skywars_3.png" },
-      { "title": "Lucky Block Skywars", "link": "files/lucky_block_skywars.mcworld", "image": "../images/lucky_block_skywars.png" },
-      { "title": "Skywars Kits", "link": "files/skywars_kits.mcworld", "image": "../images/skywars_kits.png" }
+      { "title": "Bedwars", "link": "https://wowdabug.github.io/s2/files/bedwars.mcworld", "image": "../images/bedwars.png" },
+      { "title": "Medieval Bedwars", "link": "https://wowdabug.github.io/s2/files/medieval_bedwars.mcworld", "image": "../images/medieval_bedwars.png" },
+      { "title": "Parkour Corridor", "link": "https://wowdabug.github.io/s2/files/parkour_corridor.mcworld", "image": "../images/parkour_corridor.png" },
+      { "title": "Parkour Grid", "link": "https://wowdabug.github.io/s2/files/parkour_grid.mcworld", "image": "../images/parkour_grid.png" },
+      { "title": "Skyblock", "link": "https://wowdabug.github.io/s2/files/skyblock.mcworld", "image": "../images/skyblock.png" },
+      { "title": "One Block Skyblock", "link": "https://wowdabug.github.io/s2/files/one_block_skyblock.mcworld", "image": "../images/one_block_skyblock.png" },
+      { "title": "Void World", "link": "https://wowdabug.github.io/s2/files/void_world.mcworld", "image": "../images/void_world.png" },
+      { "title": "Skywars Compiled 1", "link": "https://wowdabug.github.io/s2/files/skywars_1.mcworld", "image": "../images/skywars_1.png" },
+      { "title": "Skywars Compiled 2", "link": "https://wowdabug.github.io/s2/files/skywars_2.mcworld", "image": "../images/skywars_2.png" },
+      { "title": "Skywars Compiled 3", "link": "https://wowdabug.github.io/s2/files/skywars_3.mcworld", "image": "../images/skywars_3.png" },
+      { "title": "Lucky Block Skywars", "link": "https://wowdabug.github.io/s2/files/lucky_block_skywars.mcworld", "image": "../images/lucky_block_skywars.png" },
+      { "title": "Skywars Kits", "link": "https://wowdabug.github.io/s2/files/skywars_kits.mcworld", "image": "../images/skywars_kits.png" }
     ]
   }
 ]
