@@ -69,12 +69,13 @@ h1 {
   max-width: 800px;
   margin: 0 auto;
   padding: 0px;
+  margin-bottom: 10px;
 }
 
 .download-box {
   display: flex;
   background: #2a2a2a;
-  padding: 15px;
+  padding: 8px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   align-items: center;
@@ -206,6 +207,7 @@ h1 {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   text-align: left;
+  margin-bottom: 10px;
 }
 
 .setting-group {
