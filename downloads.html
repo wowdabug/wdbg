@@ -22,7 +22,7 @@
         content.style.display = content.style.display === "grid" ? "none" : "grid";
       }
       async function loadGames() {
-        const response = await fetch("../scripts/downloads.json");
+        const response = await fetch("scripts/downloads.json");
         const data = await response.json();
         const container = document.getElementById("downloads-container");
 
