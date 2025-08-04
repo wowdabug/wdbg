@@ -63,19 +63,45 @@ h1 {
 }
 
 .downloads-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
   padding: 20px;
-  justify-content: center;
+}
+
+.download-box {
+  display: flex;
+  background: #2a2a2a;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+}
+
+.download-box img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.download-info a {
+  color: #ddd;
+  font-weight: bold;
+  font-size: 17px;
+  text-decoration: none;
 }
 
 .games-container {
   display: none;
 }
 
-.game-box,
-.download-box {
+.game-box {
   background: #2a2a2a;
   padding: 10px;
   border-radius: 8px;
@@ -83,16 +109,14 @@ h1 {
   text-align: center;
 }
 
-.game-box img,
-.download-box img {
+.game-box img {
   width: 100%;
   height: 176px;
   object-fit: cover;
   border-radius: 5px;
 }
 
-.game-box a,
-.download-box a {
+.game-box a {
   display: block;
   margin-top: 10px;
   text-decoration: none;

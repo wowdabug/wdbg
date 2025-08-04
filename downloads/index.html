@@ -39,10 +39,11 @@
             const downloadBox = document.createElement("div");
             downloadBox.className = "download-box";
             downloadBox.innerHTML = `
-          
-			<img src="${item.image}" alt="${item.title}">
-				<a href="${item.link}" download>${item.title}</a>
-        `;
+              <img src="${item.image}" alt="${item.title}">
+              <div class="download-info">
+                <a href="${item.link}" download>${item.title}</a>
+              </div>
+            `;
             downloadsContainer.appendChild(downloadBox);
           });
           section.appendChild(header);

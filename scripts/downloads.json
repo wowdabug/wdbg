@@ -2,9 +2,6 @@
   {
     "category": "Offline Games",
     "downloads": [
-      { "title": "Appel", "link": "files/appel.html", "image": "../images/appel.png" },
-      { "title": "Mini Golf", "link": "files/mini_golf.html", "image": "../images/mini_golf.png" },
-      { "title": "Paper Minecraft", "link": "files/paper_minecraft.html", "image": "../images/paper_minecraft.png" },
       { "title": "Minecraft Beta 1.3_01", "link": "files/minecraft_beta_1.3_01.html", "image": "../images/minecraft_beta_1.3_01.png" },
       { "title": "Minecraft Release 1.5.2", "link": "files/minecraft_1.5.2.html", "image": "../images/minecraft_1.5.2.png" },
       { "title": "Minecraft Release 1.8.8", "link": "files/minecraft_1.8.8.html", "image": "../images/minecraft_1.8.8.png" }
