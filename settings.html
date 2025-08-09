@@ -69,6 +69,10 @@
         <input type="text" id="urlCrazyCattle" placeholder="https://wowdabug.github.io/s1/crazy_cattle/">
       </div>
       <div class="setting-group">
+        <label for="urlDownloads">Downloads URL</label>
+        <input type="text" id="urlDownloads" placeholder="https://wowdabug.github.io/s2/files/">
+      </div>
+      <div class="setting-group">
         <label for="urlFnaf">FNAF URL</label>
         <input type="text" id="urlFnaf" placeholder="https://wowdabug.github.io/fnaf/">
       </div>
@@ -97,6 +101,10 @@
         <input type="text" id="urlRun3" placeholder="https://wowdabug.github.io/run_3/tn6pS9dCf37xAhkJv/">
       </div>
       <div class="setting-group">
+        <label for="urlTownscaper">Townscaper URL</label>
+        <input type="text" id="urlTownscaper" placeholder="https://wowdabug.github.io/s2/townscaper/">
+      </div>
+      <div class="setting-group">
         <label for="urlUndertale">Undertale URL</label>
         <input type="text" id="urlUndertale" placeholder="https://wowdabug.github.io/s1/undertale/">
       </div>
@@ -118,6 +126,7 @@
         localStorage.setItem('urlBrotato', document.getElementById('urlBrotato').value);
         localStorage.setItem('urlChampionIsland', document.getElementById('urlChampionIsland').value);
         localStorage.setItem('urlCrazyCattle', document.getElementById('urlCrazyCattle').value);
+        localStorage.setItem('urlDownloads', document.getElementById('urlDownloads').value);
         localStorage.setItem('urlFnaf', document.getElementById('urlFnaf').value);
         localStorage.setItem('urlGranny', document.getElementById('urlGranny').value);
         localStorage.setItem('urlJustAPlatformer', document.getElementById('urlJustAPlatformer').value);
@@ -125,6 +134,7 @@
         localStorage.setItem('urlPeoplePlayground', document.getElementById('urlPeoplePlayground').value);
         localStorage.setItem('urlPolytrack', document.getElementById('urlPolytrack').value);
         localStorage.setItem('urlRun3', document.getElementById('urlRun3').value);
+        localStorage.setItem('urlTownscaper', document.getElementById('urlTownscaper').value);
         localStorage.setItem('urlUndertale', document.getElementById('urlUndertale').value);
       }
 
@@ -134,6 +144,7 @@
           document.getElementById('urlBrotato').value = '';
           document.getElementById('urlChampionIsland').value = '';
           document.getElementById('urlCrazyCattle').value = '';
+          document.getElementById('urlDownloads').value = '';
           document.getElementById('urlFnaf').value = '';
           document.getElementById('urlGranny').value = '';
           document.getElementById('urlJustAPlatformer').value = '';
@@ -141,6 +152,7 @@
           document.getElementById('urlPeoplePlayground').value = '';
           document.getElementById('urlPolytrack').value = '';
           document.getElementById('urlRun3').value = '';
+          document.getElementById('urlTownscaper').value = '';
           document.getElementById('urlUndertale').value = '';
         }
       }
@@ -166,6 +178,7 @@
         document.getElementById('urlBrotato').value = localStorage.getItem('urlBrotato') || '';
         document.getElementById('urlChampionIsland').value = localStorage.getItem('urlChampionIsland') || '';
         document.getElementById('urlCrazyCattle').value = localStorage.getItem('urlCrazyCattle') || '';
+        document.getElementById('urlDownloads').value = localStorage.getItem('urlDownloads') || '';
         document.getElementById('urlFnaf').value = localStorage.getItem('urlFnaf') || '';
         document.getElementById('urlGranny').value = localStorage.getItem('urlGranny') || '';
         document.getElementById('urlJustAPlatformer').value = localStorage.getItem('urlJustAPlatformer') || '';
@@ -173,6 +186,7 @@
         document.getElementById('urlPeoplePlayground').value = localStorage.getItem('urlPeoplePlayground') || '';
         document.getElementById('urlPolytrack').value = localStorage.getItem('urlPolytrack') || '';
         document.getElementById('urlRun3').value = localStorage.getItem('urlRun3') || '';
+        document.getElementById('urlTownscaper').value = localStorage.getItem('urlTownscaper') || '';
         document.getElementById('urlUndertale').value = localStorage.getItem('urlUndertale') || '';
         if (savedTitle) titleInput.value = savedTitle;
         if (savedFavicon) faviconInput.value = savedFavicon;
