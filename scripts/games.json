@@ -17,19 +17,23 @@
     "games": [
       {"title":"Asteroids","image":"../images/asteroids.png","link":"asteroids"},
       {"title":"Baldi's Basics","image":"../images/baldis_basics.png","link":"baldis_basics"},
-      {"title":"Champion Island","image":"../images/champion_island.png","link":"champion_island"},
+      {"title":"Brotato","image":"../images/brotato.png","link":"brotato"},
+      {"title":"CircloO","image":"../images/circloo.png","link":"circloo"},
       {"title":"ClassiCube","image":"../images/classicube.png","link":"classicube"},
+      {"title":"Crazy Cattle 3D","image":"../images/crazy_cattle.png","link":"crazy_cattle"},
       {"title":"Death Run","image":"../images/death_run.png","link":"death_run"},
       {"title":"Dino","image":"../images/dino.png","link":"dino"},
       {"title":"Dodge","image":"../images/dodge.png","link":"dodge"},
       {"title":"Doodle Jump","image":"../images/doodle_jump.png","link":"doodle_jump"},
+      {"title":"Handulum+","image":"../images/handulum+.png","link":"handulum+"},
       {"title":"Magic Cat Academy","image":"../images/magic_cat_academy.png","link":"magic_cat_academy"},
       {"title":"Mini Golf","image":"../images/mini_golf.png","link":"mini_golf"},
       {"title":"Plug Away","image":"../images/plug_away.png","link":"plug_away"},
       {"title":"Plug Away 2","image":"../images/plug_away_2.png","link":"plug_away_2"},
-      {"title":"Poly Track","image":"../images/polytrack.png","link":"polytrack"},
+      {"title":"PolyTrack","image":"../images/polytrack.png","link":"polytrack"},
       {"title":"Retro Flight Sim","image":"../images/retro_flight_sim.png","link":"retro_flight_sim/dist"},
       {"title":"Sandboxels","image":"../images/sandboxels.png","link":"sandboxels"},
+      {"title":"Sand Game","image":"../images/sand_game.png","link":"sand_game"},
       {"title":"Scratch Flight Sim","image":"../images/scratch_flight_sim.png","link":"scratch_flight_sim"},
       {"title":"Slope","image":"../images/slope.png","link":"slope"},
       {"title":"Slow Roads","image":"../images/slow_roads.png","link":"slow_roads"},
@@ -37,6 +41,7 @@
       {"title":"Stack","image":"../images/stack.png","link":"stack"},
       {"title":"Stickman Hook","image":"../images/stickman_hook.png","link":"stickman_hook"},
       {"title":"Surf","image":"../images/surf.png","link":"surf"}
+      {"title":"Tag","image":"../images/tag.png","link":"tag"},
     ]
   },
   {
@@ -45,6 +50,7 @@
       {"title":"2048","image":"../images/2048.png","link":"2048"},
       {"title":"Angry Birds","image":"../images/angry_birds.png","link":"angry_birds"},
       {"title":"Countries Quiz","image":"../images/countries_quiz.png","link":"countries_quiz"},
+      {"title":"Battleship","image":"../images/battleship.png","link":"battleship"},
       {"title":"Bitlife","image":"../images/bitlife.png","link":"bitlife"},
       {"title":"Minesweeper","image":"../images/minesweeper.png","link":"minesweeper"},
       {"title":"TWHG","image":"../images/twhg.png","link":"twhg"},
@@ -70,6 +76,7 @@
     "category": "Sports Games",
     "games": [
       {"title":"Basket Random","image":"../images/basket_random.png","link":"basket_random"},
+      {"title":"Champion Island","image":"../images/champion_island.png","link":"champion_island"},
       {"title":"Pen Football","image":"../images/pen_football.png","link":"pen_football"},
       {"title":"Retro Bowl","image":"../images/retro_bowl.png","link":"retro_bowl"},
       {"title":"Soccer Random","image":"../images/soccer_random.png","link":"soccer_random"},
@@ -89,26 +96,21 @@
       {"title":"Planet Clicker","image":"../images/planet_clicker.png","link":"planet_clicker"},
       {"title":"Spacebar Clicker","image":"../images/spacebar_clicker.png","link":"spacebar_clicker"},
       {"title":"The Final Earth 2","image":"../images/the_final_earth_2.png","link":"the_final_earth_2"}
+      {"title":"Universal Paperclips","image":"../images/universal_paperclips.png","link":"universal_paperclips"}
     ]
   },
   {
     "category": "Beta Games",
     "games": [
       {"title":"ADOFAI","image":"../images/a_dance_of_fire_and_ice.png","link":"a_dance_of_fire_and_ice"},
-      {"title":"Battleship","image":"../images/battleship.png","link":"battleship"},
-      {"title":"Brotato","image":"../images/brotato.png","link":"brotato"},
-      {"title":"CircloO","image":"../images/circloo.png","link":"circloo"},
-      {"title":"Crazy Cattle 3D","image":"../images/crazy_cattle.png","link":"crazy_cattle"},
+
       {"title":"FNAF","image":"../images/fnaf.png","link":"fnaf"},
-      {"title":"Globle","image":"../images/globle.png","link":"globle"},
       {"title":"Granny","image":"../images/granny.png","link":"granny"},
-      {"title":"Handulum+","image":"../images/handulum+.png","link":"handulum+"},
+      {"title":"Jelly Mario","image":"../images/jelly_mario.png","link":"jelly_mario"},
       {"title":"Moto X3M","image":"../images/moto_x3m.png","link":"moto_x3m"},
       {"title":"People Playground","image":"../images/people_playground.png","link":"people_playground"},
-      {"title":"Sand Game","image":"../images/sand_game.png","link":"sand_game"},
-      {"title":"Tag","image":"../images/tag.png","link":"tag"},
+      {"title":"Townscaper","image":"../images/townscaper.png","link":"townscaper"},
       {"title":"Undertale","image":"../images/undertale.png","link":"undertale"},
-      {"title":"Universal Paperclips","image":"../images/universal_paperclips.png","link":"universal_paperclips"}
     ]
   }
 ]
