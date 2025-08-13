@@ -1,18 +1,18 @@
 [
-      { "title": "Minecraft Beta 1.3_01", "fallbackUrl": "https://wowdabug.github.io/s2/files/minecraft_beta_1.3_01.html", "link": "void", "image": "images/minecraft_beta_1.3_01.png" },
-      { "title": "Minecraft Release 1.5.2", "fallbackUrl": "https://wowdabug.github.io/s2/files/minecraft_1.5.2.html", "link": "void", "image": "images/minecraft_1.5.2.png" },
-      { "title": "Minecraft Release 1.8.8", "fallbackUrl": "https://wowdabug.github.io/s2/files/minecraft_1.8.8.html", "link": "void", "image": "images/minecraft_1.8.8.png" },
-      { "title": "Bedwars", "fallbackUrl": "https://wowdabug.github.io/s2/files/bedwars.mcworld", "link": "void", "image": "images/bedwars.png" },
-      { "title": "Medieval Bedwars", "fallbackUrl": "https://wowdabug.github.io/s2/files/medieval_bedwars.mcworld", "link": "void", "image": "images/medieval_bedwars.png" },
-      { "title": "Parkour Corridor", "fallbackUrl": "https://wowdabug.github.io/s2/files/parkour_corridor.mcworld", "link": "void", "image": "images/parkour_corridor.png" },
-      { "title": "Parkour Grid", "fallbackUrl": "https://wowdabug.github.io/s2/files/parkour_grid.mcworld", "link": "void", "image": "images/parkour_grid.png" },
-      { "title": "Skyblock", "fallbackUrl": "https://wowdabug.github.io/s2/files/skyblock.mcworld", "link": "void", "image": "images/skyblock.png" },
-      { "title": "One Block Skyblock", "fallbackUrl": "https://wowdabug.github.io/s2/files/one_block_skyblock.mcworld", "link": "void", "image": "images/one_block_skyblock.png" },
-      { "title": "Void World", "fallbackUrl": "https://wowdabug.github.io/s2/files/void_world.mcworld", "link": "void", "image": "images/void_world.png" },
-      { "title": "Skywars Compiled 1", "fallbackUrl": "https://wowdabug.github.io/s2/files/skywars_1.mcworld", "link": "void", "image": "images/skywars_1.png" },
-      { "title": "Skywars Compiled 2", "fallbackUrl": "https://wowdabug.github.io/s2/files/skywars_2.mcworld", "link": "void", "image": "images/skywars_2.png" },
-      { "title": "Skywars Compiled 3", "fallbackUrl": "https://wowdabug.github.io/s2/files/skywars_3.mcworld", "link": "void", "image": "images/skywars_3.png" },
-      { "title": "Lucky Block Skywars", "fallbackUrl": "https://wowdabug.github.io/s2/files/lucky_block_skywars.mcworld", "link": "void", "image": "images/lucky_block_skywars.png" },
-      { "title": "Skywars Kits", "fallbackUrl": "https://wowdabug.github.io/s2/files/skywars_kits.mcworld", "link": "void", "image": "images/skywars_kits.png" }
+      { "title": "Minecraft Beta 1.3_01", "fallbackUrl": "https://wowdabug.github.io/s2/downloads/minecraft_beta_1.3_01.html", "link": "void", "image": "images/minecraft_beta_1.3_01.png" },
+      { "title": "Minecraft Release 1.5.2", "fallbackUrl": "https://wowdabug.github.io/s2/downloads/minecraft_1.5.2.html", "link": "void", "image": "images/minecraft_1.5.2.png" },
+      { "title": "Minecraft Release 1.8.8", "fallbackUrl": "https://wowdabug.github.io/s2/downloads/minecraft_1.8.8.html", "link": "void", "image": "images/minecraft_1.8.8.png" },
+      { "title": "Bedwars", "fallbackUrl": "https://wowdabug.github.io/s2/downloads/bedwars.mcworld", "link": "void", "image": "images/bedwars.png" },
+      { "title": "Medieval Bedwars", "fallbackUrl": "https://wowdabug.github.io/s2/downloads/medieval_bedwars.mcworld", "link": "void", "image": "images/medieval_bedwars.png" },
+      { "title": "Parkour Corridor", "fallbackUrl": "https://wowdabug.github.io/s2/downloads/parkour_corridor.mcworld", "link": "void", "image": "images/parkour_corridor.png" },
+      { "title": "Parkour Grid", "fallbackUrl": "https://wowdabug.github.io/s2/downloads/parkour_grid.mcworld", "link": "void", "image": "images/parkour_grid.png" },
+      { "title": "Skyblock", "fallbackUrl": "https://wowdabug.github.io/s2/downloads/skyblock.mcworld", "link": "void", "image": "images/skyblock.png" },
+      { "title": "One Block Skyblock", "fallbackUrl": "https://wowdabug.github.io/s2/downloads/one_block_skyblock.mcworld", "link": "void", "image": "images/one_block_skyblock.png" },
+      { "title": "Void World", "fallbackUrl": "https://wowdabug.github.io/s2/downloads/void_world.mcworld", "link": "void", "image": "images/void_world.png" },
+      { "title": "Skywars Compiled 1", "fallbackUrl": "https://wowdabug.github.io/s2/downloads/skywars_1.mcworld", "link": "void", "image": "images/skywars_1.png" },
+      { "title": "Skywars Compiled 2", "fallbackUrl": "https://wowdabug.github.io/s2/downloads/skywars_2.mcworld", "link": "void", "image": "images/skywars_2.png" },
+      { "title": "Skywars Compiled 3", "fallbackUrl": "https://wowdabug.github.io/s2/downloads/skywars_3.mcworld", "link": "void", "image": "images/skywars_3.png" },
+      { "title": "Lucky Block Skywars", "fallbackUrl": "https://wowdabug.github.io/s2/downloads/lucky_block_skywars.mcworld", "link": "void", "image": "images/lucky_block_skywars.png" },
+      { "title": "Skywars Kits", "fallbackUrl": "https://wowdabug.github.io/s2/downloads/skywars_kits.mcworld", "link": "void", "image": "images/skywars_kits.png" }
 ]
 
