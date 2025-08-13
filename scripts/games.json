@@ -40,8 +40,8 @@
       {"title":"Snow Rider 3D","image":"../images/snow_rider.png","link":"snow_rider"},
       {"title":"Stack","image":"../images/stack.png","link":"stack"},
       {"title":"Stickman Hook","image":"../images/stickman_hook.png","link":"stickman_hook"},
-      {"title":"Surf","image":"../images/surf.png","link":"surf"}
-      {"title":"Tag","image":"../images/tag.png","link":"tag"},
+      {"title":"Surf","image":"../images/surf.png","link":"surf"},
+      {"title":"Tag","image":"../images/tag.png","link":"tag"}
     ]
   },
   {
@@ -95,7 +95,7 @@
       {"title":"Pixels Filling Squares","image":"../images/pixels_filling_squares.png","link":"pixels_filling_squares"},
       {"title":"Planet Clicker","image":"../images/planet_clicker.png","link":"planet_clicker"},
       {"title":"Spacebar Clicker","image":"../images/spacebar_clicker.png","link":"spacebar_clicker"},
-      {"title":"The Final Earth 2","image":"../images/the_final_earth_2.png","link":"the_final_earth_2"}
+      {"title":"The Final Earth 2","image":"../images/the_final_earth_2.png","link":"the_final_earth_2"},
       {"title":"Universal Paperclips","image":"../images/universal_paperclips.png","link":"universal_paperclips"}
     ]
   },
@@ -103,14 +103,13 @@
     "category": "Beta Games",
     "games": [
       {"title":"ADOFAI","image":"../images/a_dance_of_fire_and_ice.png","link":"a_dance_of_fire_and_ice"},
-
       {"title":"FNAF","image":"../images/fnaf.png","link":"fnaf"},
       {"title":"Granny","image":"../images/granny.png","link":"granny"},
       {"title":"Jelly Mario","image":"../images/jelly_mario.png","link":"jelly_mario"},
       {"title":"Moto X3M","image":"../images/moto_x3m.png","link":"moto_x3m"},
       {"title":"People Playground","image":"../images/people_playground.png","link":"people_playground"},
       {"title":"Townscaper","image":"../images/townscaper.png","link":"townscaper"},
-      {"title":"Undertale","image":"../images/undertale.png","link":"undertale"},
+      {"title":"Undertale","image":"../images/undertale.png","link":"undertale"}
     ]
   }
 ]
