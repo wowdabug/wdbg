@@ -228,11 +228,12 @@ input[type="text"] {
 button {
   background-color: #686df2;
   color: white;
-  padding: 10px 20px;
+  padding: 8px 14px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 0px;
+  font-size: 14px;
 }
 
 button:hover {
@@ -313,20 +314,22 @@ button:hover {
 .tag-button {
   background-color: #333;
   color: #ddd;
-  padding: 6px 12px;
+  padding: 8px 14px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
-  transition: background 0.2s, transform 0.1s;
 }
 
 .tag-button:hover {
-  background-color: #333;
-  color: #686df2;
+  background-color: #444;
 }
 
 .tag-button.active {
   background-color: #686df2;
   color: #fff;
+}
+
+.tag-button.active:hover {
+  background-color: #5a61e0;
 }
