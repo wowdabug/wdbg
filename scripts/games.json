@@ -39,7 +39,7 @@
   {"title":"Mr. Mine","image":"../images/mr_mine.png","link":"mr_mine","tags":["Idle"]},
   {"title":"OvO","image":"../images/ovo.png","link":"ovo","tags":["Platformer"]},
   {"title":"Pen Football","image":"../images/pen_football.png","link":"pen_football","tags":["Sports"]},
-  {"title":"People Playground","image":"../images/people_playground.png","link":"people_playground","tags":["Beta"]},
+  {"title":"People Playground","image":"../images/people_playground.png","link":"people_playground","tags":["Beta","Sandbox"]},
   {"title":"Pixels Filling Squares","image":"../images/pixels_filling_squares.png","link":"pixels_filling_squares","tags":["Idle"]},
   {"title":"Planet Clicker","image":"../images/planet_clicker.png","link":"planet_clicker","tags":["Idle"]},
   {"title":"Plug Away 2","image":"../images/plug_away_2.png","link":"plug_away_2","tags":[]},
