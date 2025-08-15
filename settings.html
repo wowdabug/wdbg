@@ -93,6 +93,10 @@
         <input type="text" id="urlPeoplePlayground" placeholder="https://wowdabug.github.io/s1/people_playground/">
       </div>
       <div class="setting-group">
+        <label for="urlPeoplePlayground">Pizza Tower URL</label>
+        <input type="text" id="urlPizzaTower" placeholder="https://wowdabug.github.io/s1/pizza_tower/">
+      </div>
+      <div class="setting-group">
         <label for="urlPolytrack">Polytrack URL</label>
         <input type="text" id="urlPolytrack" placeholder="https://wowdabug.github.io/s2/polytrack/">
       </div>
@@ -132,6 +136,7 @@
         localStorage.setItem('urlJustAPlatformer', document.getElementById('urlJustAPlatformer').value);
         localStorage.setItem('urlOvo', document.getElementById('urlOvo').value);
         localStorage.setItem('urlPeoplePlayground', document.getElementById('urlPeoplePlayground').value);
+        localStorage.setItem('urlPizzaTower', document.getElementById('urlPizzaTower').value);
         localStorage.setItem('urlPolytrack', document.getElementById('urlPolytrack').value);
         localStorage.setItem('urlRun3', document.getElementById('urlRun3').value);
         localStorage.setItem('urlTownscaper', document.getElementById('urlTownscaper').value);
@@ -150,6 +155,7 @@
           document.getElementById('urlJustAPlatformer').value = '';
           document.getElementById('urlOvo').value = '';
           document.getElementById('urlPeoplePlayground').value = '';
+          document.getElementById('urlPizzaTower').value = '';
           document.getElementById('urlPolytrack').value = '';
           document.getElementById('urlRun3').value = '';
           document.getElementById('urlTownscaper').value = '';
@@ -184,6 +190,7 @@
         document.getElementById('urlJustAPlatformer').value = localStorage.getItem('urlJustAPlatformer') || '';
         document.getElementById('urlOvo').value = localStorage.getItem('urlOvo') || '';
         document.getElementById('urlPeoplePlayground').value = localStorage.getItem('urlPeoplePlayground') || '';
+        document.getElementById('urlPizzaTower').value = localStorage.getItem('urlPizzaTower') || '';
         document.getElementById('urlPolytrack').value = localStorage.getItem('urlPolytrack') || '';
         document.getElementById('urlRun3').value = localStorage.getItem('urlRun3') || '';
         document.getElementById('urlTownscaper').value = localStorage.getItem('urlTownscaper') || '';
